@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+build/
+vendor/
+
+/www/silkroad.localhost/*
+!/www/silkroad.localhost/wp-content/
+/www/silkroad.localhost/wp-content/*
+!/www/silkroad.localhost/wp-content/themes/
+/www/silkroad.localhost/wp-content/themes/*
+!/www/silkroad.localhost/wp-content/themes/silkroad

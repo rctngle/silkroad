@@ -1,0 +1,44 @@
+# docker-compose -p silkroad up
+
+version: "3.3"
+services:
+
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: silkroad
+      MYSQL_USER: silkroad
+      MYSQL_PASSWORD: silkroad
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+    ports:
+      - "3306:3306"
+    volumes:
+      - silkroad_db_data:/var/lib/mysql:delegated
+      - ./database:/docker-entrypoint-initdb.d:delegated
+      - ./mariadb-conf:/etc/mysql/mariadb.conf.d:delegated
+
+  nginx:
+    depends_on:
+      - db
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ../www:/var/www/html:delegated
+      - ./nginx-conf:/etc/nginx/conf.d:delegated
+
+  fpm:
+    build:
+      context: ./fpm
+    env_file:
+      - ./fpm/vars.env
+    volumes:
+      - ../www:/var/www/html:delegated
+      - ./fpm-conf/custom.ini:/usr/local/etc/php/conf.d/custom.ini:delegated
+
+volumes:
+    silkroad_db_data:

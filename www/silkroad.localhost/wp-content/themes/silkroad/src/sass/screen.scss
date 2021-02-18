@@ -1,0 +1,28 @@
+@import "reset-css";
+
+$breakpoints: (
+	'xsm': 767px,
+	'sm': 1024px,
+	'md': 1280px,
+	'md-lg': 1360px,
+	'lg': 1850px
+) !default;
+
+@mixin breakpoint($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	--annotations-color: #ffffbf;
+	--collections-color: #e2f6ff;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
