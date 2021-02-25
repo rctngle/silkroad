@@ -8,8 +8,10 @@ $testimonies_query = new WP_Query([
 ?>
 
 <?php if ($testimonies_query->have_posts()): ?>
-	<?php while($testimonies_query->have_posts()): $testimonies_query->the_post(); ?>
-		<?php get_template_part('templates/posts/post', get_post_type()); ?>
-	<?php endwhile; ?>
-	<?php wp_reset_postdata() ?>
+	<div class="section-inner">
+		<?php while($testimonies_query->have_posts()): $testimonies_query->the_post(); ?>
+			<?php get_template_part('templates/posts/post', get_post_type()); ?>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata() ?>
+	</div>
 <?php endif; ?>

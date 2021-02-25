@@ -18,19 +18,19 @@ header {
 }
 
 nav {
-	display: flex;
-	
+	display: flex;	
 	a {
 		@include small-caps;
+		text-decoration: none;		
+	}
+	a, span {
 		display: block;
-		text-decoration: none;
-		padding: 20px 22px 17px 22px;
+		padding: 18px 24px 15px 24px;
 	}
 	img {
 		width: 16px;
 		height: 16px;
 		display: block;
-		margin-right: 4px;
 	}
 	> div {
 		border-left: 1px solid #e6e6e6;
@@ -38,11 +38,18 @@ nav {
 		@include small-bold;
 	}
 	div.language-nav {
+		background-color: #f2f2f2;
 		display: flex;
-		a {
+		span {
 			display: flex;
 			align-items: center;
+			padding-right: 0;		
 		}
+		img {
+			position: relative;
+			top: -3px;
+		}
+		
 	}
 }
 

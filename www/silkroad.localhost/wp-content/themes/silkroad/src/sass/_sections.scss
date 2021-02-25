@@ -1,3 +1,6 @@
+section {
+	margin: 0 0 24px * 4 0;
+}
 #mapbox-map {
 	height: 600px;
 	.mapboxgl-canvas-container:focus,
@@ -6,11 +9,40 @@
 	}
 }
 
-#report-downloads {
-	display: flex;
-	flex-flow: row wrap;
-	> div {
-		flex: 0 1 25%;
-		margin-bottom: 1rem;
-	}	
+section#report-downloads {
+	.section-inner {
+		display: flex;
+		flex-flow: row wrap;	
+		> div {
+			flex: 0 1 25%;
+			margin-bottom: 16px;
+		}	
+	}
+	
+	
+}
+
+section#cases {
+
+	.modal {
+		display: none;
+	}
+	.section-inner {
+		display: flex;
+		justify-content: space-between;
+
+	}
+	article {
+		flex: 0 1 calc(25% - 18px);
+		background-color: #FFF;
+		color: #000;
+		
+		.image {
+			background-color: #999;
+			min-height: 260px;
+		}
+		.case {
+			padding: 16px 16px 8px 16px;
+		}
+	}
 }

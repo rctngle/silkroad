@@ -19,8 +19,7 @@ $breakpoints: (
 html {
 	box-sizing: border-box;
 	font-size: 16px;
-	--annotations-color: #ffffbf;
-	--collections-color: #e2f6ff;
+	--padding: 16px;
 }
 
 *, *:before, *:after {

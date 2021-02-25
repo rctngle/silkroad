@@ -2,7 +2,7 @@
 $report_downloads_page = get_page_by_path('report-downloads');
 ?>
 
-<div id="report-downloads" class="section-inner">
+<div class="section-inner">
 	<?php if(have_rows('report_downloads', $report_downloads_page->ID)): ?>
 		<?php while( have_rows('report_downloads', $report_downloads_page->ID) ) : the_row(); ?>
 
