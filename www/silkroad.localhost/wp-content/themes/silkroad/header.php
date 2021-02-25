@@ -38,7 +38,7 @@ $classes = get_body_class();
 
 <header>
 	<div class="logo">
-		<img src="<?php bloginfo('template_directory');?>/assets/images/logo-amnesty-yellow@3x.png">
+		<a href="<?php echo site_url();?>"><img src="<?php bloginfo('template_directory');?>/assets/images/logo-amnesty-yellow@3x.png"></a>
 	</div>
 	<nav>
 		<?php get_template_part('templates/nav/main-nav'); ?>
@@ -50,6 +50,7 @@ $classes = get_body_class();
 <section class="hero">
 	<div class="media full image">
 		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/Brothers-of-the-Gun.jpg">
+		<div class="gradient"></div>
 	</div>
 	<div class="hero-content">
 		<h1 class="main-title"><?php echo silkroad_translate('human-rights-exposed'); ?></h1>

@@ -4,7 +4,7 @@
 
 	<section><?php get_template_part('templates/parts/report-downloads'); ?></section>
 
-
+	<section><?php get_template_part('templates/parts/map'); ?></section>
 
 	<section><?php get_template_part('templates/parts/testimonies'); ?></section>
 

@@ -2,7 +2,7 @@
 $report_downloads_page = get_page_by_path('report-downloads');
 ?>
 
-<div>
+<div id="report-downloads" class="section-inner">
 	<?php if(have_rows('report_downloads', $report_downloads_page->ID)): ?>
 		<?php while( have_rows('report_downloads', $report_downloads_page->ID) ) : the_row(); ?>
 
@@ -16,7 +16,7 @@ $report_downloads_page = get_page_by_path('report-downloads');
 			?>
 
 			<div class="<?php echo $language_slug; ?>">
-				<?php the_sub_field('language'); ?>
+				<h4><?php the_sub_field('language'); ?></h4>
 				
 				<?php if ($download_summery && $summary_document): ?>
 					<a href="<?php echo $summary_document['url']; ?>" target="_blank"><?php echo $download_summery; ?></a>

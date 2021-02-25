@@ -28,7 +28,9 @@
     "webpack-cli": "^3.3.11",
     "webpack-livereload-plugin": "^2.3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mapbox-gl": "^2.1.1"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions"

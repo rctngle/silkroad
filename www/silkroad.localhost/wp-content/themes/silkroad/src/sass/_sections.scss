@@ -1,0 +1,16 @@
+#mapbox-map {
+	height: 600px;
+	.mapboxgl-canvas-container:focus,
+	canvas:focus {
+		outline: none;
+	}
+}
+
+#report-downloads {
+	display: flex;
+	flex-flow: row wrap;
+	> div {
+		flex: 0 1 25%;
+		margin-bottom: 1rem;
+	}	
+}
