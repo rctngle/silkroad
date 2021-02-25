@@ -40,7 +40,6 @@ $classes = get_body_class();
 	<h1><?php echo silkroad_translate('human-rights-exposed'); ?></h1>
 	<h2><?php echo silkroad_translate('an-investigation-into-human-rights-violations'); ?></h2>
 
-
 	<hr />
 
 	<?php get_template_part('templates/nav/main-nav'); ?>

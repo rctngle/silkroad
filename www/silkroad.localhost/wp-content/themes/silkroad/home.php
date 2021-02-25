@@ -14,7 +14,9 @@
 
 	<hr />
 
-	<?php get_template_part('templates/parts/resources'); ?>
+	<?php get_template_part('templates/parts/report'); ?>
+
+	<hr />
 
 </main>
 

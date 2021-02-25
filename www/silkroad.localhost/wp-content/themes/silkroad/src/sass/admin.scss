@@ -1,3 +1,21 @@
 .uyghur {
 	direction: RTL; 
 }
+
+label[for=attachment-details-two-column-title]::after, 
+label[for=attachment-details-title]::after
+{
+	content: ' English';
+}
+
+label[for=attachment-details-two-column-caption]::after, 
+label[for=attachment-details-caption]::after
+{
+	content: ' English';
+}
+
+label[for=attachment-details-two-column-description]::after, 
+label[for=attachment-details-description]::after
+{
+	content: ' English';
+}
