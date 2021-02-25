@@ -3,8 +3,16 @@
 $is_chapter = $args['is_chapter'];
 $chapter_num = $args['chapter_num'];
 
+$classes = ['report'];
+
+if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
+	foreach($args['report_content_type_terms'] as $term) {
+		$classes[] = 'content-type-' . $term->slug;
+	}
+}
+
 ?>
-<article class="report">
+<article class="<?php echo implode(' ', $classes); ?>">
 	<div class="content-box">
 
 		<?php if ($is_chapter): ?>
