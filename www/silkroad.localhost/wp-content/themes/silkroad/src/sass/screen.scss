@@ -26,3 +26,24 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+
+@import "fonts";
+@import "typography";
+@import "header";
+@import "footer";
+@import "ui";
+@import "base";
+@import "media";
+@import "hero";
+
+a {
+	color: currentColor;
+}
+
+body {
+	color: #fff;
+	background-color: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

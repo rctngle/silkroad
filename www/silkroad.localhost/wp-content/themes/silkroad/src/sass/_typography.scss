@@ -1,0 +1,60 @@
+@mixin body-text {
+	font-family: Roboto, sans-serif, '';
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+
+@mixin small-caps {
+	text-transform: uppercase;
+	@include small-bold;
+}
+
+@mixin small-bold {
+	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
+	font-size: 15px;
+	line-height: 1;
+	letter-spacing: 0.02em;
+}
+
+p {
+	@include body-text;
+	margin-bottom: 32px;
+}
+
+h3 {
+	font-size: 24px;
+	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
+	margin-bottom: 32px;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+h2 {
+	background-color: #FFF;
+	color: #000;
+	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
+	line-height: 1;
+	letter-spacing: -0.015em;
+	font-size: 36px;
+}
+
+h1 {
+	background-color: #FFF;
+	color: #000;
+	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
+	text-transform: uppercase;
+	line-height: 1;
+	font-size: 36px;
+	padding: 16px 24px;
+}
+
+

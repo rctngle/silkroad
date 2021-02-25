@@ -22,10 +22,11 @@ $chapters_query = new WP_Query([
 		<?php $slug = get_post_field( 'post_name', get_post() ); ?>
 		<div>
 			<a href="#<?php echo $slug; ?>">
-				<?php echo silkroad_translate('chapter-n', LANG, [$chapter_counter+1]); ?>
-				<br />
-				<?php echo silkroad_translate_field(get_field('title_ml_text')); ?>
+				<?php echo silkroad_translate('chapter-n', LANG, [$chapter_counter+1]); ?>								
 			</a>
+			<div class="nav-tooltip">
+				<?php echo silkroad_translate_field(get_field('title_ml_text')); ?>
+			</div>
 		</div>
 		<?php $chapter_counter++; ?>
 	<?php endwhile; ?>

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic';
+	src: url('../fonts/AmnestyTradeGothicLight.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicLight.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicLight.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicLight.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicLight.svg#AmnestyTradeGothicLight') format("svg");
+	font-weight: 300;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic';
+	src: url('../fonts/AmnestyTradeGothicLightItalic.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicLightItalic.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicLightItalic.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicLightItalic.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicLightItalic.svg#AmnestyTradeGothicLightItalic') format("svg");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic';
+	src: url('../fonts/AmnestyTradeGothicRegular.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicRegular.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicRegular.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicRegular.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicRegular.svg#AmnestyTradeGothicRegular') format("svg");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic';
+	src: url('../fonts/AmnestyTradeGothicRegularItalic.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicRegularItalic.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicRegularItalic.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicRegularItalic.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicRegularItalic.svg#AmnestyTradeGothicRegularItalic') format("svg");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic';
+	src: url('../fonts/AmnestyTradeGothicBold.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicBold.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicBold.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicBold.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicBold.svg#AmnestyTradeGothicBold') format("svg");
+	font-weight: 600;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic';
+	src: url('../fonts/AmnestyTradeGothicBoldItalic.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicBoldItalic.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicBoldItalic.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicBoldItalic.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicBoldItalic.svg#AmnestyTradeGothicBoldItalic') format("svg");
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic Condensed';
+	src: url('../fonts/AmnestyTradeGothicCondensed.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicCondensed.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicCondensed.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicCondensed.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicCondensed.svg#AmnestyTradeGothicCondensed') format("svg");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic Condensed';
+	src: url('../fonts/AmnestyTradeGothicCondensedItalic.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicCondensedItalic.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicCondensedItalic.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicCondensedItalic.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicCondensedItalic.svg#AmnestyTradeGothicCondensedItalic') format("svg");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic Condensed';
+	src: url('../fonts/AmnestyTradeGothicBoldCondensed.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicBoldCondensed.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicBoldCondensed.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicBoldCondensed.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicBoldCondensed.svg#AmnestyTradeGothicBoldCondensed') format("svg");
+	font-weight: 600;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Amnesty Trade Gothic Condensed';
+	src: url('../fonts/AmnestyTradeGothicBoldCondensedItalic.eot?#iefix');
+	src: url('../fonts/AmnestyTradeGothicBoldCondensedItalic.eot?#iefix') format("eot"),
+	url('../fonts/AmnestyTradeGothicBoldCondensedItalic.woff') format("woff"),
+	url('../fonts/AmnestyTradeGothicBoldCondensedItalic.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicBoldCondensedItalic.svg#AmnestyTradeGothicBoldCondensedItalic') format("svg");
+	font-weight: 600;
+	font-style: italic;
+}
+@font-face {
+	font-family: AmnestyTradeGothicW01BdCnNo20;
+	src: url('../fonts/AmnestyTradeGothicW01BdCnNo20.ttf') format("truetype"),
+	url('../fonts/AmnestyTradeGothicW01BdCnNo20.svg') format("svg"),
+	url('../fonts/AmnestyTradeGothicW01BdCnNo20.eot') format("opentype"),
+	url('../fonts/AmnestyTradeGothicW01BdCnNo20.woff') format("woff");
+}
+
+
+@font-face {
+	font-family: BTitrBd;
+	src: url('../fonts/BTitrBd.ttf') format('truetype');
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

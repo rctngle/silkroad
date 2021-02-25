@@ -2,21 +2,21 @@
 
 <main>
 
-	<?php get_template_part('templates/parts/report-downloads'); ?>
+	<section><?php get_template_part('templates/parts/report-downloads'); ?></section>
 
-	<hr />
 
-	<?php get_template_part('templates/parts/testimonies'); ?>
 
-	<hr />
+	<section><?php get_template_part('templates/parts/testimonies'); ?></section>
 
-	<?php get_template_part('templates/parts/cases'); ?>
 
-	<hr />
 
-	<?php get_template_part('templates/parts/report'); ?>
+	<section><?php get_template_part('templates/parts/cases'); ?></section>
 
-	<hr />
+
+
+	<section><?php get_template_part('templates/parts/report'); ?></section>
+
+
 
 </main>
 
