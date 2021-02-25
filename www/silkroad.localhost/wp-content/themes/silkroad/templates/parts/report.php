@@ -1,3 +1,9 @@
+<div class="bw-inlay">
+	<img src="<?php bloginfo('template_directory');?>/assets/images/inlay.jpg">
+</div>
+<div class="content-box section-title">	
+	<h1>Report</h1>
+</div>
 <?php
 
 function silkroad_report_display_children($parent, $depth, $chapter_num) {
