@@ -4,7 +4,7 @@
 	position: sticky;
 	top: 100px;
 	width: 300px;
-	
+	z-index: 1;
 	height: 0;
 	overflow: visible;
 	
@@ -27,13 +27,16 @@
 			}
 		}
 	}
-	.active {
-		background: rgba(60,60,60,0.6);
+	> ul > li.active {
 		+ ul {
 			display: block;
 		}
+	}	
+	.active {
+		background: rgba(60,60,60,0.6);
+		
 	}
-	ul ul {
+	ul ul li {
 		padding-left: 16px;
 	}
 	ul {
