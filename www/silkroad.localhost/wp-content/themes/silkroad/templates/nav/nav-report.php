@@ -1,6 +1,13 @@
 <?php
 $slug = get_post_field( 'post_name', get_post() );
+
+$title = silkroad_translate_field(get_field('title_ml_text'));
+$short_title = silkroad_translate_field(get_field('short_title_ml_text'));
+$display_title = ($short_title) ? $short_title : $title;
+
 ?>
 <li class="reportid-<?php echo get_the_ID(); ?>">
-	<a href="#<?php echo $slug; ?>"><?php the_title(); ?></a>
+	<a href="#<?php echo $slug; ?>">
+		<?php echo $display_title; ?>
+	</a>
 </li>
