@@ -7,7 +7,16 @@ window.addEventListener('DOMContentLoaded', e=>{
 		appendMap();	
 	}
 
-	document.querySelectorAll('.continue').forEach(continueLink=>{
+	// document.querySelectorAll('.continue').forEach(continueLink=>{
+
+	// 	continueLink.addEventListener('click',e=>{
+	// 		e.preventDefault();
+	// 		const articleParent = continueLink.closest('article');
+	// 		articleParent.classList.remove('concatenate');
+	// 	});
+	// });
+
+	document.querySelectorAll('.expand').forEach(continueLink=>{
 
 		continueLink.addEventListener('click',e=>{
 			e.preventDefault();

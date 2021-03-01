@@ -29,18 +29,19 @@ section#report {
 	padding-top: 40px;
 	.content-type-legal-text {
 		.content-box {
-			border: 2px solid #FFF;	
+			border: 2px solid #FFF !important; 	
 			padding: 24px 24px 0 24px;
-			margin-bottom: 32px;
-		}
-		p:nth-child(n+3) {
-			display: none;
+			
 		}
 		
+		
 	}
-
+	h3 {
+		display: flex;
+		justify-content: space-between;
+	}
 	article.report {
-		border-bottom: 1px solid red;
+		//border-bottom: 1px solid red;
 
 		// .continue {
 		// 	display: none;
@@ -62,5 +63,36 @@ section#report {
 		// 		}
 		// 	}			
 		// }
+	}
+	article.content-type-section,
+	article.content-type-legal-text {
+		.content-box > *:not(h3){
+			display: none;
+		}
+		.content-box p:nth-of-type(1) {
+			
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+		.content-box {
+			padding-top: 32px;
+			border-bottom: 1px solid #FFF;
+		}
+	}
+
+	article.content-type-big-text {
+		display: none;
+	}
+
+	article.content-type-chapter {
+		padding-top: 8px * 10;
+		margin-top: 8px * 10;
+	}
+
+	article.depth-3 {
+		display: none;
 	}
 }
