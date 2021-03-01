@@ -6,7 +6,7 @@
 </div>
 <?php
 
-function silkroad_report_display_children($parent, $depth, $chapter_num) {
+function silkroad_report_display_children($template, $parent, $depth, $chapter_num) {
 
 	$report_query = new WP_Query([
 		'post_type' => 'report',
@@ -17,6 +17,8 @@ function silkroad_report_display_children($parent, $depth, $chapter_num) {
 	]);
 
 	if ($report_query->have_posts()) {
+
+		
 		while ($report_query->have_posts()) {
 			$report_query->the_post();
 
@@ -32,16 +34,24 @@ function silkroad_report_display_children($parent, $depth, $chapter_num) {
 				}
 			}	
 
-			get_template_part('templates/posts/post', get_post_type(), [
+			get_template_part('templates/'.$template, get_post_type(), [
 				'depth' => $depth, 
 				'is_chapter' => $is_chapter, 
 				'chapter_num' => $chapter_num, 
 				'report_content_type_terms' => $terms,
 			]);
 
-			silkroad_report_display_children(get_the_ID(), $depth+1, $chapter_num);
+			if ($template == 'nav/nav') echo "<ul>";
+			silkroad_report_display_children($template, get_the_ID(), $depth+1, $chapter_num);
+			if ($template == 'nav/nav') echo "</ul>";
 		}
+		
 	}	
 }
 
-silkroad_report_display_children(0, 0, 0);
+echo "<ul>";
+silkroad_report_display_children('nav/nav', 0, 0, 0);
+echo "</ul>";
+
+
+silkroad_report_display_children('posts/post', 0, 0, 0);
