@@ -20,7 +20,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 }
 ?>
 
-<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>">
+<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 	<?php if($is_chapter):?>
 
 	<div class="bw-inlay">
