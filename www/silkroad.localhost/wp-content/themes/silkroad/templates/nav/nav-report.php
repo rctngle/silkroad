@@ -12,7 +12,7 @@ $chapter_num = $args['chapter_num'];
 <li class="reportid-<?php echo get_the_ID(); ?>">
 	<a href="#<?php echo $slug; ?>">
 		<?php if ($is_chapter): ?>
-			<?php echo silkroad_translate('chapter-n', LANG, [$chapter_num]); ?>
+			<h5><?php echo silkroad_translate('chapter-n', LANG, [$chapter_num]); ?></h5>
 		<?php endif; ?>
 		<?php echo $display_title; ?>
 	</a>
