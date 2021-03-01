@@ -32,7 +32,9 @@ window.addEventListener('DOMContentLoaded', e=>{
 			document.querySelectorAll('.report-nav > ul > li.active').forEach(item => {
 				item.classList.remove('active');
 			});
+
 			navItem.classList.add('active');
+
 		}
 
 		const subNavItem = document.querySelector('.report-nav > ul > ul > li.reportid-'+el.dataset.subparent);
@@ -40,7 +42,9 @@ window.addEventListener('DOMContentLoaded', e=>{
 			document.querySelectorAll('.report-nav ul > ul > li.active').forEach(item => {
 				item.classList.remove('active');
 			});
+
 			subNavItem.classList.add('active');
+
 		}
 	});
 });

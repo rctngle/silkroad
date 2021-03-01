@@ -141,7 +141,9 @@ section#report {
 	article.content-type-big-text {
 		display: none;
 	}
-
+	article.active {
+		background: red;
+	}
 	article.content-type-chapter {
 		padding-top: 8px * 10;
 		margin-top: 8px * 10;
