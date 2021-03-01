@@ -7,9 +7,12 @@
 	
 	height: 0;
 	overflow: visible;
+	
 	> ul > li a {
 		@include small-caps;
+		padding: 16px;
 	}
+
 	ul {
 		ul {
 			display: none;
@@ -28,14 +31,15 @@
 		}
 	}
 	ul ul {
-		padding-left: 32px;
+		padding-left: 16px;
 	}
 	ul {
 		list-style-type: none;
 		padding: 0;
 	}
 	a {
-		padding: 16px;
+		@include small-bold;
+		padding: 8px 16px;
 		display: block;
 		text-decoration: none;
 	}
