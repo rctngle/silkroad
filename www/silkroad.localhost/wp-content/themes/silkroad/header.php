@@ -32,6 +32,8 @@ $classes = get_body_class();
 	<meta name="twitter:title" content="">	
 	<meta name="twitter:image" content="" />
 	<meta property="og:image" content="" />
+	<script src="https://kit.fontawesome.com/09200ef171.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body dir="auto" class="<?php echo implode(' ', $classes); ?>">

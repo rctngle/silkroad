@@ -15,14 +15,14 @@ $report_downloads_page = get_page_by_path('report-downloads');
 			?>
 
 			<div class="<?php echo $language_slug; ?>">
-				<h4><?php the_sub_field('language'); ?></h4>
+				<div dir="auto" class="title"><strong><?php the_sub_field('language'); ?></strong></div>
 				
 				<?php if ($download_summery && $summary_document): ?>
-					<a href="<?php echo $summary_document['url']; ?>" target="_blank"><?php echo $download_summery; ?></a>
+					<div dir="auto" class="download"><i class="fad fa-file-alt"></i> <a href="<?php echo $summary_document['url']; ?>" target="_blank"><?php echo $download_summery; ?></a></div>
 				<?php endif; ?>
 
 				<?php if ($download_full_report && $report_document): ?>
-					<a href="<?php echo $report_document['url']; ?>" target="_blank"><?php echo $download_full_report; ?></a>
+					<div dir="auto" class="download"><i class="fad fa-file-alt"></i> <a href="<?php echo $report_document['url']; ?>" target="_blank"><?php echo $download_full_report; ?></a></div>
 				<?php endif; ?>
 			</div>
 		<?php endwhile; ?>

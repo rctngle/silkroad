@@ -1,5 +1,5 @@
 @mixin body-text {
-	font-family: Roboto, sans-serif, '';
+	font-family: Roboto, sans-serif, Tahoma;
 	font-size: 18px;
 	font-weight: normal;
 	line-height: 1.5;
@@ -39,7 +39,7 @@ em {
 }
 
 strong {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 h5 {

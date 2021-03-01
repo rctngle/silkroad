@@ -47,13 +47,26 @@ section {
 }
 
 section#report-downloads {
+	font-size: 16px;
 	.section-inner {
-		display: flex;
-		flex-flow: row wrap;	
+		column-count: 4;
+		column-gap: 32px;
+		padding: 0 16px;
 		> div {
-			flex: 0 1 25%;
-			margin-bottom: 16px;
+			margin-bottom: 32px;
+			break-inside: avoid;
 		}	
+		div.download {
+			font-size: 15px;
+			margin-bottom: 5px;
+			i {
+				margin-right: 5px;
+				font-size: 18px;
+			}
+		}
+		div.title {
+			margin-bottom: 16px;
+		}		
 	}
 }
 
