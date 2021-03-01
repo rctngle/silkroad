@@ -12,8 +12,11 @@
 		@include small-caps;
 		padding: 16px;
 	}
-
+	li {
+		margin-bottom: 0;
+	}
 	ul {
+		margin-bottom: 0;
 		ul {
 			display: none;
 			ul {
@@ -25,7 +28,7 @@
 		}
 	}
 	.active {
-		background: #222;
+		background: rgba(50,50,50,0.6);
 		+ ul {
 			display: block;
 		}
@@ -46,6 +49,11 @@
 }
 
 section#report {
+	sup {
+		span {
+			display: none;
+		}
+	}
 	padding-top: 40px;
 	.content-type-legal-text {
 		.content-box {
@@ -107,6 +115,7 @@ section#report {
 		}
 	}
 
+
 	article.expanded {	
 		.expand {
 			.fa-caret-up {
@@ -146,6 +155,12 @@ section#report {
 			padding-top: 0;
 			border-bottom: none;	
 		}
+	}
+	article.content-type-introduction,
+	article.content-type-conclusion {	
+		h3 .expand {
+			display: none;
+		}	
 	}
 
 	article.image {

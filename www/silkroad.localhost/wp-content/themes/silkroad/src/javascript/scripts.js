@@ -41,17 +41,17 @@ function appendMap(){
 	const map = new mapboxgl.Map({
 		container: 'mapbox-map',
 		style: 'mapbox://styles/anecdote101/cklkrw25g1nz617nnucz4id6p?fresh=true',
-		center: [85.1275,41.47332],
-		zoom: [4.541],
+		center: [105.3,32.25],
+		zoom: [3.2],
 		attributionControl: false,
 		zoomControl: false,
-		interactive: true
+//		interactive: false
 	});
 	map.on('zoom', e=>{
-		// console.log(map.getZoom());
+		console.log(map.getZoom());
 	});
 	map.on('move', e=>{
-		// console.log(map.getCenter());
+		console.log(map.getCenter());
 	});
 }
 

@@ -3,7 +3,7 @@ $report_downloads_page = get_page_by_path('report-downloads');
 ?>
 
 <div class="section-inner">
-	<h2>Download the Report</h2>
+	<div class="section-title centered"><h2>Download the Report</h2></div>
 	<div class="reports">
 		<?php if(have_rows('report_downloads', $report_downloads_page->ID)): ?>
 			<?php while( have_rows('report_downloads', $report_downloads_page->ID) ) : the_row(); ?>
