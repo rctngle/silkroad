@@ -49,9 +49,11 @@ function silkroad_report_display_children($template, $parent, $depth, $chapter_n
 	}	
 }
 
-echo "<ul>";
+echo '<div class="report-nav">';
+echo '<ul>';
 silkroad_report_display_children('nav/nav', 0, 0, 0);
-echo "</ul>";
+echo '</ul>';
+echo "</div>";
 
 
 silkroad_report_display_children('posts/post', 0, 0, 0);

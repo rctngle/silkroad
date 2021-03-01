@@ -6,6 +6,15 @@ window.addEventListener('DOMContentLoaded', e=>{
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
+
+	document.querySelectorAll('.continue').forEach(continueLink=>{
+
+		continueLink.addEventListener('click',e=>{
+			e.preventDefault();
+			const articleParent = continueLink.closest('article');
+			articleParent.classList.remove('concatenate');
+		});
+	});
 	
 });
 
@@ -25,4 +34,21 @@ function appendMap(){
 	map.on('move', e=>{
 		// console.log(map.getCenter());
 	});
+}
+
+
+
+
+if (window.Element && !Element.prototype.closest) {
+	Element.prototype.closest =
+	function(s) {
+		var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+			i,
+			el = this;
+		do {
+			i = matches.length;
+			while (--i >= 0 && matches.item(i) !== el) {};
+		} while ((i < 0) && (el = el.parentElement));
+		return el;
+	};
 }

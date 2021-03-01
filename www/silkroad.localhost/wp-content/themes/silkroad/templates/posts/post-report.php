@@ -4,18 +4,26 @@ $slug = get_post_field( 'post_name', get_post() );
 
 $is_chapter = $args['is_chapter'];
 $chapter_num = $args['chapter_num'];
-
+$is_legal_text = false;
 $classes = ['report'];
 
 if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	foreach($args['report_content_type_terms'] as $term) {
 		$classes[] = 'content-type-' . $term->slug;
+		if($term->slug == 'legal-text'){
+			$is_legal_text = true;
+		} else {
+			$classes[]='concatenate';			
+		}
 	}
+
 }
 
+
+
 ?>
-<a name="<?php echo $slug; ?>"></a>
 <article class="<?php echo implode(' ', $classes); ?>">
+	<a name="<?php echo $slug; ?>"></a>
 	<div class="content-box">
 		<?php if ($is_chapter): ?>
 			<div class="section-title">
@@ -28,5 +36,8 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			<h3><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h3>
 		<?php endif; ?>
 		<?php echo silkroad_translate_field(get_field('content_ml_rich_text')); ?>		
+		<!-- <?php if(!$is_legal_text):?>
+			<div class="continue"><p><a href="">Continue reading</a></p></div>
+		<?php endif;?> -->
 	</div>
 </article>
