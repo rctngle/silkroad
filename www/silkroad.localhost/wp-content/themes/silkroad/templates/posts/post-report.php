@@ -1,5 +1,7 @@
 <?php
 
+$slug = get_post_field( 'post_name', get_post() );
+
 $is_chapter = $args['is_chapter'];
 $chapter_num = $args['chapter_num'];
 
@@ -12,6 +14,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 }
 
 ?>
+<a name="<?php echo $slug; ?>"></a>
 <article class="<?php echo implode(' ', $classes); ?>">
 	<div class="content-box">
 		<?php if ($is_chapter): ?>
