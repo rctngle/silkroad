@@ -18,11 +18,6 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	}
 
 }
-
-echo "<pre>";
-print_r($args);
-echo "</pre>";
-
 ?>
 
 <article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>">
