@@ -4,6 +4,12 @@
 	position: sticky;
 	top: 100px;
 	width: 300px;
+	
+	height: 0;
+	overflow: visible;
+	> ul > li a {
+		@include small-caps;
+	}
 	ul {
 		ul {
 			display: none;
@@ -17,6 +23,12 @@
 	}
 	.active {
 		background: #222;
+		+ ul {
+			display: block;
+		}
+	}
+	ul ul {
+		padding-left: 32px;
 	}
 	ul {
 		list-style-type: none;
@@ -25,6 +37,7 @@
 	a {
 		padding: 16px;
 		display: block;
+		text-decoration: none;
 	}
 }
 
