@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 		continueLink.addEventListener('click',e=>{
 			e.preventDefault();
 			const articleParent = continueLink.closest('article');
-			articleParent.classList.remove('concatenate');
+			articleParent.classList.toggle('expanded');
 		});
 	});
 	

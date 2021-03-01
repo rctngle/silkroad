@@ -43,7 +43,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<?php elseif($args['depth'] == 0):?>
 			<h2><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h2>
 		<?php else:?>
-			<h3><?php echo silkroad_translate_field(get_field('title_ml_text')); ?> <div class="expand"><i class="fas fa-caret-down"></i></div></h3>
+			<h3><?php echo silkroad_translate_field(get_field('title_ml_text')); ?> <div class="expand"><i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></div></h3>
 		<?php endif; ?>
 		<?php echo silkroad_translate_field(get_field('content_ml_rich_text')); ?>		
 		<!-- <?php if(!$is_legal_text):?>

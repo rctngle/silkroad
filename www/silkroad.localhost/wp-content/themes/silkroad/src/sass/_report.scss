@@ -39,6 +39,9 @@ section#report {
 	h3 {
 		display: flex;
 		justify-content: space-between;
+		.fa-caret-up {
+			display: none;
+		}
 	}
 	article.report {
 		//border-bottom: 1px solid red;
@@ -64,6 +67,7 @@ section#report {
 		// 	}			
 		// }
 	}
+
 	article.content-type-section,
 	article.content-type-legal-text {
 		.content-box > *:not(h3){
@@ -82,7 +86,22 @@ section#report {
 			border-bottom: 1px solid #FFF;
 		}
 	}
-
+	article.expanded {	
+		.expand {
+			.fa-caret-up {
+				display: block;
+			}
+			.fa-caret-down {
+				display: none;
+			}
+		}	
+		.content-box {
+			border-bottom: 1px solid transparent;	
+		}
+		.content-box p {
+			display: block;
+		}	
+	}
 	article.content-type-big-text {
 		display: none;
 	}
