@@ -29,6 +29,7 @@
     "webpack-livereload-plugin": "^2.3.0"
   },
   "dependencies": {
+    "in-view-modern": "^0.6.3",
     "mapbox-gl": "^2.1.1"
   },
   "browserslist": [
