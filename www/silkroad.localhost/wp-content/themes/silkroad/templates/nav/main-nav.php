@@ -16,18 +16,24 @@ $chapters_query = new WP_Query([
 
 ?>
 
+<div><a href="">Introduction</a></div>
+<div><a href="">Report</a></div>
+<div><a href="">Cases</a></div>
+<div><a href="">Take Action</a></div>
+
 <?php if ($chapters_query->have_posts()): ?>
 	<?php $chapter_counter = 0; ?>
 	<?php while($chapters_query->have_posts()): $chapters_query->the_post(); ?>
 		<?php $slug = get_post_field( 'post_name', get_post() ); ?>
-		<div>
+		<?php /* <div>
 			<a href="#<?php echo $slug; ?>">
 				<?php echo silkroad_translate('chapter-n', LANG, [$chapter_counter+1]); ?>								
 			</a>
 			<div class="nav-tooltip">
 				<?php echo silkroad_translate_field(get_field('title_ml_text')); ?>
 			</div>
-		</div>
+		</div> */?>
+		
 		<?php $chapter_counter++; ?>
 	<?php endwhile; ?>
 	<?php wp_reset_postdata() ?>

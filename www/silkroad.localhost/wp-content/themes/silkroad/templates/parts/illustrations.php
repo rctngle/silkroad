@@ -15,9 +15,15 @@ $images = [
 
 $num_images = (mt_rand(0, 1) == 0) ? 1 : 3;
 
+$classes = ['image'];
+
+if($num_images == 3){
+	$classes[]='staggered';
+}
+
 ?>
 
-<article>
+<article class="<?php echo implode(' ', $classes);?>">
 	<?php for ($i=0; $i<$num_images; $i++): ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/illustrations/<?php echo $images[mt_rand(0, count($images)-1)]; ?>" />
 	<?php endfor; ?>
