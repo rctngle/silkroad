@@ -42,6 +42,8 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 		while ($report_query->have_posts()) {
 			$report_query->the_post();
 			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num);
+			$chapter_num = $report_args['chapter_num'];
+			
 			get_template_part('templates/nav/nav', get_post_type(), $report_args);
 
 			echo "<ul>";
@@ -68,8 +70,10 @@ function silkroad_report_get_children($parent, $root_parent, $depth, $chapter_nu
 				$root_parent = get_the_id();
 			}
 
+
 			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num);
 			$report_args['root_parent'] = $root_parent;
+			$chapter_num = $report_args['chapter_num'];
 
 			$report_content .= silkroad_load_template_part('templates/posts/post', get_post_type(), $report_args);
 
