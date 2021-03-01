@@ -43,14 +43,20 @@ function silkroad_report_display_children($template, $parent, $depth, $chapter_n
 			if ($template == 'nav/nav') {
 				get_template_part('templates/'.$template, get_post_type(), $report_args);
 				echo "<ul>";
-				silkroad_report_display_children($template, get_the_ID(), $depth+1, $chapter_num, $report_content);
+				silkroad_report_display_children($template, get_the_ID(), $template_directorypth+1, $chapter_num, $report_content);
 				echo "</ul>";
 			} else {
 				$report_content .= silkroad_load_template_part('templates/'.$template, get_post_type(), $report_args);
 				// echo $report_content;
 				silkroad_report_display_children($template, get_the_ID(), $depth+1, $chapter_num, $report_content);
 
+
+				if ($is_chapter) {
+					$report_content .= silkroad_load_template_part('templates/parts/illustrations');
+				}
+
 			}
+
 		}
 	}	
 }
