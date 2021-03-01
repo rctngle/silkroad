@@ -27,12 +27,20 @@ window.addEventListener('DOMContentLoaded', e=>{
 	});
 
 	inView('article.report').on('enter', el => {
-		const navItem = document.querySelector('.report-nav li.reportid-'+el.dataset.rootparent);
+		const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);
 		if (!navItem.classList.contains('active')) {
-			document.querySelectorAll('.report-nav li.active').forEach(item => {
+			document.querySelectorAll('.report-nav > ul > li.active').forEach(item => {
 				item.classList.remove('active');
 			});
 			navItem.classList.add('active');
+		}
+
+		const subNavItem = document.querySelector('.report-nav > ul > ul > li.reportid-'+el.dataset.subparent);
+		if (!subNavItem.classList.contains('active')) {
+			document.querySelectorAll('.report-nav ul > ul > li.active').forEach(item => {
+				item.classList.remove('active');
+			});
+			subNavItem.classList.add('active');
 		}
 	});
 });
