@@ -13,11 +13,16 @@ function appendMap(){
 	const map = new mapboxgl.Map({
 		container: 'mapbox-map',
 		style: 'mapbox://styles/anecdote101/cklkrw25g1nz617nnucz4id6p?fresh=true',
-		center: [83.208,41.031],
-		zoom: [7],
+		center: [85.1275,41.47332],
+		zoom: [4.541],
 		attributionControl: false,
 		zoomControl: false,
 		interactive: true
 	});
-
+	map.on('zoom', e=>{
+		console.log(map.getZoom());
+	});
+	map.on('move', e=>{
+		console.log(map.getCenter());
+	});
 }

@@ -14,12 +14,13 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 ?>
 <article class="<?php echo implode(' ', $classes); ?>">
 	<div class="content-box">
-
 		<?php if ($is_chapter): ?>
 			<div class="section-title">
 				<h1><?php echo silkroad_translate('chapter-n', LANG, [$chapter_num]); ?></h1>
 				<h2><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h2>
 			</div>
+		<?php elseif($args['depth'] == 0):?>
+			<h2><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h2>
 		<?php else:?>
 			<h3><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h3>
 		<?php endif; ?>
