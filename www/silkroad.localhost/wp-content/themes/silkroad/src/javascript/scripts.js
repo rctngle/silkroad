@@ -26,28 +26,63 @@ window.addEventListener('DOMContentLoaded', e=>{
 		});
 	});
 
+
+	let clickScrollInProgress = false;
+	document.querySelectorAll('.report-nav a').forEach(reportNavLink => {
+		reportNavLink.addEventListener('click', e => {
+			if (!clickScrollInProgress) {
+				clickScrollInProgress = true;
+				setTimeout(() => {
+					clickScrollInProgress = false;
+				}, 100);
+
+				document.querySelectorAll('.report-nav li').forEach(item => {
+					item.classList.remove('active');
+				});
+
+				const slug = reportNavLink.getAttribute('href');
+				const anchor = document.querySelector('article.report a[name="' + slug.replace('#', '') + '"]');
+				updateReportNav(anchor.parentNode);;
+				// const report = document.querySE
+				// reportNavLink.parentNode.classList.add('active')
+				// console.log(reportNavLink.parentNode.parentNode);
+
+			}	
+		});
+	})
+
 	inView('article.report').on('enter', el => {
-		const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);
-		if (!navItem.classList.contains('active')) {
-			document.querySelectorAll('.report-nav > ul > li.active').forEach(item => {
-				item.classList.remove('active');
-			});
-
-			navItem.classList.add('active');
-
-		}
-
-		const subNavItem = document.querySelector('.report-nav > ul > ul > li.reportid-'+el.dataset.subparent);
-		if (!subNavItem.classList.contains('active')) {
-			document.querySelectorAll('.report-nav ul > ul > li.active').forEach(item => {
-				item.classList.remove('active');
-			});
-
-			subNavItem.classList.add('active');
-
+		
+		if (!clickScrollInProgress) {
+			updateReportNav(el);
 		}
 	});
 });
+
+function updateReportNav(el) {
+	const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);
+	if (!navItem.classList.contains('active')) {
+		document.querySelectorAll('.report-nav > ul > li.active').forEach(item => {
+			item.classList.remove('active');
+		});
+		navItem.classList.add('active');
+
+	}
+
+	const subNavItem = document.querySelector('.report-nav > ul > ul > li.reportid-'+el.dataset.subparent);
+	if (subNavItem && !subNavItem.classList.contains('active')) {
+		document.querySelectorAll('.report-nav ul > ul > li.active').forEach(item => {
+			item.classList.remove('active');
+		});
+
+		subNavItem.classList.add('active');
+	}	
+}
+
+function locationHashChanged() {
+	console.log(window.location.hash);
+}
+
 
 function appendMap(){
 	const map = new mapboxgl.Map({

@@ -75,6 +75,13 @@ section#report {
 		}
 	}
 	article.report {
+
+		a.anchor {
+			display: block;
+			position: relative;
+			top: -100px;
+			visibility: hidden;			
+		}
 		//border-bottom: 1px solid red;
 
 		// .continue {

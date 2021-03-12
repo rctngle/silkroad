@@ -30,7 +30,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 
 
 	<?php endif;?>
-	<a name="<?php echo $slug; ?>"></a>
+	<a class="anchor" name="<?php echo $slug; ?>"></a>
 	<div class="content-box">
 		<?php if ($is_chapter): ?>
 			<div class="section-title">

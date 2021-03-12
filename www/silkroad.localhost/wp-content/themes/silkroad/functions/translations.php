@@ -46,15 +46,17 @@ function silkroad_get_languages() {
 }
 
 function silkroad_get_translations() {
-	$translations = get_field('translations', 'options');
-	$dictionary = [];
+	if (function_exists('get_field')) {
+		$translations = get_field('translations', 'options');
+		$dictionary = [];
 
-	foreach($translations as $translation) {
-		$key = array_shift($translation);
-		$dictionary[$key] = $translation;
+		foreach($translations as $translation) {
+			$key = array_shift($translation);
+			$dictionary[$key] = $translation;
+		}
+
+		return $dictionary;
 	}
-
-	return $dictionary;
 }
 
 function silkroad_translate($term, $lang = LANG, $params = false) {
