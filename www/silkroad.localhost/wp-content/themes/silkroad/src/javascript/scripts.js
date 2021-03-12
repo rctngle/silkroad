@@ -6,7 +6,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a
 window.addEventListener('DOMContentLoaded', e=>{
 	
 	createCases();
-
+	createFootnotes();
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
@@ -60,6 +60,16 @@ window.addEventListener('DOMContentLoaded', e=>{
 	});
 });
 
+function createFootnotes(){
+	document.querySelectorAll('sup').forEach(sup=>{
+		sup.addEventListener('click', e=>{
+			document.querySelectorAll('sup').forEach(item=>{
+				item.classList.remove('show');
+			});
+			sup.classList.add('show');
+		});
+	});
+}
 
 function updateReportNav(el) {
 	const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);

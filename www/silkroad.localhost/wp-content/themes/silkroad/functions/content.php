@@ -19,8 +19,9 @@ function silkroad_footnotes($slug, $str) {
 		$str = str_replace($match, '
 			<a name="' . $num_name . '"></a>
 			<sup>
+
 				<a href="#' . $fn_name. '">' . ($idx + 1) . '</a>
-				<span>' . $matches[1][$idx] . '</span>
+				<span>' . ($idx+1) . '.<br/>' . $matches[1][$idx] . '</span>
 			</sup>', 
 		$str);
 	}
