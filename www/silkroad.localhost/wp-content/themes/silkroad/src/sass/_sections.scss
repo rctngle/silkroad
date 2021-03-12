@@ -98,7 +98,7 @@ section#cases {
 	}
 	.section-inner-full {
 		position: relative;
-		padding-left: 40px;
+		//padding-left: 40px;
 	}
 	.controls {
 		position: absolute;
@@ -137,11 +137,24 @@ section#cases {
 		margin-bottom: 0;
 	}
 	.cases {
+		padding-left: 200px;
 		overflow: auto;
 		// display: flex;
 		// flex-flow: row nowrap;
 		// justify-content: space-between;
 		white-space: nowrap;
+		&.scrolled {
+			~ .gradient.left {
+				display: flex;
+				justify-content: flex-start;
+				background: linear-gradient(to left, transparent, #000);
+			}
+		}
+	}
+	.gradient.left {
+		display: none;
+		left: 0;
+		right: auto;
 	}
 	.gradient {
 		position: absolute;
@@ -149,14 +162,14 @@ section#cases {
 		top: 0;
 		bottom: 0;
 		z-index: 10;
-		width: 400px;
+		width: 200px;
 		background: linear-gradient(to right, transparent, #000);
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 		pointer-events: none;
 		.button {
-			margin-right: -20px;
+
 			text-align: center;
 
 			img {
@@ -192,8 +205,9 @@ section#cases {
 		}
 		.case .full {
 			display: block;
+			margin-bottom: 0.8rem;
 			h5 {
-				margin-bottom: 0.3rem;
+				margin-bottom: 0.2rem;
 			}
 		}
 		.image {

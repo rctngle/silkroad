@@ -22,8 +22,10 @@ $cases_query = new WP_Query([
 			<?php endfor;?>	
 		</div>
 		<div class="gradient">
-			<div class="button" style="background-image: url(https://iran-shutdown.amnesty.org/wp-content/themes/amnesty-iran-internet-shutdown/assets/images/btn-victim-next.png)">
-	        </div>
-        </div>
+			<div class="button" style="background-image: url(https://iran-shutdown.amnesty.org/wp-content/themes/amnesty-iran-internet-shutdown/assets/images/btn-victim-next.png)"></div>
+		</div>
+		<div class="gradient left">
+			<div class="button" style="background-image: url(https://iran-shutdown.amnesty.org/wp-content/themes/amnesty-iran-internet-shutdown/assets/images/btn-victim-prev.png)"></div>
+		</div>
 	</div>
 <?php endif; ?>
