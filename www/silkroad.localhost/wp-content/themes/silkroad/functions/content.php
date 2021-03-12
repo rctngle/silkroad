@@ -21,7 +21,7 @@ function silkroad_footnotes($slug, $str) {
 			<sup>
 
 				<a href="#' . $fn_name. '">' . ($idx + 1) . '</a>
-				<span>' . ($idx+1) . '.<br/>' . $matches[1][$idx] . '</span>
+				<span><span>' . ($idx+1) . '</span><br/>' . $matches[1][$idx] . '</span>
 			</sup>', 
 		$str);
 	}

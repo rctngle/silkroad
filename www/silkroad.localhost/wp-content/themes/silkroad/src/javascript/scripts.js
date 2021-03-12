@@ -63,6 +63,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 function createFootnotes(){
 	document.querySelectorAll('sup').forEach(sup=>{
 		sup.addEventListener('click', e=>{
+			
 			document.querySelectorAll('sup').forEach(item=>{
 				item.classList.remove('show');
 			});

@@ -61,22 +61,29 @@ section#report {
 			text-decoration: none;
 		}
 		&.show {
-			span {
+			> span {
 				display: block;
 			}
 		}
 		position: static;
-		span {
+		> span {
 			text-align: left;
 			display: none;
 			position: absolute;
 			right: 40px;
 			width: 260px;
 			padding-right: 20px;
-			padding-top: 10px;
+			margin-top: -20px;
 			font-size: 14px;
 			color: #999;
 			word-break: break-word;
+			span {
+				padding: 2px 5px;
+				background: #222;
+				//display: inline-block;
+				font-size: 12.6px;
+				color: #FFF;
+			}
 			//display: none;
 		}
 	}
