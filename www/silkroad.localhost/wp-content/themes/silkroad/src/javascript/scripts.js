@@ -5,6 +5,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a
 
 window.addEventListener('DOMContentLoaded', e=>{
 	
+
+	createCases();
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
@@ -45,8 +47,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 				updateReportNav(anchor.parentNode);;
 				// const report = document.querySE
 				// reportNavLink.parentNode.classList.add('active')
-				// console.log(reportNavLink.parentNode.parentNode);
-
+				
 			}	
 		});
 	})
@@ -80,7 +81,6 @@ function updateReportNav(el) {
 }
 
 function locationHashChanged() {
-	console.log(window.location.hash);
 }
 
 
@@ -95,10 +95,10 @@ function appendMap(){
 //		interactive: false
 	});
 	map.on('zoom', e=>{
-		console.log(map.getZoom());
+		// console.log(map.getZoom());
 	});
 	map.on('move', e=>{
-		console.log(map.getCenter());
+		// console.log(map.getCenter());
 	});
 }
 
@@ -117,4 +117,15 @@ if (window.Element && !Element.prototype.closest) {
 		} while ((i < 0) && (el = el.parentElement));
 		return el;
 	};
+}
+
+function createCases() {
+	const cases = document.querySelector('.cases');
+	cases.addEventListener('scroll', e => {
+		if (cases.scrollLeft > 0) {
+			cases.classList.add('scrolled');
+		} else {
+			cases.classList.remove('scrolled');
+		}
+	})
 }
