@@ -5,12 +5,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a
 
 window.addEventListener('DOMContentLoaded', e=>{
 	
-
 	createCases();
+
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
-	initSlideShows();
+
 	// document.querySelectorAll('.continue').forEach(continueLink=>{
 
 	// 	continueLink.addEventListener('click',e=>{
@@ -60,24 +60,6 @@ window.addEventListener('DOMContentLoaded', e=>{
 	});
 });
 
-
-function initSlideShows(){
-
-	document.querySelectorAll('.slideshow').forEach(slideshow => {
-		slideshow.dataset.idx = 0;
-		slideshow.dataset.numarticles = slideshow.querySelectorAll('.slide').length;
-	});
-
-	setInterval(() => {
-		document.querySelectorAll('.slideshow').forEach(slideshow => {
-			let idx = parseInt(slideshow.dataset.idx) + 1;
-			if (idx >= parseInt(slideshow.dataset.numarticles)) {
-				idx = 0;
-			}
-			slideshow.dataset.idx = idx;			
-		});
-	}, 3000);
-}
 
 function updateReportNav(el) {
 	const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);
@@ -147,4 +129,37 @@ function createCases() {
 			cases.classList.remove('scrolled');
 		}
 	})
+
+	cases.querySelectorAll('.slideshow').forEach(slideshow => {
+
+		slideshow.dataset.idx = 0;
+		slideshow.dataset.numarticles = slideshow.querySelectorAll('.slide').length;
+
+		slideshow.querySelector('.prev').addEventListener('click', e => {
+			let idx = parseInt(slideshow.dataset.idx) - 1;
+			if (idx < 0) {
+				idx = parseInt(slideshow.dataset.numarticles) - 1;
+			}
+			slideshow.dataset.idx = idx;
+		});
+
+		slideshow.querySelector('.next').addEventListener('click', e => {
+			let idx = parseInt(slideshow.dataset.idx) + 1;
+			if (idx > parseInt(slideshow.dataset.numarticles) - 1) {
+				idx = 0;
+			}
+			slideshow.dataset.idx = idx;
+		});
+	});
+
+	// setInterval(() => {
+	// 	document.querySelectorAll('.slideshow').forEach(slideshow => {
+	// 		let idx = parseInt(slideshow.dataset.idx) + 1;
+	// 		if (idx >= parseInt(slideshow.dataset.numarticles)) {
+	// 			idx = 0;
+	// 		}
+	// 		slideshow.dataset.idx = idx;			
+	// 	});
+	// }, 3000);
+
 }
