@@ -21,8 +21,8 @@
 				<?php endforeach; ?>
 			<?php endif; ?>
 			<div class="controls">
-				<div class="prev"><</div>
-				<div class="next">></div>
+				<div class="prev"><i class="fal fa-chevron-left"></i></div>
+				<div class="next"><i class="fal fa-chevron-right"></i></div>
 			</div>
 		</div>
 		<div class="case">
