@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
-
+	initSlideShows();
 	// document.querySelectorAll('.continue').forEach(continueLink=>{
 
 	// 	continueLink.addEventListener('click',e=>{
@@ -58,6 +58,25 @@ window.addEventListener('DOMContentLoaded', e=>{
 		}
 	});
 });
+
+
+function initSlideShows(){
+
+	document.querySelectorAll('.slideshow').forEach(slideshow => {
+		slideshow.dataset.idx = 0;
+		slideshow.dataset.numarticles = slideshow.querySelectorAll('.slide').length;
+	});
+
+	setInterval(() => {
+		document.querySelectorAll('.slideshow').forEach(slideshow => {
+			let idx = parseInt(slideshow.dataset.idx) + 1;
+			if (idx >= parseInt(slideshow.dataset.numarticles)) {
+				idx = 0;
+			}
+			slideshow.dataset.idx = idx;			
+		});
+	}, 3000);
+}
 
 function updateReportNav(el) {
 	const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);

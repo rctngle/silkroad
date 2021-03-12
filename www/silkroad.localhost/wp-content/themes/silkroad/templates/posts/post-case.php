@@ -1,7 +1,29 @@
 <article>
 	<div class="preview">
-		<div class="image">
-			<?php the_post_thumbnail();?>
+		<div class="slideshow" data-idx="0">
+			<div class="slide"><?php the_post_thumbnail();?></div>
+			<?php
+				$gallery = get_field('images_documents');
+			?>
+
+			<?php if ($gallery && is_array($gallery) && count($gallery) > 0): ?>
+				<?php foreach($gallery as $media): ?>
+
+					<?php 
+						$preview = get_field('preview', $media['ID']);
+					?>
+
+					<?php if ($media['type'] == 'image'): ?>
+						<div class="slide"><img src="<?php echo esc_url($media['sizes']['large']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" /></div>
+					<?php elseif ($preview): ?>
+						<div class="slide"><img src="<?php echo esc_url($preview['sizes']['large']); ?>" alt="<?php echo esc_attr($preview['alt']); ?>" /></div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			<?php endif; ?>
+			<div class="controls">
+				<div class="prev"><</div>
+				<div class="next">></div>
+			</div>
 		</div>
 		<div class="case">
 			
@@ -61,27 +83,7 @@
 		
 
 
-		<?php
-		$gallery = get_field('images_documents');
-		?>
-
-		<?php if ($gallery && is_array($gallery) && count($gallery) > 0): ?>
-			<?php foreach($gallery as $media): ?>
-
-				<?php 
-				$preview = get_field('preview', $media['ID']);
-				?>
-
-				<?php if ($media['type'] == 'image'): ?>
-					<img src="<?php echo esc_url($media['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" />
-				<?php elseif ($preview): ?>
-					<img src="<?php echo esc_url($preview['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($preview['alt']); ?>" />
-					<a href="<?php echo esc_url($media['url']); ?>" target="_blank">Download</a>
-				<?php else: ?>
-					<a href="<?php echo esc_url($media['url']); ?>" target="_blank">Download</a>
-				<?php endif; ?>
-			<?php endforeach; ?>
-		<?php endif; ?>
+		
 
 	</div>
 	
