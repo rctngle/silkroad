@@ -44,12 +44,13 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num);
 			$chapter_num = $report_args['chapter_num'];
 			
-			get_template_part('templates/nav/nav', get_post_type(), $report_args);
 
-			echo "<ul>";
-			silkroad_report_display_nav(get_the_ID(), $depth+1, $chapter_num);
-			echo "</ul>";
-
+			echo '<li class="reportid-' . get_the_ID() . '">';
+				get_template_part('templates/nav/nav', get_post_type(), $report_args);
+				echo "<ul>";
+				silkroad_report_display_nav(get_the_ID(), $depth+1, $chapter_num);
+				echo "</ul>";
+			echo '</li>';
 		}
 	}	
 }
