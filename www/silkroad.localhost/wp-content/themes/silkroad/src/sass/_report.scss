@@ -54,7 +54,7 @@ body.horizontal-nav {
 	height: 0;
 	overflow: visible;
 	
-	.report-nav-inner > ul > li a {
+	.report-nav-inner > ul > li > a {
 		@include small-caps;
 		padding: 16px;
 	}
@@ -77,13 +77,14 @@ body.horizontal-nav {
 		}
 	}
 	.report-nav-inner > ul > li.active {
-		+ ul {
+		> ul {
 			display: block;
 		}
 	}	
 	.active {
+
 		background: rgba(60,60,60,0.6);
-		
+		background: red;
 	}
 	ul ul li {
 		padding-left: 16px;
