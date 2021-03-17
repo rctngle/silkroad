@@ -22,7 +22,7 @@ $chapter_num = $args['chapter_num'];
 	<?php if ($is_chapter): ?>			
 		<?php if(has_post_thumbnail()):?>
 			<div class="image">
-				<?php the_post_thumbnail('medium');?>
+				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium');?>"/>
 			</div>
 		<?php endif;?>
 	<?php endif; ?>

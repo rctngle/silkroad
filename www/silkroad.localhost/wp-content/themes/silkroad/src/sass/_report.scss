@@ -17,11 +17,32 @@ body.horizontal-nav {
 
 	}
 	li {
+		width: 255px;
+		position: relative;
 		border-right: 1px solid #333;
+	}
+	li ul {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		li {
+			display: none;
+			&.active {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: block;
+			}
+		}
 	}
 	.report-nav .image {
 		border-radius: 5px;
-		width: 180px;
+		width: 100%;
 		overflow: hidden;
 		height: 100px;
 		display: block;
