@@ -10,33 +10,59 @@ body.horizontal-nav {
 	}
 	.report-nav-inner {
 		background: #222;
+		height: 180px;
+		overflow: hidden;
 	}
 	.report-nav-inner {
 
 		width: 3000px;
 
 	}
-	li {
-		width: 255px;
+
+	.report-nav-inner > ul > li {
+		max-width: 255px;
 		position: relative;
 		border-right: 1px solid #333;
+		&.active {
+			height: 180px;
+			overflow: auto;
+			padding-top: 0;
+			.image {
+				height: 0px;
+			}
+		}
+	}
+	.report-nav .report-nav-inner > ul > li > a {
+		padding-bottom: 0;
 	}
 	li ul {
-		position: absolute;
+		//position: absolute;
 		z-index: 1;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
+		// top: 63px;
+		// right: 0;
+		// left: 0;
+		// bottom: 0;
+		background: #333;
 		li {
-			display: none;
+			padding: 0;
+			//display: none;
 			&.active {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				display: block;
+
+			//	background: rgba(60,60,60,0.6);
+			//	padding: 0;
+				// position: absolute;
+				// top: 63px;
+				// left: 16px;
+				// right: 16px;
+				// bottom: 16px;
+				// display: flex;
+				// text-align: center;
+				// justify-content: center;
+				// flex-flow: column nowrap;
+				// width: auto;
+				a {
+					background: transparent;
+				}
 			}
 		}
 	}
@@ -102,10 +128,9 @@ body.horizontal-nav {
 			display: block;
 		}
 	}	
-	.active {
+	.active > a {
 
 		background: rgba(60,60,60,0.6);
-		background: red;
 	}
 	ul ul li {
 		padding-left: 16px;
