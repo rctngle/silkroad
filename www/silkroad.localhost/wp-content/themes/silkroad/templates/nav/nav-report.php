@@ -18,12 +18,12 @@ $chapter_num = $args['chapter_num'];
 	
 		<?php echo $display_title; ?>
 	
-		<?php if ($is_chapter): ?>
-			<div class="image">
-				<?php if(has_post_thumbnail()):?>
+		<?php if ($is_chapter): ?>			
+			<?php if(has_post_thumbnail()):?>
+				<div class="image">
 					<?php the_post_thumbnail('medium');?>
-				<?php endif;?>
-			</div>
+				</div>
+			<?php endif;?>
 		<?php endif; ?>
 	</a>
 </li>

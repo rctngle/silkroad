@@ -20,13 +20,16 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 
 <article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 	<?php if($is_chapter):?>
-
-	<div class="bw-inlay">
-		<img src="<?php bloginfo('template_directory');?>/assets/images/inlay.jpg">
-	</div>
-
-
-
+<!-- 		<div class="bw-inlay">
+			<img src="<?php bloginfo('template_directory');?>/assets/images/inlay.jpg">
+		</div> -->
+		<?php if(has_post_thumbnail()):?>
+			<div class="media illustration">
+				<div class="section-inner">
+					<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
+				</div>
+			</div>
+		<?php endif;?>
 	<?php endif;?>
 	<a class="anchor" name="<?php echo $slug; ?>"></a>
 	<div class="content-box">

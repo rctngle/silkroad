@@ -16,6 +16,21 @@
 	}
 }
 
+.media.illustration {
+	margin-bottom: 36px;
+	.image {
+		width: 100%;
+		height: 540px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
 
 #report-downloads {
 	@include body-text;
