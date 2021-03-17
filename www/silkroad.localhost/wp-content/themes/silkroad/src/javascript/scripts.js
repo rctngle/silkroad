@@ -90,9 +90,9 @@ function updateReportNav(el) {
 
 	}
 
-	const subNavItem = document.querySelector('.report-nav-inner > ul > ul > li.reportid-'+el.dataset.subparent);
+	const subNavItem = document.querySelector('.report-nav-inner > ul > li > ul > li.reportid-'+el.dataset.subparent);
 	if (subNavItem && !subNavItem.classList.contains('active')) {
-		document.querySelectorAll('.report-nav-inner ul > ul > li.active').forEach(item => {
+		document.querySelectorAll('.report-nav-inner ul > li > ul > li.active').forEach(item => {
 			item.classList.remove('active');
 		});
 
