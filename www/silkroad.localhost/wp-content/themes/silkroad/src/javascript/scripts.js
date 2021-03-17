@@ -60,6 +60,14 @@ window.addEventListener('DOMContentLoaded', e=>{
 	});
 });
 
+window.addEventListener('keydown', e=>{
+	if(e.key == '1'){
+		document.body.classList.remove('horizontal-nav');
+	} else if (e.key == '2'){
+		document.body.classList.add('horizontal-nav');
+	}
+});
+
 function createFootnotes(){
 	document.querySelectorAll('sup').forEach(sup=>{
 		sup.addEventListener('click', e=>{

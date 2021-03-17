@@ -13,7 +13,17 @@ $chapter_num = $args['chapter_num'];
 	<a href="#<?php echo $slug; ?>">
 		<?php if ($is_chapter): ?>
 			<h5><?php echo silkroad_translate('chapter-n', LANG, [$chapter_num]); ?></h5>
+
 		<?php endif; ?>
+	
 		<?php echo $display_title; ?>
+	
+		<?php if ($is_chapter): ?>
+			<div class="image">
+				<?php if(has_post_thumbnail()):?>
+					<?php the_post_thumbnail('medium');?>
+				<?php endif;?>
+			</div>
+		<?php endif; ?>
 	</a>
 </li>

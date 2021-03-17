@@ -1,3 +1,44 @@
+body.horizontal-nav {
+	.report-nav {
+
+		position: sticky;
+		top: 52px;
+		z-index: 1;
+		height: auto;
+		width: 100%;
+		overflow: auto;
+	}
+	.report-nav-inner {
+		background: #222;
+	}
+	.report-nav-inner {
+
+		width: 3000px;
+
+	}
+	li {
+		border-right: 1px solid #333;
+	}
+	.image {
+		border-radius: 5px;
+		width: 180px;
+		overflow: hidden;
+		height: 110px;
+		display: block;
+		margin-top: 10px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	ul {
+		display: flex;
+	}
+}
+
+
+
 .report-nav-title {
 	padding: 16px;
 	@include small-caps;
@@ -13,12 +54,15 @@
 	height: 0;
 	overflow: visible;
 	
-	> ul > li a {
+	.report-nav-inner > ul > li a {
 		@include small-caps;
 		padding: 16px;
 	}
 	li {
 		margin-bottom: 0;
+	}
+	.image {
+		display: none;
 	}
 	ul {
 		margin-bottom: 0;
@@ -32,7 +76,7 @@
 			}
 		}
 	}
-	> ul > li.active {
+	.report-nav-inner > ul > li.active {
 		+ ul {
 			display: block;
 		}
