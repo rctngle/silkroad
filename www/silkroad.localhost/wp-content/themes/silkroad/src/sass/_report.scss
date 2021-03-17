@@ -1,19 +1,68 @@
+body.horizontal-nav {
+	.report-nav {
+
+		position: sticky;
+		top: 52px;
+		z-index: 1;
+		height: auto;
+		width: 100%;
+		overflow: auto;
+	}
+	.report-nav-inner {
+		background: #222;
+	}
+	.report-nav-inner {
+
+		width: 3000px;
+
+	}
+	li {
+		border-right: 1px solid #333;
+	}
+	.image {
+		border-radius: 5px;
+		width: 180px;
+		overflow: hidden;
+		height: 110px;
+		display: block;
+		margin-top: 10px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	ul {
+		display: flex;
+	}
+}
+
+
+
+.report-nav-title {
+	padding: 16px;
+	@include small-caps;
+	color: #999;
+}
 .report-nav {
 	font-family: 'Roboto';
 	font-size: 16px;
 	position: sticky;
-	top: 100px;
+	top: 54px;
 	width: 300px;
 	z-index: 1;
 	height: 0;
 	overflow: visible;
 	
-	> ul > li a {
+	.report-nav-inner > ul > li a {
 		@include small-caps;
 		padding: 16px;
 	}
 	li {
 		margin-bottom: 0;
+	}
+	.image {
+		display: none;
 	}
 	ul {
 		margin-bottom: 0;
@@ -27,7 +76,7 @@
 			}
 		}
 	}
-	> ul > li.active {
+	.report-nav-inner > ul > li.active {
 		+ ul {
 			display: block;
 		}
@@ -50,8 +99,52 @@
 		text-decoration: none;
 	}
 }
+article.content-type-legal-text {
+	margin-top: 32px;
+	.content-box > *:not(h3):not(.legal-text-title) {
+		display: none;
+	}
 
+	
+	.content-box {
+
+		padding-top: 28px;
+		//border: 1px solid #999; 	
+		//padding: 24px 0 0 0;
+		//border-left: 8px solid rgba(255,255,255,0.1);
+		font-size: 12px;
+		color: #999;
+		background: #1a1a1a;
+		position: relative;
+		&::after, &::before {
+			content: '';
+			position: absolute;
+			left: -8px;
+			top: 0;
+			bottom: 0;
+			width: 8px;
+			background: #1a1a1a;
+		}
+		&::after {
+			left: auto;
+			right: -8px;
+		}
+	}
+	h4 {
+		text-transform: uppercase;
+		flex: 1 0 100%;
+	}
+	p {
+		margin-bottom: 20px;
+	}
+	i.fas {
+		font-size: 24px;
+	}
+
+}
 section#report {
+	padding-top: 40px;
+
 	sup {
 		padding: 0px 5px;
 		text-align: center;
@@ -87,21 +180,16 @@ section#report {
 			//display: none;
 		}
 	}
-	padding-top: 40px;
-	.content-type-legal-text {
-		.content-box {
-			border: 2px solid #FFF !important; 	
-			padding: 24px 24px 0 24px;
-			
-		}
-		
-		
-	}
-	h3 {
+
+	h3, .legal-text-title {
 		display: flex;
 		justify-content: space-between;
+		flex-flow: row wrap;
 		.fa-caret-up {
 			display: none;
+		}
+		i.fa-balance-scale {
+			margin-right: 3px;
 		}
 	}
 	article.report {
@@ -136,8 +224,7 @@ section#report {
 		// }
 	}
 
-	article.content-type-section,
-	article.content-type-legal-text {
+	article.content-type-section {
 		.content-box > *:not(h3){
 			display: none;
 		}
@@ -155,7 +242,7 @@ section#report {
 			border-bottom: 1px solid #FFF;
 		}
 	}
-
+	
 
 	article.expanded {	
 		.expand {

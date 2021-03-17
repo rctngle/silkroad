@@ -10,11 +10,9 @@ $classes = ['report', 'depth-' . $args['depth']];
 if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	foreach($args['report_content_type_terms'] as $term) {
 		$classes[] = 'content-type-' . $term->slug;
-		// if($term->slug == 'legal-text'){
-		// 	$is_legal_text = true;
-		// } else {
-		// 	$classes[]='concatenate';			
-		// }
+		if($term->slug == 'legal-text'){
+			$is_legal_text = true;
+		}
 	}
 
 }
@@ -39,9 +37,19 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			</div>
 		<?php elseif($args['depth'] == 0):?>
 			<h2><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h2>
+		<?php elseif($is_legal_text):?>
+			<div class="legal-text-title">
+				<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
+				<p><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></p>
+				<div class="expand">
+					<i class="fas fa-caret-down"></i>
+					<i class="fas fa-caret-up"></i>
+				</div>
+			</div>
 		<?php else:?>
 			<h3><?php echo silkroad_translate_field(get_field('title_ml_text')); ?> <div class="expand"><i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></div></h3>
 		<?php endif; ?>
+
 		<?php echo silkroad_translate_field(get_field('content_ml_rich_text')); ?>		
 		<!-- <?php if(!$is_legal_text):?>
 			<div class="continue"><p><a href="">Continue reading</a></p></div>

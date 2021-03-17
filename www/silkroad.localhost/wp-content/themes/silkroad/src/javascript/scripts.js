@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 
 
 	let clickScrollInProgress = false;
-	document.querySelectorAll('.report-nav a').forEach(reportNavLink => {
+	document.querySelectorAll('.report-nav-inner a').forEach(reportNavLink => {
 		reportNavLink.addEventListener('click', e => {
 			if (!clickScrollInProgress) {
 				clickScrollInProgress = true;
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 					clickScrollInProgress = false;
 				}, 100);
 
-				document.querySelectorAll('.report-nav li').forEach(item => {
+				document.querySelectorAll('.report-nav-inner li').forEach(item => {
 					item.classList.remove('active');
 				});
 
@@ -60,6 +60,14 @@ window.addEventListener('DOMContentLoaded', e=>{
 	});
 });
 
+window.addEventListener('keydown', e=>{
+	if(e.key == '1'){
+		document.body.classList.remove('horizontal-nav');
+	} else if (e.key == '2'){
+		document.body.classList.add('horizontal-nav');
+	}
+});
+
 function createFootnotes(){
 	document.querySelectorAll('sup').forEach(sup=>{
 		sup.addEventListener('click', e=>{
@@ -73,18 +81,18 @@ function createFootnotes(){
 }
 
 function updateReportNav(el) {
-	const navItem = document.querySelector('.report-nav > ul > li.reportid-'+el.dataset.rootparent);
+	const navItem = document.querySelector('.report-nav-inner > ul > li.reportid-'+el.dataset.rootparent);
 	if (!navItem.classList.contains('active')) {
-		document.querySelectorAll('.report-nav > ul > li.active').forEach(item => {
+		document.querySelectorAll('.report-nav-inner > ul > li.active').forEach(item => {
 			item.classList.remove('active');
 		});
 		navItem.classList.add('active');
 
 	}
 
-	const subNavItem = document.querySelector('.report-nav > ul > ul > li.reportid-'+el.dataset.subparent);
+	const subNavItem = document.querySelector('.report-nav-inner > ul > ul > li.reportid-'+el.dataset.subparent);
 	if (subNavItem && !subNavItem.classList.contains('active')) {
-		document.querySelectorAll('.report-nav ul > ul > li.active').forEach(item => {
+		document.querySelectorAll('.report-nav-inner ul > ul > li.active').forEach(item => {
 			item.classList.remove('active');
 		});
 
@@ -140,6 +148,13 @@ function createCases() {
 			cases.classList.remove('scrolled');
 		}
 	})
+
+	cases.querySelectorAll('article').forEach(article => {
+		article.querySelector('.read-more').addEventListener('click', e=>{
+			article.classList.add('expanded');
+		});
+
+	});
 
 	cases.querySelectorAll('.slideshow').forEach(slideshow => {
 

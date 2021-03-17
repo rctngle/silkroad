@@ -1,6 +1,15 @@
 <div class="bw-inlay">
 	<img src="<?php bloginfo('template_directory');?>/assets/images/inlay.jpg">
 </div>
+<div class="report-nav">
+	<!-- <div class="report-nav-title">Report</div> -->
+	<div class="report-nav-inner">
+		<ul>
+			<?php silkroad_report_display_nav(0, 0, 0);?>
+		</ul>
+	</div>
+</div>
+
 <div class="content-box section-title">	
 	<h1>Report</h1>
 </div>
@@ -90,11 +99,12 @@ function silkroad_report_get_children($parent, $root_parent, $sub_parent, $depth
 	}	
 }
 
-echo '<div class="report-nav">';
-echo '<ul>';
-silkroad_report_display_nav(0, 0, 0);
-echo '</ul>';
-echo "</div>";
+
+?>
+
+
+<?php
+
 
 
 $report_content = '';

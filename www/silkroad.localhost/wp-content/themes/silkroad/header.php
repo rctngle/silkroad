@@ -45,7 +45,7 @@ $classes = get_body_class();
 
 </head>
 
-<body dir="auto" class="<?php echo implode(' ', $classes); ?>">
+<body dir="auto" class="<?php echo implode(' ', $classes); ?> horizontal-nav">
 
 <header>
 	<div class="logo">
