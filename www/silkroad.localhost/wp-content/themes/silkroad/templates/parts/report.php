@@ -15,11 +15,15 @@ function silkroad_get_report_args($post_id, $depth, $chapter_num) {
 	$terms = get_the_terms($post_id, 'report_content_types');
 	$is_chapter = false;
 	$is_intro = false;
+	$is_conclusion = false;
 	if ($terms && is_array($terms)) {
 		foreach($terms as $term) {
 			if ($term->slug === 'chapter') {
 				$is_chapter = true;
 				$chapter_num++;
+			}
+			if($term->slug == 'conclusion'){
+				$is_conclusion = true;
 			}
 			if($term->slug === 'introduction'){
 				$is_intro = true;
@@ -32,6 +36,7 @@ function silkroad_get_report_args($post_id, $depth, $chapter_num) {
 		'is_chapter' => $is_chapter, 
 		'chapter_num' => $chapter_num, 
 		'is_intro' => $is_intro,
+		'is_conclusion' => $is_conclusion,
 		'report_content_type_terms' => $terms,
 	];
 

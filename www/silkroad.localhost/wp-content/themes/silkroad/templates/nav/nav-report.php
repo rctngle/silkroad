@@ -7,6 +7,7 @@ $display_title = ($short_title) ? $short_title : $title;
 
 $is_chapter = $args['is_chapter'];
 $is_intro = $args['is_intro'];
+$is_conclusion = $args['is_conclusion'];
 $chapter_num = $args['chapter_num'];
 
 ?>
@@ -20,7 +21,7 @@ $chapter_num = $args['chapter_num'];
 
 	<?php echo $display_title; ?>
 
-	<?php if ($is_chapter || $is_intro): ?>			
+	<?php if ($is_chapter || $is_intro || $is_conclusion): ?>			
 		<?php if(has_post_thumbnail()):?>
 			<div class="image">
 				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium');?>"/>

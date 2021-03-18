@@ -206,9 +206,12 @@ function createCases() {
 	});
 
 	var navSwiper = new Swiper('.report-nav-inner', {
-		slidesPerView: 7,
-		spaceBetween: 30,
+		slidesPerView: 'auto',
+		spaceBetween: 0,
 		freeMode: true,
+		preventClicks: false,
+		grabCursor: true,
+		setWrapperSize: true
 	});
 	// const swiper = new Swiper(, {
 	// 	slidesPerView: 3,
