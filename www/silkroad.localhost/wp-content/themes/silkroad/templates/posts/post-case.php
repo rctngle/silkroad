@@ -1,4 +1,4 @@
-<article>
+<article class="swiper-slide">
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
 			<div class="slide"><?php the_post_thumbnail();?></div>
