@@ -131,7 +131,7 @@ function updateReportNav(el) {
 	const navItem = document.querySelector('.report-nav-inner > ul > li.reportid-'+el.dataset.rootparent);
 	
 	const nodes = Array.prototype.slice.call(document.querySelector('.report-nav-inner > ul').children);
-	navSwiper.slideTo(nodes.indexOf(navItem)-1, 50);
+	navSwiper.slideTo(nodes.indexOf(navItem)-1, 150);
 
 	if (!navItem.classList.contains('active')) {
 		document.querySelectorAll('.report-nav-inner > ul > li.active').forEach(item => {
@@ -139,7 +139,6 @@ function updateReportNav(el) {
 		});
 		navItem.classList.add('active');
 		// navItem.scrollIntoView({behavior: "smooth", inline: "center"});
-
 	}
 
 	const subNavItem = document.querySelector('.report-nav-inner > ul > li > ul > li.reportid-'+el.dataset.subparent);
