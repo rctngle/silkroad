@@ -89,6 +89,7 @@ body.horizontal-nav {
 		}
 
 		> a {
+		    height: 100%;
 			padding-top: 14px;
 		}
 	}
@@ -382,7 +383,9 @@ section#report {
 		// }
 	}
 
-
+	article.report.depth-0.content-type-conclusion {
+		margin-top: 8 * 8px;
+	}
 	article.content-type-introduction.depth-0 {
 		.content-box {
 			padding-top: 440px;
