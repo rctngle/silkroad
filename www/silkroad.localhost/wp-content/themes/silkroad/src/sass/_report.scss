@@ -3,7 +3,7 @@ body.horizontal-nav {
 	.report-nav {
 
 		position: sticky;
-		top: 52px;
+		top: 48px;
 		z-index: 2;
 		height: auto;
 		width: 100%;
@@ -13,11 +13,9 @@ body.horizontal-nav {
 		}
 		margin-bottom: 64px;
 	}
-	.reportid-7 {
-
-
-	}
-	.expand {
+	
+	.report-nav .expand {
+		display: none;
 		text-align: center;
 		font-size: 12px;
 		color: #999;
@@ -41,11 +39,17 @@ body.horizontal-nav {
 		display: inline;
 	}
 
+	.reportid-7 {
+		> ul > li {
+			width: 200px;
+		}
+
+	}
 	.report-nav-inner > ul > li {
 		width: 266px;
 		flex-shrink: 0;
 		position: relative;
-		border-right: 1px solid #333;
+		border-right: 1px solid #444;
 		display: inline-block;
 		&.active {
 			height: $horizontal-nav-height;
@@ -64,7 +68,14 @@ body.horizontal-nav {
 			padding-top: 14px;
 		}
 	}
-
+	.report-nav-inner > ul > li.report-nav-intro {
+		width: 80px;
+		padding: 14px 16px;
+		h4 {
+			text-transform: uppercase;
+			color: #999;
+		}
+	}
 	.report-nav-inner > ul > li:hover {
 		overflow: auto;
 		ul {
@@ -179,7 +190,7 @@ body.horizontal-nav {
 	}	
 	.active > a {
 
-		background: rgba(60,60,60,0.6);
+		background: rgba(78,78,78,0.6);
 	}
 	ul ul li {
 		padding-left: 16px;
