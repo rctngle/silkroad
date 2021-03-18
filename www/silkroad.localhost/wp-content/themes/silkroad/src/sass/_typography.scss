@@ -3,6 +3,9 @@
 	font-size: 18px;
 	font-weight: normal;
 	line-height: 1.5;
+	body.chinese & {
+		font-size: 17px;
+	}
 }
 
 @mixin extra-small-caps {
@@ -14,6 +17,7 @@
 @mixin small-caps {
 	text-transform: uppercase;
 	@include small-bold;
+
 }
 
 @mixin small-bold {
@@ -21,6 +25,9 @@
 	font-size: 15px;
 	line-height: 1;
 	letter-spacing: 0.02em;
+	body.chinese & {
+		font-size: 14px;
+	}
 }
 
 @mixin h3-title {

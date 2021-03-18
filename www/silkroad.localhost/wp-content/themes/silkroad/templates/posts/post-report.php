@@ -19,10 +19,9 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 ?>
 
 <article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
+	<a class="anchor" name="<?php echo $slug; ?>"></a>
+
 	<?php if($is_chapter):?>
-<!-- 		<div class="bw-inlay">
-			<img src="<?php bloginfo('template_directory');?>/assets/images/inlay.jpg">
-		</div> -->
 		<?php if(has_post_thumbnail()):?>
 			<div class="media illustration">
 				<div class="section-inner">
@@ -31,7 +30,6 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			</div>
 		<?php endif;?>
 	<?php endif;?>
-	<a class="anchor" name="<?php echo $slug; ?>"></a>
 	<div class="content-box">
 		<?php if ($is_chapter): ?>
 			<div class="section-title">

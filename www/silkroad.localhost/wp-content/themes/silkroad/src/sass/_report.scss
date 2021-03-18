@@ -1,41 +1,68 @@
+$horizontal-nav-height: 155px;
 body.horizontal-nav {
 	.report-nav {
 
 		position: sticky;
 		top: 52px;
-		z-index: 1;
+		z-index: 2;
 		height: auto;
 		width: 100%;
 		overflow: auto;
+		+ .content-box {
+			padding-top: 32px;
+		}
 	}
 	.report-nav-inner {
 		background: #222;
-		height: 180px;
+		height: $horizontal-nav-height;
 		overflow: hidden;
+		box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	}
 	.report-nav-inner {
 
 		width: 3000px;
 
 	}
+	h5{
+		display: none;
+	}
+	.horizontal-chapter-number {
+		color: #999;
+		display: inline;
+	}
 
 	.report-nav-inner > ul > li {
-		max-width: 255px;
+		max-width: 266px;
 		position: relative;
 		border-right: 1px solid #333;
 		&.active {
-			height: 180px;
+			height: $horizontal-nav-height;
 			overflow: auto;
 			padding-top: 0;
+			//display: none;
 			.image {
 				height: 0px;
 			}
+		}
+		> a {
+			padding-top: 14px;
+		}
+	}
+
+	.report-nav-inner > ul > li:hover {
+		overflow: auto;
+		ul {
+			display: block;
+			position: absolute;
+		}
+		.image {
+
 		}
 	}
 	.report-nav .report-nav-inner > ul > li > a {
 		padding-bottom: 0;
 	}
-	li ul {
+	.report-nav-inner li ul {
 		//position: absolute;
 		z-index: 1;
 		// top: 63px;
@@ -61,7 +88,8 @@ body.horizontal-nav {
 				// flex-flow: column nowrap;
 				// width: auto;
 				a {
-					background: transparent;
+
+					background: #222;
 				}
 			}
 		}
@@ -79,7 +107,7 @@ body.horizontal-nav {
 			object-fit: cover;
 		}
 	}
-	ul {
+	.report-nav-inner > ul {
 		display: flex;
 	}
 }
@@ -100,7 +128,9 @@ body.horizontal-nav {
 	z-index: 1;
 	height: 0;
 	overflow: visible;
-	
+	.horizontal-chapter-number {
+		display: none;
+	}
 	.report-nav-inner > ul > li > a {
 		@include small-caps;
 		padding: 16px;
@@ -190,7 +220,7 @@ article.content-type-legal-text {
 
 }
 section#report {
-	padding-top: 40px;
+	
 
 	sup {
 		padding: 0px 5px;
