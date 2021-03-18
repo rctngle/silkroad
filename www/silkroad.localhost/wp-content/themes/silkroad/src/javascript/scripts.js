@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', e=>{
 	
 	createCases();
 	createFootnotes();
-	createSwipers();
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
@@ -63,22 +62,29 @@ window.addEventListener('DOMContentLoaded', e=>{
 			updateReportNav(el);
 		}
 	});
+
+	createCaseSwiper();
+	createNavSwiper();
+
+
 });
+
+window.onload = function() {
+}
 
 window.addEventListener('keydown', e=>{
 	if(e.key == '1'){
-		destroySwipers();
+		createNavSwiper();
 		document.body.classList.remove('horizontal-nav');
 		document.body.classList.add('vertical-nav');
 	} else if (e.key == '2'){
-		createSwipers();
+		destroyNavSwiper();
 		document.body.classList.add('horizontal-nav');
 		document.body.classList.remove('vertical-nav');
 	}
 });
 
-//While I was in camp, I thought my family had freedom, but I leaned that they were under house arrest. They had to ask permission to move… a cadre was consistently visiting house. … there was a camera in the street [in front of their house].
-function createSwipers() {
+function createCaseSwiper() {
 
 	caseSwiper = new Swiper('.swiper-container', {
 		slidesPerView: 'auto',
@@ -89,6 +95,9 @@ function createSwipers() {
 		slidesOffsetBefore: 40,
 		grabCursor: true
 	});
+}
+
+function createNavSwiper() {
 
 	navSwiper = new Swiper('.report-nav-inner', {
 		slidesPerView: 'auto',
@@ -96,11 +105,12 @@ function createSwipers() {
 		freeMode: true,
 		preventClicks: false,
 		grabCursor: true,
-		setWrapperSize: true
+		setWrapperSize: true,
+		// centeredSlidesBounds: true,
 	});
 }
 
-function destroySwipers() {
+function destroyNavSwiper() {
 	navSwiper.destroy();
 }
 
@@ -119,12 +129,15 @@ function createFootnotes(){
 
 function updateReportNav(el) {
 	const navItem = document.querySelector('.report-nav-inner > ul > li.reportid-'+el.dataset.rootparent);
+	
+	const nodes = Array.prototype.slice.call(document.querySelector('.report-nav-inner > ul').children);
+	navSwiper.slideTo(nodes.indexOf(navItem), 50);
+
 	if (!navItem.classList.contains('active')) {
 		document.querySelectorAll('.report-nav-inner > ul > li.active').forEach(item => {
 			item.classList.remove('active');
 		});
 		navItem.classList.add('active');
-		console.log(navItem);
 		// navItem.scrollIntoView({behavior: "smooth", inline: "center"});
 
 	}
@@ -179,7 +192,6 @@ if (window.Element && !Element.prototype.closest) {
 }
 
 function createCases() {
-	console.log('create');
 
 	// const cases = document.querySelector('.cases');
 	// cases.addEventListener('scroll', e => {
