@@ -1,7 +1,7 @@
 <?php
 
 $classes = get_body_class();
-
+$classes[]=LANG;
 
 ?>
 

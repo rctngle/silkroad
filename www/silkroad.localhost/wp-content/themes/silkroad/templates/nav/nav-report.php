@@ -15,6 +15,7 @@ $chapter_num = $args['chapter_num'];
 <a href="#<?php echo $slug; ?>">
 	<?php if ($is_chapter): ?>
 		<h5><?php echo silkroad_translate('chapter-n', LANG, [$chapter_num]); ?></h5>
+		<span class="horizontal-chapter-number"><?php echo $chapter_num;?>. </span>
 	<?php else:?>
 		<!-- <h5>&nbsp;</h5> -->
 	<?php endif; ?>

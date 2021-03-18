@@ -38,11 +38,17 @@ html {
 @import "hero";
 @import "sections";
 @import "report";
+@import "chinese-adjustments";
 
 a {
 	color: currentColor;
 }
-
+a[name]{
+	display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
 body {
 	color: #fff;
 	background-color: #000;
@@ -50,6 +56,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 }
+body.uyghur {
+	direction: rtl;
+} 
 
 ul {
 	list-style: disc;

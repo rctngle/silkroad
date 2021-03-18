@@ -1,8 +1,5 @@
-<div class="bw-inlay">
-	<img src="<?php bloginfo('template_directory');?>/assets/images/inlay.jpg">
-</div>
+
 <div class="report-nav">
-	<!-- <div class="report-nav-title">Report</div> -->
 	<div class="report-nav-inner">
 		<ul>
 			<?php silkroad_report_display_nav(0, 0, 0);?>
