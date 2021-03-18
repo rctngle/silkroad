@@ -18,11 +18,16 @@
 		<?php get_template_part('templates/parts/cases'); ?>
 			
 	</section>
-	<section><?php get_template_part('templates/parts/call-to-action'); ?></section>
+	
 	<section name="report" id="report">
 		<a name="report-anchor"></a>
 		<?php get_template_part('templates/parts/report'); ?></section>
 	</main>
+	<section id="call-to-action">
+		<a name="call-to-action-anchor"></a>
+		<?php get_template_part('templates/parts/call-to-action'); ?>
+			
+	</section>
 </main>
 
 <?php get_footer(); ?>
