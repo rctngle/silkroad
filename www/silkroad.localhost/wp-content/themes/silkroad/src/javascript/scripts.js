@@ -132,7 +132,6 @@ function updateReportNav(el) {
 	
 	const nodes = Array.prototype.slice.call(document.querySelector('.report-nav-inner > ul').children);
 	if (document.body.classList.contains('horizontal-nav')) {
-		console.log('??');
 		navSwiper.slideTo(nodes.indexOf(navItem)-1, 150);
 	}
 
