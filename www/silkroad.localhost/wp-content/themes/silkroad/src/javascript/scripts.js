@@ -67,6 +67,11 @@ window.addEventListener('DOMContentLoaded', e=>{
 	createNavSwiper();
 
 
+	document.querySelector('.button').addEventListener('click', e => {
+		console.log('next');
+		caseSwiper.slideNext()
+	})
+
 });
 
 window.onload = function() {
