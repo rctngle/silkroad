@@ -96,6 +96,7 @@ function createSwipers() {
 		freeMode: true,
 		preventClicks: false,
 		grabCursor: true,
+		setWrapperSize: true
 	});
 }
 

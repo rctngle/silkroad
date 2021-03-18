@@ -1,7 +1,7 @@
 body.vertical-nav {
 	.report-nav {
 		.swiper-wrapper {
-		display: block;
+			display: block;
 			.expand {
 				display: none;
 			}
@@ -158,10 +158,12 @@ body.horizontal-nav {
 			object-fit: cover;
 		}
 	}
-	.report-nav-inner > ul {
+	.report-nav-inner {
 		overflow-x: auto;
-		white-space: nowrap;
-		display: flex;
+	}
+	.report-nav-inner > ul {
+	
+		//display: flex;
 
 	}
 }
