@@ -112,7 +112,7 @@ function appendMap(){
 		zoom: [3.2],
 		attributionControl: false,
 		zoomControl: false,
-//		interactive: false
+		interactive: false
 	});
 	map.on('zoom', e=>{
 		// console.log(map.getZoom());

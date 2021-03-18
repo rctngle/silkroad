@@ -43,11 +43,14 @@ html {
 a {
 	color: currentColor;
 }
-a[name]{
+section > a[name]{
 	display: block;
     position: relative;
-    top: -250px;
+    top: -100px;
     visibility: hidden;
+}
+section > a[name="report-anchor"]{
+	top: -50px;
 }
 body {
 	color: #fff;

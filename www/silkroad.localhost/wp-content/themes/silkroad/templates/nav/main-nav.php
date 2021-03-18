@@ -16,10 +16,10 @@ $chapters_query = new WP_Query([
 
 ?>
 
-<div><a href="#introduction">Introduction</a></div>
-<div><a href="#cases">Cases</a></div>
-<div><a href="#take-action">Take Action</a></div>
-<div><a href="#report">Report</a></div>
+<div><a href="#introduction-anchor">Introduction</a></div>
+<div><a href="#cases-anchor">Cases</a></div>
+<div><a href="#take-action-anchor">Take Action</a></div>
+<div><a href="#report-anchor">Report</a></div>
 
 <?php if ($chapters_query->have_posts()): ?>
 	<?php $chapter_counter = 0; ?>
