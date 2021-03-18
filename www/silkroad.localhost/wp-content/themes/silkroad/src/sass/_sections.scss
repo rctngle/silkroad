@@ -100,8 +100,9 @@ section#call-to-action {
 }
 
 section#cases {
-
-
+	.swiper-wrapper {
+		overflow: auto;
+	}
 	.modal {
 		display: none;
 	}
@@ -224,6 +225,7 @@ section#cases {
 			
 		}
 	}
+
 	article {
 		position: relative;
 		display: inline-block;

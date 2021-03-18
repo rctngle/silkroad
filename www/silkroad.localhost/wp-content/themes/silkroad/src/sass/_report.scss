@@ -68,7 +68,7 @@ body.horizontal-nav {
 
 	.report-nav-inner > ul > li {
 		width: 266px;
-		//flex-shrink: 0;
+		flex-shrink: 0;
 		position: relative;
 		border-right: 1px solid #444;
 		//display: inline-block;
@@ -160,8 +160,8 @@ body.horizontal-nav {
 	}
 	.report-nav-inner > ul {
 		overflow-x: auto;
-		// white-space: nowrap;
-		// display: flex;
+		white-space: nowrap;
+		display: flex;
 
 	}
 }
