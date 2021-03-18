@@ -21,6 +21,9 @@ $cases_query = new WP_Query([
 			<?php wp_reset_postdata() ?>
 		<?php endfor;?>	
 	</div>
+	<div class="gradient">
+		<div class="button" style="background-image: url(https://iran-shutdown.amnesty.org/wp-content/themes/amnesty-iran-internet-shutdown/assets/images/btn-victim-next.png)"></div>
+	</div>
 </div>
 </div>
 

@@ -2,7 +2,7 @@
 <div class="report-nav">
 	<div class="report-nav-inner">
 		<ul class="swiper-wrapper">
-			<li class="report-nav-intro"><h4>Report</h4></li>
+			<li class="report-nav-intro"><a>Report</a></li>
 			<?php silkroad_report_display_nav(0, 0, 0);?>
 		</ul>
 	</div>
