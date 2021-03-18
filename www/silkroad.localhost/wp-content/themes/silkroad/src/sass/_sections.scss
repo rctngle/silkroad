@@ -98,6 +98,7 @@ section#cases {
 		display: none;
 	}
 	.section-inner-full {
+		
 		position: relative;
 		//padding-left: 40px;
 	}
@@ -112,7 +113,7 @@ section#cases {
 			background-color: rgba(41, 41, 41, 0.6);
 			padding: 10px;
 			cursor: pointer;
-			width: 26px;
+			width: 27px;
 			color: #FFF;
 		}
 
@@ -121,6 +122,7 @@ section#cases {
 		// display: grid;
 		// grid-template-columns: 1fr 1fr;
 		.slideshow {
+			box-sizing: border-box;
 			position: relative;
 			height: 200px;
 			min-height: 0;
@@ -145,8 +147,8 @@ section#cases {
 				font-style: italic;
 				position: absolute;
 				bottom: 0;
-				left: 26px;
-				right: 26px;
+				left: 27px;
+				right: 27px;
 				height: 36px;
 				background-color: rgba(41, 41, 41, 0.6);
 				a[target="_blank"]:after {

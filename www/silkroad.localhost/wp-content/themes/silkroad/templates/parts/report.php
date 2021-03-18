@@ -2,14 +2,13 @@
 <div class="report-nav">
 	<div class="report-nav-inner">
 		<ul class="swiper-wrapper">
+			<li class="report-nav-intro swiper-slide">Report</li>
 			<?php silkroad_report_display_nav(0, 0, 0);?>
 		</ul>
 	</div>
 </div>
 
-<div class="content-box section-title">	
-	<h1>Report</h1>
-</div>
+
 <?php
 
 function silkroad_get_report_args($post_id, $depth, $chapter_num) {
