@@ -196,6 +196,12 @@ function createCases() {
 		spaceBetween: 30,
 		freeMode: true,
 	});
+
+	var navSwiper = new Swiper('.report-nav-inner', {
+		slidesPerView: 3,
+		spaceBetween: 30,
+		freeMode: true,
+	});
 	// const swiper = new Swiper(, {
 	// 	slidesPerView: 3,
 	// 	spaceBetween: 30,
