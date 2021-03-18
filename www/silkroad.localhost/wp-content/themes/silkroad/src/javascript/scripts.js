@@ -90,7 +90,7 @@ function updateReportNav(el) {
 		});
 		navItem.classList.add('active');
 		console.log(navItem);
-		navItem.scrollIntoView({behavior: "smooth", inline: "center"});
+		// navItem.scrollIntoView({behavior: "smooth", inline: "center"});
 
 	}
 
@@ -203,6 +203,12 @@ function createCases() {
 		slidesOffsetAfter: 40,
 		slidesOffsetBefore: 40,
 		grabCursor: true
+	});
+
+	var navSwiper = new Swiper('.report-nav-inner', {
+		slidesPerView: 7,
+		spaceBetween: 30,
+		freeMode: true,
 	});
 	// const swiper = new Swiper(, {
 	// 	slidesPerView: 3,
