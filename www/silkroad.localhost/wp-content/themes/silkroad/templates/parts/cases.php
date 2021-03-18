@@ -11,9 +11,10 @@ $cases_query = new WP_Query([
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
 
+<div class="section-inner-full">
 <div class="swiper-container">
 	<div class="swiper-wrapper">
-		<?php for($i = 0; $i < 20; $i++):?>			
+		<?php for($i = 0; $i < 12; $i++):?>			
 			<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
 				<?php get_template_part('templates/posts/post', get_post_type()); ?>
 			<?php endwhile; ?>
@@ -21,8 +22,9 @@ $cases_query = new WP_Query([
 		<?php endfor;?>	
 	</div>
 </div>
+</div>
 
-<?php if ($cases_query->have_posts()): ?>
+<?php /* if ($cases_query->have_posts()): ?>
 	<div class="section-inner-full">	
 		<div class="cases">
 			<?php for($i = 0; $i < 20; $i++):?>			
@@ -39,4 +41,4 @@ $cases_query = new WP_Query([
 			<div class="button" style="background-image: url(https://iran-shutdown.amnesty.org/wp-content/themes/amnesty-iran-internet-shutdown/assets/images/btn-victim-prev.png)"></div>
 		</div>
 	</div>
-<?php endif; ?>
+<?php endif; */?>

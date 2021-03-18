@@ -142,23 +142,25 @@ if (window.Element && !Element.prototype.closest) {
 }
 
 function createCases() {
-	const cases = document.querySelector('.cases');
-	cases.addEventListener('scroll', e => {
-		if (cases.scrollLeft > 0) {
-			cases.classList.add('scrolled');
-		} else {
-			cases.classList.remove('scrolled');
-		}
-	})
+	console.log('create');
 
-	cases.querySelectorAll('article').forEach(article => {
+	// const cases = document.querySelector('.cases');
+	// cases.addEventListener('scroll', e => {
+	// 	if (cases.scrollLeft > 0) {
+	// 		cases.classList.add('scrolled');
+	// 	} else {
+	// 		cases.classList.remove('scrolled');
+	// 	}
+	// })
+
+	document.querySelector('#cases').querySelectorAll('article').forEach(article => {
 		article.querySelector('.read-more').addEventListener('click', e=>{
 			article.classList.add('expanded');
 		});
 
 	});
 
-	cases.querySelectorAll('.slideshow').forEach(slideshow => {
+	document.querySelector('#cases').querySelectorAll('.slideshow').forEach(slideshow => {
 
 		slideshow.dataset.idx = 0;
 		slideshow.dataset.numarticles = slideshow.querySelectorAll('.slide').length;
@@ -192,9 +194,13 @@ function createCases() {
 
 
 	var swiper = new Swiper('.swiper-container', {
-		slidesPerView: 3,
-		spaceBetween: 30,
+		slidesPerView: 4,
+		spaceBetween: 20,
 		freeMode: true,
+		preventClicks: false,
+		slidesOffsetAfter: 40,
+		slidesOffsetBefore: 40,
+		grabCursor: true
 	});
 	// const swiper = new Swiper(, {
 	// 	slidesPerView: 3,
