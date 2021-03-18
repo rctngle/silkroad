@@ -90,7 +90,7 @@ function updateReportNav(el) {
 		});
 		navItem.classList.add('active');
 		console.log(navItem);
-		navItem.scrollIntoView({behavior: "smooth", inline: "center"});
+		// navItem.scrollIntoView({behavior: "smooth", inline: "center"});
 
 	}
 
@@ -206,7 +206,7 @@ function createCases() {
 	});
 
 	var navSwiper = new Swiper('.report-nav-inner', {
-		slidesPerView: 3,
+		slidesPerView: 7,
 		spaceBetween: 30,
 		freeMode: true,
 	});
