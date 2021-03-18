@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-	<section name="introduction" id="introduction">
+	<section id="introduction">
 		<div class="section-inner">
 			<article>
 				<div class="content-box">
@@ -13,9 +13,16 @@
 	</section>
 	<section id="report-downloads"><?php get_template_part('templates/parts/report-downloads'); ?></section>
 	<section id="map"><?php get_template_part('templates/parts/map'); ?></section>
-	<section name="cases" id="cases"><?php get_template_part('templates/parts/cases'); ?></section>
-	<?php /* <section><?php get_template_part('templates/parts/testimonies'); ?></section> */ ?>
-	<section name="report" id="report"><?php get_template_part('templates/parts/report'); ?></section>
+	<section id="cases">
+		<a name="cases-anchor"></a>
+		<?php get_template_part('templates/parts/cases'); ?>
+			
+	</section>
+	<section><?php get_template_part('templates/parts/call-to-action'); ?></section>
+	<section name="report" id="report">
+		<a name="report-anchor"></a>
+		<?php get_template_part('templates/parts/report'); ?></section>
+	</main>
 </main>
 
 <?php get_footer(); ?>

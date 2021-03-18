@@ -46,6 +46,7 @@ $classes[]=LANG;
 </head>
 
 <body dir="auto" class="<?php echo implode(' ', $classes); ?> horizontal-nav">
+<a name="introduction-anchor"></a>
 
 <header>
 	<div class="logo">
