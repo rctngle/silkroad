@@ -159,7 +159,7 @@ body.horizontal-nav {
 		}
 	}
 	.report-nav-inner {
-		overflow-x: auto;
+		//overflow-x: auto;
 	}
 	.report-nav-inner > ul {
 	
@@ -277,7 +277,29 @@ article.content-type-legal-text {
 }
 section#report {
 	
+	.wp-caption {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 1100px !important;
+		position: relative;
+		left: -205px;
+		margin: 48px 0;
+		align-items: start;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		p {
+			background: #FFF;
+			@include quote;
+			padding: 32px;
+			margin-bottom: 0;
+			position: relative;
+			top: 80px;
+			left: -40px;
 
+		}
+	}
 	sup {
 		padding: 0px 5px;
 		text-align: center;
@@ -386,6 +408,7 @@ section#report {
 	
 
 	article.expanded {	
+		background: red;
 		.expand {
 			.fa-caret-up {
 				display: block;
@@ -399,7 +422,10 @@ section#report {
 		}
 		.content-box p {
 			display: block;
-		}	
+		}
+		.content-box p:nth-of-type(1){
+			display: block;
+		}
 		& ~ article.depth-3 {
 			display: block;
 		}

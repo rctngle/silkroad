@@ -77,7 +77,7 @@ window.addEventListener('keydown', e=>{
 	}
 });
 
-//While I was in camp, I thought my family had freedom, but I leaned that they were under house arrest. They had to ask permission to move… a cadre was consistently visiting house. … there was a camera in the street [in front of their house].
+
 function createSwipers() {
 
 	caseSwiper = new Swiper('.swiper-container', {

@@ -33,6 +33,7 @@ section {
 		margin-bottom: 16px;
 	}
 }
+
 .section-title.centered {
 	align-items: center;
 	text-align: center;
@@ -101,7 +102,7 @@ section#call-to-action {
 
 section#cases {
 	.swiper-container {
-		overflow: auto;
+		//overflow: auto;
 	}
 	.modal {
 		display: none;
