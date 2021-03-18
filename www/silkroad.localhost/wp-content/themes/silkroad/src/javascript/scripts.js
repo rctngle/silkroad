@@ -5,10 +5,13 @@ import 'swiper/swiper-bundle.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a2V0ZTBsNThoMiJ9.1Ce55CnAaojzkqgfX70fAw'
 
+let caseSwiper, navSwiper;
+
 window.addEventListener('DOMContentLoaded', e=>{
 	
 	createCases();
 	createFootnotes();
+	createSwipers();
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
@@ -64,11 +67,43 @@ window.addEventListener('DOMContentLoaded', e=>{
 
 window.addEventListener('keydown', e=>{
 	if(e.key == '1'){
+		destroySwipers();
 		document.body.classList.remove('horizontal-nav');
+		document.body.classList.add('vertical-nav');
 	} else if (e.key == '2'){
+		createSwipers();
 		document.body.classList.add('horizontal-nav');
+		document.body.classList.remove('vertical-nav');
 	}
 });
+
+
+function createSwipers() {
+
+	caseSwiper = new Swiper('.swiper-container', {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		freeMode: true,
+		preventClicks: false,
+		slidesOffsetAfter: 40,
+		slidesOffsetBefore: 40,
+		grabCursor: true
+	});
+
+	navSwiper = new Swiper('.report-nav-inner', {
+		slidesPerView: 'auto',
+		spaceBetween: 0,
+		freeMode: true,
+		preventClicks: false,
+		grabCursor: true,
+		setWrapperSize: true
+	});
+}
+
+function destroySwipers() {
+	navSwiper.destroy();
+}
+
 
 function createFootnotes(){
 	document.querySelectorAll('sup').forEach(sup=>{
@@ -159,7 +194,6 @@ function createCases() {
 		article.querySelector('.read-more').addEventListener('click', e=>{
 			article.classList.add('expanded');
 		});
-
 	});
 
 	document.querySelector('#cases').querySelectorAll('.slideshow').forEach(slideshow => {
@@ -195,24 +229,7 @@ function createCases() {
 	// }, 3000);
 
 
-	var swiper = new Swiper('.swiper-container', {
-		slidesPerView: 4,
-		spaceBetween: 20,
-		freeMode: true,
-		preventClicks: false,
-		slidesOffsetAfter: 40,
-		slidesOffsetBefore: 40,
-		grabCursor: true
-	});
 
-	var navSwiper = new Swiper('.report-nav-inner', {
-		slidesPerView: 'auto',
-		spaceBetween: 0,
-		freeMode: true,
-		preventClicks: false,
-		grabCursor: true,
-		setWrapperSize: true
-	});
 	// const swiper = new Swiper(, {
 	// 	slidesPerView: 3,
 	// 	spaceBetween: 30,
