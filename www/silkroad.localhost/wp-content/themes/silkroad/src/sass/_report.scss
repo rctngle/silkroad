@@ -408,7 +408,6 @@ section#report {
 	
 
 	article.expanded {	
-		background: red;
 		.expand {
 			.fa-caret-up {
 				display: block;
@@ -421,10 +420,10 @@ section#report {
 			border-bottom: 1px solid transparent;	
 		}
 		.content-box p {
-			display: block;
+			display: block !important;
 		}
 		.content-box p:nth-of-type(1){
-			display: block;
+			display: block !important;
 		}
 		& ~ article.depth-3 {
 			display: block;
