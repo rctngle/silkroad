@@ -89,6 +89,8 @@ function updateReportNav(el) {
 			item.classList.remove('active');
 		});
 		navItem.classList.add('active');
+		console.log(navItem);
+		navItem.scrollIntoView({behavior: "smooth", inline: "center"});
 
 	}
 
