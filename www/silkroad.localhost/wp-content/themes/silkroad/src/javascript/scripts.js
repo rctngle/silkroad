@@ -1,5 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import inView from 'in-view-modern';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a2V0ZTBsNThoMiJ9.1Ce55CnAaojzkqgfX70fAw'
 
@@ -188,4 +190,19 @@ function createCases() {
 	// 	});
 	// }, 3000);
 
+
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 3,
+		spaceBetween: 30,
+		freeMode: true,
+	});
+	// const swiper = new Swiper(, {
+	// 	slidesPerView: 3,
+	// 	spaceBetween: 30,
+	// 	freeMode: true,
+	// 		// pagination: {
+	// 		// 	el: '.swiper-pagination',
+	// 		// 	clickable: true,
+	// 		// },
+	// });
 }
