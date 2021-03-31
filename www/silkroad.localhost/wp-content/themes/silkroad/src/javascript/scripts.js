@@ -1,7 +1,9 @@
 import mapboxgl from 'mapbox-gl';
 import inView from 'in-view-modern';
-import Swiper from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.css';
+
+Swiper.use([Navigation, Pagination]);
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a2V0ZTBsNThoMiJ9.1Ce55CnAaojzkqgfX70fAw'
 
