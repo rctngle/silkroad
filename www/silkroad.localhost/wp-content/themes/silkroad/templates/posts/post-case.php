@@ -64,7 +64,7 @@
 				<h5>Assumed Location</h5>
 				<?php echo silkroad_translate_field(get_field('where_held_ml_text')); ?>
 			</div>
-			<div>
+			<div class="ethnicity">
 				<h5>Ethnicity</h5>
 				<?php echo silkroad_translate_field(get_field('ethnicity_ml_text')); ?>
 			</div>

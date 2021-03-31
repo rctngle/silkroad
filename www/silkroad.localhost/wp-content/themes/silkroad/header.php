@@ -61,7 +61,7 @@ $classes[]=LANG;
 
 <section class="hero">
 	<div class="media full image">
-		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/Brothers-of-the-Gun.jpg">
+		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/feet_shadows.jpg">
 		<div class="gradient"></div>
 	</div>
 	<div class="hero-content">

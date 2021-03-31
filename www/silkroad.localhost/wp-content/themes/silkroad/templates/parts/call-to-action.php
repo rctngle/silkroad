@@ -1,6 +1,6 @@
 <div class="section-inner">
 	<div class="media image">
-		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/camp-2.jpg">
+		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/mensell.jpg">
 		<div class="gradient"></div>
 	</div>
 

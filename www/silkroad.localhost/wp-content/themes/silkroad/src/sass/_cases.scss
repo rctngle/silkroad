@@ -53,6 +53,22 @@ section#cases {
 	}
 	.swiper-pagination {
 		color: #FFF;
+		bottom: 0px;
+		.swiper-pagination-bullet {
+			width: 16px;
+			height: 16px;
+			background-color: #525252;
+			opacity: 1;
+			&:hover {
+				background-color: var(--light-grey);
+			}
+		}
+		.swiper-pagination-bullet-active {
+			background-color: #FFF;
+			&:hover {
+				background-color: #FFF;
+			}
+		}
 	}
 	.preview {
 		.slideshow {
@@ -165,7 +181,7 @@ section#cases {
 		line-height: 1.2;
 		font-size: 14px;
 		letter-spacing: 0.01em;
-		margin-bottom: 20px;
+		margin-bottom: 56px;
 		width: 360px;
 		background-color: #FFF;
 		color: #000;
@@ -217,7 +233,7 @@ section#cases {
 		.case div {
 			white-space: normal;
 			align-items: baseline;
-			margin-bottom: 0.6rem;
+			margin-bottom: 0.5rem;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
@@ -232,12 +248,15 @@ section#cases {
 				text-decoration: underline;
 			}
 		}
+		.case .ethnicity {
+			margin-bottom: 1rem;
+		}
 		.case .full {
 			display: block;
-			padding-top: 0.2rem;
-			margin-bottom: 0.7rem;
+			// padding-top: 0.2rem;
+			margin-bottom: 1rem;
 			h5 {
-				margin-bottom: 0.2rem;
+				margin-bottom: 0.3rem;
 			}
 		}
 		.image {
