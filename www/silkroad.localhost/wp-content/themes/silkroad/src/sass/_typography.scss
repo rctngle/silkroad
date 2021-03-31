@@ -49,14 +49,26 @@
 	margin-bottom: 32px;
 }
 
-p, ul {
+
+main ul {
+	list-style: disc;
+	padding-left: 20px;
+}
+
+main ul li {
+	margin-bottom: 16px;
+}
+
+main ul {
+	@include body-text;
+	margin-bottom: 32px;
+}
+p {
 	@include body-text;
 	margin-bottom: 32px;
 }
 
-ul li {
-	margin-bottom: 16px;
-}
+
 
 h3 {
 	@include h3-title;

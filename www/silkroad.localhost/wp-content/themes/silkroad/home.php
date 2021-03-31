@@ -25,8 +25,9 @@
 	</section>
 	<section name="report" id="report">
 		<a name="report-anchor"></a>
-		<?php get_template_part('templates/parts/report'); ?></section>
-	</main>
+		<?php get_template_part('templates/parts/report'); ?>
+	</section>
+	
 	<section id="call-to-action">
 		<a name="call-to-action-anchor"></a>
 		<?php get_template_part('templates/parts/call-to-action'); ?>
