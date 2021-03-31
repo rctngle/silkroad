@@ -30,7 +30,7 @@ $cases_query = new WP_Query([
 			<?php wp_reset_postdata() ?>
 		<?php endfor;?>	
 	</div>
-	<div class="swiper-pagination">???</div>
+	<div class="swiper-pagination"></div>
 	<div class="gradient">
 		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right.svg)"></div>
 	</div>
