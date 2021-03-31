@@ -61,13 +61,14 @@
 				<?php the_field('last_seen_date') ?>
 			</div>
 			<div>
-				<h5>Being Held At</h5>
+				<h5>Assumed Location</h5>
 				<?php echo silkroad_translate_field(get_field('where_held_ml_text')); ?>
 			</div>
 			<div>
-				<h5>Reference Code</h5>
-				<h5><?php the_field('reference_code'); ?></h5>
+				<h5>Ethnicity</h5>
+				<?php echo silkroad_translate_field(get_field('ethnicity_ml_text')); ?>
 			</div>
+			
 			<div class="full">
 				<h5>Real Reason for Arrest or Detention</h5>
 				<p><?php echo silkroad_translate_field(get_field('reason_for_arrest_or_detention_suspected_ml_text')); ?></p>

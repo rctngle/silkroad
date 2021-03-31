@@ -11,14 +11,18 @@
 			</article>
 		</div>
 	</section>
-	<section id="report-downloads"><?php get_template_part('templates/parts/report-downloads'); ?></section>
+	<section id="report-dropdowns"><?php get_template_part('templates/parts/report-dropdowns'); ?></section>
 	<section id="map"><?php get_template_part('templates/parts/map'); ?></section>
+	
 	<section id="cases">
 		<a name="cases-anchor"></a>
 		<?php get_template_part('templates/parts/cases'); ?>
 			
 	</section>
-	
+	<section id="call-to-action">
+		<a name="call-to-action-anchor"></a>
+		<?php get_template_part('templates/parts/call-to-action'); ?>			
+	</section>
 	<section name="report" id="report">
 		<a name="report-anchor"></a>
 		<?php get_template_part('templates/parts/report'); ?></section>

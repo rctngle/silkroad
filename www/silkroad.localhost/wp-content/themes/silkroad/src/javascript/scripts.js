@@ -98,7 +98,11 @@ function createCaseSwiper() {
 		preventClicks: false,
 		slidesOffsetAfter: 40,
 		slidesOffsetBefore: 40,
-		grabCursor: true
+		grabCursor: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		}
 	});
 }
 
