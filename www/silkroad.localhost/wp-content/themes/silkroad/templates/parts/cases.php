@@ -7,7 +7,16 @@ $cases_query = new WP_Query([
 
 ?>
 <div class="content-box section-title centered">
-	<h1>Cases</h1>
+
+	<h1><?php echo count($cases_query->posts);?> Missing and Detained Persons</h1>		
+	<div class="cases-download-container">
+		<a target="_blank" href="">
+			<div class="icon">
+				<img src="<?php bloginfo('template_directory');?>/assets/images/ico-download.svg">
+			</div>
+			<div class="label">Download<br/>Cases</div>
+		</a>
+	</div>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
 
@@ -21,8 +30,9 @@ $cases_query = new WP_Query([
 			<?php wp_reset_postdata() ?>
 		<?php endfor;?>	
 	</div>
+	<div class="swiper-pagination"></div>
 	<div class="gradient">
-		<div class="button" style="background-image: url(https://iran-shutdown.amnesty.org/wp-content/themes/amnesty-iran-internet-shutdown/assets/images/btn-victim-next.png)"></div>
+		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right.svg)"></div>
 	</div>
 </div>
 </div>

@@ -1,23 +1,23 @@
-body.vertical-nav {
-	.report-nav {
-		.swiper-wrapper {
-			display: block;
-			.expand {
-				display: none;
-			}
-		}
-	}
-	.report-nav ul {
-		box-sizing: border-box;
-	}
-	.report-nav-intro {
+// body.vertical-nav {
+// 	.report-nav {
+// 		.swiper-wrapper {
+// 			display: block;
+// 			.expand {
+// 				display: none;
+// 			}
+// 		}
+// 	}
+// 	.report-nav ul {
+// 		box-sizing: border-box;
+// 	}
+// 	.report-nav-intro {
 		
 		
-	}
-	.swiper-wrapper {
-		width: 100% !important;
-	}
-}
+// 	}
+// 	.swiper-wrapper {
+// 		width: 100% !important;
+// 	}
+// }
 $horizontal-nav-height: 155px;
 body.horizontal-nav {
 	.report-nav {
@@ -34,20 +34,18 @@ body.horizontal-nav {
 		margin-bottom: 64px;
 	}
 	
-	.report-nav .expand {
-		display: none;
-		text-align: center;
-		font-size: 12px;
-		color: #999;
-		padding-top: 2px;
-	}
+	// .report-nav .expand {
+	// 	display: none;
+	// 	text-align: center;
+	// 	font-size: 12px;
+	// 	color: var(--light-grey);
+	// 	padding-top: 2px;
+	// }
 	.report-nav-inner {
 		background: #222;
 		height: $horizontal-nav-height;
 		overflow: hidden;
 		box-shadow: 0 0 10px rgba(0,0,0,0.4);
-		
-
 	}
 	
 
@@ -55,7 +53,7 @@ body.horizontal-nav {
 		display: none;
 	}
 	.horizontal-chapter-number {
-		color: #999;
+		color: var(--light-grey);
 		display: inline;
 	}
 
@@ -74,22 +72,13 @@ body.horizontal-nav {
 		flex-shrink: 0;
 		position: relative;
 		border-right: 1px solid #444;
-		//display: inline-block;
 		&.active {
 			height: $horizontal-nav-height;
 			overflow: auto;
-			padding-top: 0;
-			
-			// .image {
-			// 	height: 0px;
-			// }
-			ul {
-				display: none !important;
-			}
+			padding-top: 0;		
 		}
 
 		> a {
-		    height: 100%;
 			padding-top: 14px;
 		}
 	}
@@ -101,7 +90,7 @@ body.horizontal-nav {
 		width: 80px;
 //		padding: 14px 16px;
 		a {
-			color: #999;
+			color: var(--light-grey);
 		}
 	}
 	.report-nav-inner > ul > li:hover {
@@ -177,7 +166,7 @@ body.horizontal-nav {
 .report-nav-title {
 	padding: 16px;
 	@include small-caps;
-	color: #999;
+	color: var(--light-grey);
 }
 .report-nav {
 	font-family: 'Roboto';
@@ -246,11 +235,11 @@ article.content-type-legal-text {
 	.content-box {
 
 		padding-top: 28px;
-		//border: 1px solid #999; 	
+		//border: 1px solid var(--light-grey); 	
 		//padding: 24px 0 0 0;
 		//border-left: 8px solid rgba(255,255,255,0.1);
 		font-size: 12px;
-		color: #999;
+		color: var(--light-grey);
 		background: #1a1a1a;
 		position: relative;
 		&::after, &::before {
@@ -327,7 +316,7 @@ section#report {
 			padding-right: 20px;
 			margin-top: -20px;
 			font-size: 14px;
-			color: #999;
+			color: var(--light-grey);
 			word-break: break-word;
 			span {
 				padding: 2px 5px;
@@ -364,7 +353,7 @@ section#report {
 		// .continue {
 		// 	display: none;
 		// 	text-align: center;
-		// 	color: #999;
+		// 	color: var(--light-grey);
 		// }
 		// &.concatenate {
 		// 	.content-box {

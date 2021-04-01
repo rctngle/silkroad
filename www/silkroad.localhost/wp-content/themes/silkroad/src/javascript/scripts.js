@@ -1,7 +1,9 @@
 import mapboxgl from 'mapbox-gl';
 import inView from 'in-view-modern';
-import Swiper from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.css';
+
+Swiper.use([Navigation, Pagination]);
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a2V0ZTBsNThoMiJ9.1Ce55CnAaojzkqgfX70fAw'
 
@@ -14,15 +16,6 @@ window.addEventListener('DOMContentLoaded', e=>{
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
-
-	// document.querySelectorAll('.continue').forEach(continueLink=>{
-
-	// 	continueLink.addEventListener('click',e=>{
-	// 		e.preventDefault();
-	// 		const articleParent = continueLink.closest('article');
-	// 		articleParent.classList.remove('concatenate');
-	// 	});
-	// });
 
 	document.querySelectorAll('.expand').forEach(continueLink=>{
 		continueLink.addEventListener('click',e=>{
@@ -74,20 +67,6 @@ window.addEventListener('DOMContentLoaded', e=>{
 
 });
 
-window.onload = function() {
-}
-
-window.addEventListener('keydown', e=>{
-	if(e.key == '1'){
-		createNavSwiper();
-		document.body.classList.remove('horizontal-nav');
-		document.body.classList.add('vertical-nav');
-	} else if (e.key == '2'){
-		destroyNavSwiper();
-		document.body.classList.add('horizontal-nav');
-		document.body.classList.remove('vertical-nav');
-	}
-});
 
 function createCaseSwiper() {
 
@@ -98,7 +77,11 @@ function createCaseSwiper() {
 		preventClicks: false,
 		slidesOffsetAfter: 40,
 		slidesOffsetBefore: 40,
-		grabCursor: true
+		grabCursor: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		}
 	});
 }
 

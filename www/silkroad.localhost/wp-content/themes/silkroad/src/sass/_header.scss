@@ -17,18 +17,57 @@ header {
 	z-index: 2;
 	left: 0;
 	right: 0;
+	a {
 
+		
+	}
+}
+
+
+
+.scroll-down-continue {
+	display: flex;
+	align-items: center;
+	color: #fff;
+	position: absolute;
+	bottom: 40px;
+	@include sans-ui;
+	cursor: pointer;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	img {
+		width: 28px;
+		height: auto;
+		display: block;
+		//animation: pulse-arrow 1.2s linear infinite;
+	}
+	opacity: 0.7;
+	&:hover {
+		opacity: 1;
+	}
+	.meaning {
+		margin-left: 8px;
+	}
 }
 
 nav {
 	display: flex;	
 	a {
 		@include small-caps;
-		text-decoration: none;	
-		font-family: 'AmnestyTradeGothicW01BdCnNo20', Tahoma, sans-serif;	
+		text-decoration: none;
+	}
+	div:not(.language-nav) a {		
+		background-color: #FFF;
+		//transition: background-color 200ms linear;
+		&:hover {
+			color: #FFF;
+			background-color: #000;
+		}
 	}
 	a, span {
 		display: block;
+		height: 100%;
 		padding: 16px 24px 15px 24px;
 	}
 	img {
@@ -56,16 +95,23 @@ nav {
 			top: -3px;
 		}
 		a {
+
 			padding: 18px 12px 15px 12px;
+		}		
+	}
+	div.take-action a {
+		background-color: yellow;
+		&:hover {
+			background-color: var(--dark-yellow);
+			color: #000;
 		}
-		
 	}
 }
 
 .nav-tooltip {
 	display: none;
 	position: absolute;
-	background-color: #999;
+	background-color: var(--light-grey);
 	padding: 18px 22px 19px 22px;
 	width: 210px;
 }

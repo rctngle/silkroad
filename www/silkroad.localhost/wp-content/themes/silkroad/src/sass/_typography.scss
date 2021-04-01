@@ -38,20 +38,37 @@
 	line-height: 1.1;
 }
 
+@mixin sans-ui {
+	font-family: 'Helvetica', san-serif;
+	font-weight: bold;
+}
+
 @mixin h3-title {
 	font-size: 24px;
 	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
 	margin-bottom: 32px;
 }
 
-p, ul {
+
+main ul {
+	list-style: disc;
+	padding-left: 20px;
+}
+
+main ul li {
+	margin-bottom: 16px;
+}
+
+main ul {
+	@include body-text;
+	margin-bottom: 32px;
+}
+p {
 	@include body-text;
 	margin-bottom: 32px;
 }
 
-ul li {
-	margin-bottom: 16px;
-}
+
 
 h3 {
 	@include h3-title;
@@ -62,7 +79,7 @@ em {
 }
 
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 sup {
@@ -98,14 +115,14 @@ cite {
 	&::before {
 		content: '— ';
 	}
-	color: #999;
+	color: var(--light-grey);
 	padding: 0 64px;
 	display: block;
 }
 
 h5 {
 	@include extra-small-caps;
-	color: #999;
+	color: var(--light-grey);
 	margin-bottom: 8px;
 }
 
@@ -138,7 +155,7 @@ h1 {
 
 
 p.media-caption {
-	color: #999;
+	color: var(--light-grey);
 	font-style: italic;
 	font-size: 16px;
 	text-align: center;

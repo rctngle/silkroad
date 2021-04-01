@@ -1,0 +1,87 @@
+section#report-downloads {
+	@include body-text;
+	font-size: 16px;
+	.reports {
+		column-count: 4;
+		column-gap: 32px;
+	}
+	.section-inner {
+		
+		padding: 0 16px;
+		.reports > div {
+			margin-bottom: 32px;
+			break-inside: avoid;
+		}	
+		div.download {
+			font-size: 15px;
+			margin-bottom: 5px;
+			i {
+				margin-right: 5px;
+				font-size: 18px;
+			}
+		}
+		div.title {
+			margin-bottom: 16px;
+		}		
+	}
+	
+}
+
+
+section#report-dropdowns {
+	@include body-text;
+	font-size: 16px;
+	i.fad {
+		margin-right: 5px;
+		font-size: 18px;
+	}
+	i.fal {
+		font-size: 15px;
+		margin-left: 6px;
+	}
+	.report-dropdowns {
+		
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+		> div {
+			flex: 0 1 calc(16.6% - 13.3px);
+			position: relative;
+			display: block;
+			
+			margin-bottom: 16px;
+			text-align: center;
+			padding: 10px 8px;
+			background-color: var(--dark-grey);
+			cursor: pointer;
+			&:hover {
+				background-color: var(--hover-dark-grey);
+			}
+			> a {
+				text-decoration: none;
+			}
+		}
+		> div:hover .download-links {
+			display: block;
+			z-index: 1;
+		}
+	}
+
+	.download-links {
+		display: none;
+		z-index: 1;
+		position: absolute;
+		background-color: var(--dark-grey);
+		left: 0;
+		right: 0;
+		top: 44px;
+		div {
+			font-size: 14px;
+			&:hover {
+				background-color: var(--hover-dark-grey);
+			}
+			padding: 10px;
+		}
+
+	}
+}

@@ -13,7 +13,9 @@ section.hero {
 		justify-content: center;
 	}
 
-
+	.media.full.image {
+		height: 70vh;
+	}
 	h1.main-title {
 		margin: 0 auto 16px auto;
 		display: inline-block;
@@ -27,12 +29,5 @@ section.hero {
 		background-color: #000;
 		color: #FFF;
 	}
-	.gradient {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;		
-		height: 50%;
-		background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-	}
+	
 }

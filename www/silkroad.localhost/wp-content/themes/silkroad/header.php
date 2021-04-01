@@ -61,12 +61,16 @@ $classes[]=LANG;
 
 <section class="hero">
 	<div class="media full image">
-		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/Brothers-of-the-Gun.jpg">
+		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/feet_shadows.jpg">
 		<div class="gradient"></div>
 	</div>
 	<div class="hero-content">
 		<h1 class="main-title"><?php echo silkroad_translate('human-rights-exposed'); ?></h1>
 		<h1 class="sub-title"><?php echo silkroad_translate('an-investigation-into-human-rights-violations'); ?></h1>
+	</div>
+	<div class="scroll-down-continue" style="visibility: visible;">
+		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
+		<div class="meaning">Scroll to continue</div>
 	</div>
 </section>
 

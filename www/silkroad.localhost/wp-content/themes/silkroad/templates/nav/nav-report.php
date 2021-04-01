@@ -28,8 +28,8 @@ $chapter_num = $args['chapter_num'];
 			</div>
 		<?php endif;?>
 	<?php endif; ?>
-	<div class="expand">
+	<?php /* <div class="expand">
 		<i class="fal fa-chevron-down"></i>
-	</div>
+	</div> */?>
 </a>
 
