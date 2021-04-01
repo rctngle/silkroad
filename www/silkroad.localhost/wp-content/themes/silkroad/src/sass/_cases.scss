@@ -188,7 +188,7 @@ section#cases {
 		overflow: hidden;
 		transition: transform 150ms;
 		&:hover {
-			transform: scale(1.03);
+			//transform: scale(1.03);
 			.controls {
 				> div {
 					background-color: #000;	
@@ -198,7 +198,7 @@ section#cases {
 			}
 			.case .read-more {
 				color: #000;
-				animation: pulse-arrow 1s linear infinite;
+				//animation: pulse-arrow 1s linear infinite;
 			}
 		}
 		p {

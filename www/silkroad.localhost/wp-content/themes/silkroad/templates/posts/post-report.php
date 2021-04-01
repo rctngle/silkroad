@@ -69,6 +69,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			<?php endif;?>
 		<?php endif;?>
 
+
 		<div class="content-box">
 			<?php if ($is_chapter): ?>
 				<div class="section-title">
@@ -96,6 +97,12 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 				<div class="continue"><p><a href="">Continue reading</a></p></div>
 			<?php endif;?> -->
 		</div>
+
+		<?php if($post->post_name == 'background'):?>
+
+			<section id="map"><?php get_template_part('templates/parts/map'); ?></section>
+		<?php endif;?>
+
 	</article>
 
 

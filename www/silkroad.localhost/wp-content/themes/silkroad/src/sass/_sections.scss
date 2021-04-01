@@ -42,6 +42,10 @@ section {
 	}
 }
 
+section#map {
+	margin-top: 5rem;
+}
+
 #mapbox-map {
 	height: 600px;
 	.mapboxgl-canvas-container:focus,
