@@ -1,0 +1,36 @@
+.content-box.columns {
+	display: flex;
+	max-width: 940px;
+	justify-content: space-between;
+	div:nth-child(1){
+		flex: 0 1 698px;
+	}
+	div:nth-child(2){
+
+	}
+}
+.scroll-down-continue {
+	display: flex;
+	align-items: center;
+	color: #fff;
+	position: absolute;
+	bottom: 40px;
+	@include sans-ui;
+	cursor: pointer;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	img {
+		width: 28px;
+		height: auto;
+		display: block;
+		//animation: pulse-arrow 1.2s linear infinite;
+	}
+	opacity: 0.7;
+	&:hover {
+		opacity: 1;
+	}
+	.meaning {
+		margin-left: 8px;
+	}
+}
