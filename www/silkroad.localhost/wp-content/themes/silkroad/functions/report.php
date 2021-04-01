@@ -56,6 +56,8 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 				echo "</ul>"; */
 			echo '</li>';
 		}
+		$report_query->reset_postdata();
+		wp_reset_postdata();
 	}	
 }
 
@@ -91,5 +93,7 @@ function silkroad_report_get_children($parent, $root_parent, $sub_parent, $depth
 				$report_content .= silkroad_load_template_part('templates/parts/illustrations');
 			}
 		}
+		$report_query->reset_postdata();
+		wp_reset_postdata();
 	}	
 }
