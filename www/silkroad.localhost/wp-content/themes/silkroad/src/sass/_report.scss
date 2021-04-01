@@ -376,9 +376,12 @@ section#report {
 		margin-top: 8 * 8px;
 	}
 	article.content-type-introduction.depth-0 {
+		margin-bottom: 4rem;
+	    overflow: hidden;
 		.content-box {
 			padding-top: 440px;
 		}
+
 	}
 	article.content-type-section,
 	article.content-type-introduction.depth-1,

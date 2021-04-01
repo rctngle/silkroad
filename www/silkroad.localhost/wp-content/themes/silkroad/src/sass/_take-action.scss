@@ -2,9 +2,9 @@
 section#take-action {
 	iframe {
 		width: 100%;
-		height: 970px;
 		overflow: hidden;
-		display: none;
+		opacity: 0;
+		height: 0;
 	}
 
 	.media.image {
@@ -41,6 +41,8 @@ section#take-action {
 		}
 		iframe {
 			display: block;
+			opacity: 1;
+			height: 970px;
 		}
 	}
 }
