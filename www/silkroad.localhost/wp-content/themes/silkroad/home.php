@@ -12,7 +12,7 @@
 		</div>
 	</section>
 	<section id="report-dropdowns"><?php get_template_part('templates/parts/report-dropdowns'); ?></section>
-	<section id="map"><?php get_template_part('templates/parts/map'); ?></section>
+	<?php /* <section id="map"><?php get_template_part('templates/parts/map'); ?></section> */?>
 	
 	<section id="cases">
 		<a name="cases-anchor"></a>

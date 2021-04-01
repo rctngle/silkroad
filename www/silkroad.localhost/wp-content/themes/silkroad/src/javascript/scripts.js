@@ -17,15 +17,6 @@ window.addEventListener('DOMContentLoaded', e=>{
 		appendMap();	
 	}
 
-	// document.querySelectorAll('.continue').forEach(continueLink=>{
-
-	// 	continueLink.addEventListener('click',e=>{
-	// 		e.preventDefault();
-	// 		const articleParent = continueLink.closest('article');
-	// 		articleParent.classList.remove('concatenate');
-	// 	});
-	// });
-
 	document.querySelectorAll('.expand').forEach(continueLink=>{
 		continueLink.addEventListener('click',e=>{
 			e.preventDefault();
@@ -76,20 +67,6 @@ window.addEventListener('DOMContentLoaded', e=>{
 
 });
 
-window.onload = function() {
-}
-
-window.addEventListener('keydown', e=>{
-	if(e.key == '1'){
-		createNavSwiper();
-		document.body.classList.remove('horizontal-nav');
-		document.body.classList.add('vertical-nav');
-	} else if (e.key == '2'){
-		destroyNavSwiper();
-		document.body.classList.add('horizontal-nav');
-		document.body.classList.remove('vertical-nav');
-	}
-});
 
 function createCaseSwiper() {
 

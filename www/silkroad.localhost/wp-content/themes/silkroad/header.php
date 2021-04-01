@@ -70,7 +70,7 @@ $classes[]=LANG;
 	</div>
 	<div class="scroll-down-continue" style="visibility: visible;">
 		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
-		<div class="meaning">Scroll down to continue</div>
+		<div class="meaning">Scroll to continue</div>
 	</div>
 </section>
 
