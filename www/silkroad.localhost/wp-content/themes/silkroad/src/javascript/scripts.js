@@ -16,14 +16,26 @@ window.addEventListener('DOMContentLoaded', e=>{
 	if(document.querySelector('#mapbox-map')){
 		appendMap();	
 	}
-
+	createTakeAction();
 	document.querySelectorAll('.expand').forEach(continueLink=>{
 		continueLink.addEventListener('click',e=>{
 			e.preventDefault();
+			e.stopPropagation();
 			const articleParent = continueLink.closest('article');
-			articleParent.classList.toggle('expanded');
+			if(articleParent.classList.contains('expanded')){
+				articleParent.classList.remove('expanded');
+			} else {
+				articleParent.classList.add('expanded');	
+			}			
 		});
 	});
+
+	document.querySelectorAll('#report article').forEach(article=>{
+		article.addEventListener('click',e=>{
+			article.classList.add('expanded');
+		});
+	});
+
 
 
 	let clickScrollInProgress = false;
@@ -66,6 +78,15 @@ window.addEventListener('DOMContentLoaded', e=>{
 	})
 
 });
+
+
+function createTakeAction(){
+	document.querySelectorAll('.take-action-button, .take-action').forEach(actionButton=>{
+		actionButton.addEventListener('click', e=>{
+			document.querySelector('#take-action').classList.add('display-iframe');
+		});
+	});
+}
 
 
 function createCaseSwiper() {

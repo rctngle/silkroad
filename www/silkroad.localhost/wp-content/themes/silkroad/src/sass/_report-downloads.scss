@@ -27,6 +27,87 @@ section#report-downloads {
 	
 }
 
+#report-list {
+	font-family: 'Roboto', sans-serif, Tahoma;
+	strong {
+		font-weight: 500;
+	}
+	i.fad {
+		margin-right: 8px;
+		font-size: 17px;
+	}
+	i.fal {
+		font-size: 15px;
+		margin-left: 6px;
+		color: var(--light-grey);
+	}
+	.title {
+		display: flex;
+		align-items: baseline;
+		span {
+			flex-grow: 1;
+		}
+	}
+	div.label {
+		line-height: 1.4;
+		margin-bottom: 8px;
+		//color: var(--light-grey);
+
+		font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
+		font-size: 22px;
+	}
+	div.language {
+		position: relative;
+		width: 160px;		
+		margin-bottom: 0px;
+		//text-align: center;
+		padding: 9px 0 8px 0;
+		//background-color: var(--dark-grey);
+		border-bottom: 1px solid var(--dark-grey);
+		cursor: pointer;
+		&:hover {
+			//background-color: var(--hover-dark-grey);
+		}
+		> a {
+			text-decoration: none;
+		}
+	}
+	.arabic, .uyghur {
+		text-align: right;
+		i.fad {
+			margin-left: 8px;
+			margin-right: 0;
+		}
+	}
+	> div:hover {
+		//background-color: var(--dark-grey);
+		.download-links {
+			display: block;
+			z-index: 1;
+		}
+	}
+	.download-links {
+		display: none;
+		z-index: 1;
+		//position: absolute;
+		//background-color: var(--dark-grey);
+		// left: 0;
+		// right: 0;
+		//top: 44px;
+		padding: 4px 0 8px 0;
+		div {
+
+			font-size: 14px;
+			color: var(--light-grey);
+			&:hover {
+				color: #FFF;
+			}
+			padding: 9px 0 4px 22px;
+		}
+
+	}
+}
+
 
 section#report-dropdowns {
 	@include body-text;
