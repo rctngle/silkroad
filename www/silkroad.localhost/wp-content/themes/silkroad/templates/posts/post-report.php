@@ -47,6 +47,16 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 				<div class="section-title">
 					<h1>Report</h1>
 				</div>
+
+				<div class="report-nav">
+					<div class="report-nav-inner">
+						<ul class="swiper-wrapper">
+							<li class="report-nav-intro"><a>Report</a></li>
+							<?php silkroad_report_display_nav(0, 0, 0);?>
+						</ul>
+					</div>
+				</div>
+
 			<?php endif;?>
 			<h2><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h2>
 		<?php elseif($is_legal_text):?>
