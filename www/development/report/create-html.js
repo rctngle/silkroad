@@ -50,6 +50,7 @@ for (let i in doc.querySelector('body').children) {
 		const title = getTitle(el.textContent);
 		
 		structure['chapter_' + chapter] = {
+			type: 'chapter',
 			title: title,
 			content: '',
 			sections: {},
@@ -60,10 +61,16 @@ for (let i in doc.querySelector('body').children) {
 
 	} else if (el.tagName == 'H2') {
 		section++;
-		const title = getTitle(el.textContent);
+		let title = getTitle(el.textContent);
 		
+		let type = 'section';
+		if (title.toUpperCase().indexOf('LEGAL TEXT BOX') >= 0) {
+			type = 'legal-text';
+			title = title.replace(/LEGAL TEXT BOX:?/, '').trim();
+		}
 
 		structure['chapter_' + chapter].sections['section_' + section] = {
+			type: type,
 			title: title,
 			content: '',			
 		};
