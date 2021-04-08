@@ -23,12 +23,10 @@ $cases_query = new WP_Query([
 <div class="section-inner-full">
 <div class="swiper-container">
 	<div class="swiper-wrapper">
-		<?php for($i = 0; $i < 12; $i++):?>			
-			<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
-				<?php get_template_part('templates/posts/post', get_post_type()); ?>
-			<?php endwhile; ?>
-			<?php wp_reset_postdata() ?>
-		<?php endfor;?>	
+		<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
+			<?php get_template_part('templates/posts/post', get_post_type()); ?>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata() ?>
 	</div>
 	<div class="swiper-pagination"></div>
 	<div class="gradient">

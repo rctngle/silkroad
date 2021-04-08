@@ -13,17 +13,14 @@ $chapter_counter = 0;
 foreach ($chapters as $chapter_key => $chapter) {
 	
 	echo $chapter->chapter_id . " : " . $chapter->title . PHP_EOL;
+	update_field('title_ml_text', ['english' => $chapter->title], $chapter->chapter_id);
+	update_field('content_ml_rich_text', ['english' => $chapter->content], $chapter->chapter_id);
 
-	update_field('title_ml_text', ['english' => 'tes!!!t'], $chapter->chapter_id);
-
-
-	
-	
-	
-	exit;
 	foreach($chapter->sections as $section_key => $section) {
 
 		echo $section->section_id . "\t" . $section->title . PHP_EOL;
+		update_field('title_ml_text', ['english' => $section->title], $section->section_id);
+		update_field('content_ml_rich_text', ['english' => $section->content], $section->section_id);
 	}
 }
 
