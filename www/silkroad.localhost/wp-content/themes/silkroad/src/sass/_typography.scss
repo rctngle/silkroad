@@ -32,7 +32,7 @@
 
 @mixin quote {
 	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
-	font-size: 40px;
+	font-size: 36px;
 	color: #000;
 	letter-spacing: -0.01em;
 	line-height: 1.1;
@@ -102,7 +102,7 @@ blockquote {
 
 	p {
 		position: relative;
-		quotes: "“" "”" "‘" "’";
+		quotes: "“" "”";
 	}
 	p::before {
 		position: absolute;
