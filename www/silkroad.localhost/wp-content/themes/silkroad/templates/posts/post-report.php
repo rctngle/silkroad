@@ -41,6 +41,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<div class="content-box">
 			<div class="section-title">
 				<h1>Report</h1>
+				<h2>Xinjiang: Eventual Report Title</h2>
 			</div>
 		</div>	
 	</article>
@@ -48,7 +49,6 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	<div class="report-nav">
 		<div class="report-nav-inner">
 			<ul class="swiper-wrapper">
-				<li class="report-nav-intro"><a>Report</a></li>
 				<?php silkroad_report_display_nav(0, 0, 0);?>
 			</ul>
 		</div>

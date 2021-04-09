@@ -12,7 +12,7 @@
 					<li><a href="https://www.amnesty.org/en/about-us/privacy-policy/">Privacy Policy</a></li>
 					<li><a href="https://www.amnesty.org/en/about-us/cookie-statement/">Cookie Statement</a></li>
 				</ul>
-				<span>© 2020 AMNESTY INTERNATIONAL</span>
+				<span>© 2021 AMNESTY INTERNATIONAL</span>
 			</div>
 		</div>
 

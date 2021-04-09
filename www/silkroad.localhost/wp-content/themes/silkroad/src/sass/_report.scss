@@ -285,10 +285,11 @@ section#report {
 		}
 	}
 	sup {
-		padding: 0px 5px;
+		padding: 0px 4px 0px 4px;
 		text-align: center;
 		display: inline-block;
-		background: #222;
+		background: #353535;
+		color: #d0d0d0;
 		> a {
 			text-decoration: none;
 		}
@@ -311,10 +312,10 @@ section#report {
 			word-break: break-word;
 			span {
 				padding: 2px 5px;
-				background: #222;
+				background: #353535;
 				//display: inline-block;
 				font-size: 12.6px;
-				color: #FFF;
+				color: #d0d0d0;
 			}
 			//display: none;
 		}
@@ -328,6 +329,10 @@ section#report {
 		.expand {
 			flex: 0 0 30px;
 			text-align: right;
+			cursor: pointer;
+			&:hover {
+				color: var(--light-grey);
+			}
 		}
 		.fa-caret-up {
 			display: none;
@@ -367,7 +372,9 @@ section#report {
 		// 	}			
 		// }
 	}
-
+	article.report.depth-0.content-type-introduction {
+		//margin-bottom: 5rem;
+	}
 	article.report.depth-0.content-type-conclusion {
 		margin-top: 8 * 8px;
 	}
@@ -379,6 +386,8 @@ section#report {
 		}
 
 	}
+
+
 	article.content-type-section,
 	article.content-type-introduction.depth-1,
 	article.content-type-introduction.depth-2 {
@@ -413,7 +422,10 @@ section#report {
 		.content-box {
 			border-bottom: 1px solid transparent;	
 		}
-		.content-box p {
+		.content-box p,
+		.content-box ul,
+		.content-box blockquote,
+		.content-box ol {
 			display: block !important;
 		}
 		.content-box p:nth-of-type(1){
