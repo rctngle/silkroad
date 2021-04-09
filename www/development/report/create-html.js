@@ -48,6 +48,7 @@ let rootType = 'introduction';
 for (let i in doc.querySelector('body').children) {
 	const el = doc.querySelector('body').children[i]
 
+
 	if (el.tagName == 'H1' && el.textContent != 'Contents') {
 		chapter++;
 		const title = getTitle(el.textContent);

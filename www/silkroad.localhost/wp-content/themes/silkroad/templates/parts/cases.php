@@ -3,6 +3,8 @@
 $cases_query = new WP_Query([
 	'post_type' => 'case',
 	'posts_per_page' => -1,
+    'orderby' => 'rand',
+
 ]);
 
 ?>
