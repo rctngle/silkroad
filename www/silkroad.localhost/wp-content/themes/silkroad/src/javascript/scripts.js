@@ -167,7 +167,7 @@ function appendMap(){
 		container: 'mapbox-map',
 		style: 'mapbox://styles/anecdote101/cklkrw25g1nz617nnucz4id6p?fresh=true',
 		center: [87.48862,41.2804],
-		zoom: [3.5675],
+		zoom: [2.8],
 		attributionControl: false,
 		zoomControl: false,
 		interactive: false
