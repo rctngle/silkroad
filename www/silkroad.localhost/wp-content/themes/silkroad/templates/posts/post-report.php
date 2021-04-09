@@ -42,7 +42,6 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			<div class="section-title">
 				<h1>Report</h1>
 			</div>
-
 		</div>	
 	</article>
 
