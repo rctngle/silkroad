@@ -17,7 +17,8 @@ doc.querySelectorAll('a.footnote-ref').forEach(a => {
 	const num = parseInt(sup.textContent)
 	if (num > 0) {
 	 	const footnote = doc.querySelector('li#fn'+num)
-	 	a.insertAdjacentHTML('afterend', ' [[[' + footnote.textContent.replace('↩︎', '').trim() + ']]]');
+
+	 	a.insertAdjacentHTML('afterend', ' [[[' + footnote.textContent.replace('↩︎', '').replace(/\n/g, ' ').trim() + ']]]');
 		a.parentNode.removeChild(a)
 	}
 })

@@ -12,66 +12,53 @@ $cases = json_decode(file_get_contents('cases.json'));
 
 
 foreach($cases as $case) {
-	// print_r($case);
+	print_r($case);
 
-	// update_field('reference_code', $case->case_id, $case->post_id);
+	update_field('reference_code', $case->case_id, $case->post_id);
 	
-	// update_field('name_ml_text', ['english' => $case->name], $case->post_id);
-	// update_field('profession_ml_text', ['english' => $case->profession], $case->post_id);
-	// update_field('ethnicity_ml_text', ['english' => $case->ethnicity], $case->post_id);
+	update_field('name_ml_text', ['english' => $case->name], $case->post_id);
+	update_field('profession_ml_text', ['english' => $case->profession], $case->post_id);
+	update_field('ethnicity_ml_text', ['english' => $case->ethnicity], $case->post_id);
 
-	// update_field('date_of_birth', date('Ymd', strtotime($case->date_of_birth)), $case->post_id);
+	update_field('date_of_birth', date('Ymd', strtotime($case->date_of_birth)), $case->post_id);
 
-	// update_field('hometown_ml_text', ['english' => $case->home_town], $case->post_id);
+	update_field('hometown_ml_text', ['english' => $case->home_town], $case->post_id);
 
-	// update_field('last_seen_date_ml_text', ['english' => $case->arrest_last_contact_date], $case->post_id);
-	// update_field('last_seen_location_ml_text', ['english' => $case->arrest_last_contact_location], $case->post_id);
+	update_field('last_seen_date_ml_text', ['english' => $case->arrest_last_contact_date], $case->post_id);
+	update_field('last_seen_location_ml_text', ['english' => $case->arrest_last_contact_location], $case->post_id);
 
-	// update_field('reason_for_arrest_or_detention_official_ml_text', ['english' => $case->arrest_reason_official], $case->post_id);
-	// update_field('reason_for_arrest_or_detention_suspected_ml_text', ['english' => $case->arrest_reason_suspected], $case->post_id);
+	update_field('reason_for_arrest_or_detention_official_ml_text', ['english' => $case->arrest_reason_official], $case->post_id);
+	update_field('reason_for_arrest_or_detention_suspected_ml_text', ['english' => $case->arrest_reason_suspected], $case->post_id);
 	
-	// update_field('where_held_ml_text', ['english' => $case->held_location], $case->post_id);
+	update_field('where_held_ml_text', ['english' => $case->held_location], $case->post_id);
 	
-	// update_field('summary_ml_rich_text_basic', ['english' => $case->summary], $case->post_id);
-	// update_field('quote_or_personal_detail_ml_rich_text_basic', ['english' => $case->personal_details], $case->post_id);
+	update_field('summary_ml_rich_text_basic', ['english' => $case->summary], $case->post_id);
+	update_field('quote_or_personal_detail_ml_rich_text_basic', ['english' => $case->personal_details], $case->post_id);
+
 
 	$image_path = __DIR__ . '/media/' . $case->photo_url;
 	if (file_exists($image_path)) {
 		$attach_id = create_attachment($image_path, false);		
 	}
 
-
 	set_post_thumbnail( $case->post_id, $attach_id );
 
+	$docs_dir = __DIR__ . '/media/' . strtolower($case->case_id);
+	$doc_ids = [];
+	if (is_dir($docs_dir)) {
+		$docs = scandir($docs_dir);
+		foreach ($docs as $doc) {
+			if (substr($doc, 0, 1) != '.') {
+				$image_path = $docs_dir . '/' . $doc;
+				$doc_ids[] = create_attachment($image_path, false);
+			}
+		}
+	}
 
-}
-
-
-
-// $chapter_counter = 0;
-// foreach ($chapters as $chapter_key => $chapter) {
-	
-// 	echo $chapter->chapter_id . " : " . $chapter->title . PHP_EOL;
-// 	update_field('title_ml_text', ['english' => $chapter->title], $chapter->chapter_id);
-// 	update_field('content_ml_rich_text', ['english' => $chapter->content], $chapter->chapter_id);
-
-// 	foreach($chapter->sections as $section_key => $section) {
-
-// 		echo $section->section_id . "\t" . $section->title . PHP_EOL;
-// 		update_field('title_ml_text', ['english' => $section->title], $section->section_id);
-// 		update_field('content_ml_rich_text', ['english' => $section->content], $section->section_id);
-// 	}
-// }
-
-
-// acf-field_602657cc293e7-field_602657cc293e7_field_5edfa76c9ba7b-field_5edfa7bf9ba7d
-
-// [case_id] => SR003
-// [photo_url] => sr003.jpg
-
-
-// [age_years] => 
-// [post_id] => 445
+	if (count($doc_ids) > 0) {
+		update_field( 'images_documents', $doc_ids , $case->post_id );
+	}
+}	
 
 
 function create_attachment($image_path, $random_name){

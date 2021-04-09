@@ -1,9 +1,7 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
-
 // 
-
 
 async function savePosts(postIds) {
 	const browser = await puppeteer.launch();
