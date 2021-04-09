@@ -112,10 +112,11 @@ function createNavSwiper() {
 		slidesPerView: 'auto',
 		spaceBetween: 0,
 		freeMode: true,
-		preventClicks: false,
+		preventClicks: true,
 		grabCursor: true,
 		setWrapperSize: true,
 		centeredSlidesBounds: true,
+		preventClicksPropagation: true,
 	});
 }
 
