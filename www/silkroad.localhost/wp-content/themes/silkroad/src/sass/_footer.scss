@@ -55,6 +55,9 @@ footer {
 			display: flex;
 			li {
 				margin: 0 16px;
+				span {
+					display: none;
+				}
 			}
 		}
 		div {

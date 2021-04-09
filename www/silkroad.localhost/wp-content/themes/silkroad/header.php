@@ -68,9 +68,9 @@ $classes[]=LANG;
 		<h1 class="main-title"><?php echo silkroad_translate('human-rights-exposed'); ?></h1>
 		<h1 class="sub-title"><?php echo silkroad_translate('an-investigation-into-human-rights-violations'); ?></h1>
 	</div>
-	<div class="scroll-down-continue" style="visibility: visible;">
+	<?php /* <div class="scroll-down-continue" style="visibility: visible;">
 		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
 		<div class="meaning">Scroll to continue</div>
-	</div>
+	</div> */?>
 </section>
 
