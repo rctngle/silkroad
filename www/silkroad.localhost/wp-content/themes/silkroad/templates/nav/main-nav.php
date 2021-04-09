@@ -19,8 +19,8 @@ $chapters_query = new WP_Query([
 <div><a href="#introduction-anchor">Introduction</a></div>
 <div><a href="#cases-anchor">Cases</a></div>
 <div><a href="#report-anchor">Report</a></div>
-<div><a href="#conclusions-anchor">Conclusions</a></div>
-<div><a href="#recommendations-anchor">Recommendations</a></div>
+<div><a href="#conclusion">Conclusions</a></div>
+<div><a href="#recommendations">Recommendations</a></div>
 <div class="take-action"><a href="#take-action-anchor">Take Action</a></div>
 <div class="shared-dropdown">
 	<span>Share <i class="fas fa-caret-down"></i></span>
@@ -41,7 +41,6 @@ $chapters_query = new WP_Query([
 				<?php echo silkroad_translate_field(get_field('title_ml_text')); ?>
 			</div>
 		</div> */?>
-		
 		<?php $chapter_counter++; ?>
 	<?php endwhile; ?>
 	<?php wp_reset_postdata() ?>

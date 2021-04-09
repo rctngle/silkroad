@@ -12,7 +12,7 @@ $cases_query = new WP_Query([
 
 	<h1><?php echo count($cases_query->posts);?> Missing and Detained Persons</h1>		
 	<div class="cases-download-container">
-		<a target="_blank" href="">
+		<a target="_blank" href="#">
 			<div class="icon">
 				<img src="<?php bloginfo('template_directory');?>/assets/images/ico-download.svg">
 			</div>
