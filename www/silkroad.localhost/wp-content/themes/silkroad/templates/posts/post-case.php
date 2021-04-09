@@ -19,7 +19,6 @@
 							<?php if($media['caption']):?>
 								<p class="caption"><a target="_blank" href="<?php echo $media['sizes']['large'];?>"><?php echo $media['caption'];?></a></p>
 							<?php endif;?>
-
 						</div>
 
 					<?php elseif ($preview): ?>
@@ -32,10 +31,13 @@
 					<?php endif; ?>
 				<?php endforeach; ?>
 			<?php endif; ?>
-			<div class="controls">
-				<div class="prev"><i class="far fa-chevron-left"></i></div>
-				<div class="next"><i class="far fa-chevron-right"></i></div>
-			</div>
+
+			<?php if(get_field('images_documents')):?>
+				<div class="controls">
+					<div class="prev"><i class="far fa-chevron-left"></i></div>
+					<div class="next"><i class="far fa-chevron-right"></i></div>
+				</div>
+			<?php endif;?>
 		</div>
 		<div class="case">
 		

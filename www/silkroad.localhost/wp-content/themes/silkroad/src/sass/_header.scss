@@ -67,7 +67,7 @@ nav {
 		}
 		img {
 			position: relative;
-			top: -3px;
+			
 		}
 		a {
 
@@ -79,6 +79,40 @@ nav {
 		&:hover {
 			background-color: var(--dark-yellow);
 			color: #000;
+		}
+	}
+	div.shared-dropdown {
+		text-transform: uppercase;
+		cursor: s-resize;
+	}
+	div.shared-dropdown:hover .share-buttons {
+		display: block;
+	}
+	div.share-buttons {
+		background-color: #000;
+		position: absolute;
+		display: none;
+		z-index: 1;
+
+		a {
+			border-top: 1px solid #e6e6e6;
+			//background-color: #f2f2f2;
+			color: #000;
+			display: flex;
+			align-items: center;
+			span {
+				padding: 0;
+			}
+			&:hover {
+				img {
+					filter: none;
+				}
+			}
+		}
+
+		img {
+			margin-right: 10px;
+			filter: invert(1);
 		}
 	}
 }

@@ -93,16 +93,7 @@ body.horizontal-nav {
 			color: var(--light-grey);
 		}
 	}
-	.report-nav-inner > ul > li:hover {
-		overflow: auto;
-		ul {
-			display: none;
-			position: absolute;
-		}
-		.image {
-
-		}
-	}
+	
 	.report-nav .report-nav-inner > ul > li > a {
 		//padding-bottom: 0;
 	}
@@ -328,11 +319,16 @@ section#report {
 			//display: none;
 		}
 	}
-
+	.legal-text-title {
+		flex-flow: row wrap;
+	}
 	h3, .legal-text-title {
 		display: flex;
 		justify-content: space-between;
-		flex-flow: row wrap;
+		.expand {
+			flex: 0 0 30px;
+			text-align: right;
+		}
 		.fa-caret-up {
 			display: none;
 		}
@@ -376,10 +372,10 @@ section#report {
 		margin-top: 8 * 8px;
 	}
 	article.content-type-introduction.depth-0 {
-		margin-bottom: 4rem;
-	    overflow: hidden;
+		// margin-bottom: 4rem;
+	 //    overflow: hidden;
 		.content-box {
-			padding-top: 440px;
+			//padding-top: 440px;
 		}
 
 	}
