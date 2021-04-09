@@ -262,6 +262,7 @@ article.content-type-legal-text {
 section#report {
 	
 	.wp-caption {
+
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		width: 1100px !important;
@@ -276,7 +277,7 @@ section#report {
 		p {
 			background: #FFF;
 			@include quote;
-			padding: 32px;
+			padding: 36px;
 			margin-bottom: 0;
 			position: relative;
 			top: 80px;
@@ -303,11 +304,12 @@ section#report {
 			text-align: left;
 			display: none;
 			position: absolute;
-			right: 40px;
+			right: -340px;
 			width: 260px;
 			padding-right: 20px;
 			margin-top: -20px;
 			font-size: 14px;
+
 			color: var(--light-grey);
 			word-break: break-word;
 			span {
@@ -427,6 +429,9 @@ section#report {
 		.content-box blockquote,
 		.content-box ol {
 			display: block !important;
+		}
+		.content-box div.wp-caption {
+			display: grid;
 		}
 		.content-box p:nth-of-type(1){
 			display: block !important;
