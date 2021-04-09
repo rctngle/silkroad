@@ -1,6 +1,6 @@
 <?php
 
-function silkroad_get_report_args($post_id, $depth, $chapter_num) {
+function silkroad_get_report_args($post_id, $depth, $chapter_num, $idx) {
 	$terms = get_the_terms($post_id, 'report_content_types');
 	$is_chapter = false;
 	$is_intro = false;
@@ -25,6 +25,7 @@ function silkroad_get_report_args($post_id, $depth, $chapter_num) {
 		'is_chapter' => $is_chapter, 
 		'chapter_num' => $chapter_num, 
 		'is_intro' => $is_intro,
+		'idx' => $idx,
 		'is_conclusion' => $is_conclusion,
 		'report_content_type_terms' => $terms,
 	];
@@ -42,10 +43,11 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 		'post_parent' => $parent,
 	]);
 
+	$idx = 0;
 	if ($report_query->have_posts()) {
 		while ($report_query->have_posts()) {
 			$report_query->the_post();
-			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num);
+			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num, $idx);
 			$chapter_num = $report_args['chapter_num'];
 			
 
@@ -55,6 +57,7 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 				silkroad_report_display_nav(get_the_ID(), $depth+1, $chapter_num);
 				echo "</ul>"; */
 			echo '</li>';
+			$idx++;
 		}
 		$report_query->reset_postdata();
 		wp_reset_postdata();
@@ -70,6 +73,7 @@ function silkroad_report_get_children($parent, $root_parent, $sub_parent, $depth
 		'post_parent' => $parent,
 	]);
 
+	$idx = 0;
 	if ($report_query->have_posts()) {
 		while ($report_query->have_posts()) {
 			$report_query->the_post();
@@ -80,7 +84,7 @@ function silkroad_report_get_children($parent, $root_parent, $sub_parent, $depth
 			}
 
 
-			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num);
+			$report_args = silkroad_get_report_args(get_the_ID(), $depth, $chapter_num, $idx);
 			$report_args['root_parent'] = $root_parent;
 			$report_args['sub_parent'] = $sub_parent;
 			$chapter_num = $report_args['chapter_num'];
@@ -92,6 +96,8 @@ function silkroad_report_get_children($parent, $root_parent, $sub_parent, $depth
 			if ($report_args['is_chapter']) {
 				$report_content .= silkroad_load_template_part('templates/parts/illustrations');
 			}
+
+			$idx++;
 		}
 		$report_query->reset_postdata();
 		wp_reset_postdata();

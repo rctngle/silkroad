@@ -42,6 +42,8 @@ function getTitle(str) {
 	}
 }
 
+let rootType = 'introduction';
+
 for (let i in doc.querySelector('body').children) {
 	const el = doc.querySelector('body').children[i]
 
@@ -49,8 +51,12 @@ for (let i in doc.querySelector('body').children) {
 		chapter++;
 		const title = getTitle(el.textContent);
 		
+		if (title === 'Conclusion') {
+			rootType = 'conclusion';
+		}
+		
 		structure['chapter_' + chapter] = {
-			type: 'chapter',
+			type: rootType,
 			title: title,
 			content: '',
 			sections: {},
@@ -59,7 +65,11 @@ for (let i in doc.querySelector('body').children) {
 		current = structure['chapter_' + chapter]
 		section = 0;
 
-	} else if (el.tagName == 'H2') {
+		if (title === 'Background') {
+			rootType = 'chapter';
+		}
+
+	} else if (el.tagName == 'H2' || el.tagName == 'H3') {
 		section++;
 		let title = getTitle(el.textContent);
 		

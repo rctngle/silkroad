@@ -5,6 +5,7 @@ $slug = get_post_field( 'post_name', get_post() );
 $is_chapter = $args['is_chapter'];
 $chapter_num = $args['chapter_num'];
 $is_intro = $args['is_intro'];
+$idx = $args['idx'];
 
 $is_legal_text = false;
 $classes = ['report', 'depth-' . $args['depth']];
@@ -18,10 +19,11 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	}
 
 }
+
 ?>
 
 
-<?php if($is_intro && $args['depth'] === 0):?>
+<?php if($is_intro && $args['depth'] === 0 && $idx == 0):?>
 
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 		<a class="anchor" name="<?php echo $slug; ?>"></a>
