@@ -254,10 +254,22 @@ function appendMap(){
 				'paint': {
 					// make circles larger as the user zooms from z12 to z22
 					'circle-radius': [
-       					 "interpolate", ["linear"], ["get", "point_count"],
+       					"interpolate", ["linear"], ["get", "point_count"],
 						5,8,
 						50,20
 					],
+					'circle-color': '#000'
+				}
+			});
+
+			map.addLayer({
+				'id': 'population-unclustered',
+				'type': 'circle',
+				'source': 'markers',
+				filter: ['!', ['has', 'point_count']],
+				'paint': {
+					// make circles larger as the user zooms from z12 to z22
+					'circle-radius': 5,
 					'circle-color': '#000'
 				}
 			});
