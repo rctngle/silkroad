@@ -10,34 +10,22 @@ function silkroad_load_template_part($template_name, $part_name=null, $args=[]) 
 
 
 function silkroad_footnotes($slug, $str) {
-	preg_match_all("/\[\[\[(.+?)\]\]\]/", $str, $matches);
+	
+	$count = 0;
+	$str = preg_replace_callback("/\[\[\[(.+?)\]\]\]/", function($matches) use (&$count, $slug) {
+		$count = $count + 1;
+		$num_name = $slug . '-num-' . $count;
+		$fn_name = $slug . '-fn-' . $count;
 
-
-	foreach($matches[0] as $idx => $match) {
-		$num_name = $slug . '-num-' . ($idx + 1);
-		$fn_name = $slug . '-fn-' . ($idx + 1);
-		$str = str_replace($match, '
+		return '
 			<a name="' . $num_name . '"></a>
 			<sup>
 
-				<a href="#' . $fn_name. '">' . ($idx + 1) . '</a>
-				<span><span>' . ($idx+1) . '</span><br/>' . $matches[1][$idx] . '</span>
-			</sup>', 
-		$str);
-	}
-
-	$str .= '<ol class="footnotes">';
-	foreach($matches[1] as $idx => $match) {
-		$num_name = $slug . '-num-' . ($idx + 1);
-		$fn_name = $slug . '-fn-' . ($idx + 1);
-		$str .= '
-			<li>
-				<a name="' . $fn_name . '"></a>
-				<a href="#' . $num_name. '">' . $match . '</a>
-			</li>
+				<a href="#' . $fn_name. '">' . $count . '</a>
+				<span><span>' . $count . '</span><br/>' . $matches[1] . '</span>
+			</sup>
 		';
-	}
-	$str .= '</ol>';
-
+	}, $str);
+	
 	return $str;
 }
