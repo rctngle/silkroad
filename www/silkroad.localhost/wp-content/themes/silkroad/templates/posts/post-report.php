@@ -31,9 +31,8 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<?php if($is_chapter || $is_intro):?>
 			<?php if(has_post_thumbnail()):?>
 				<div class="media illustration">
-					<div class="section-inner">
-						<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
-					</div>
+					
+					<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
 				</div>
 			<?php endif;?>
 		<?php endif;?>
@@ -51,6 +50,11 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			<ul class="swiper-wrapper">
 				<?php silkroad_report_display_nav(0, 0, 0);?>
 			</ul>
+			<div class="gradient">
+				
+				<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right-white.svg)"></div>
+				
+			</div>
 		</div>
 	</div>
 
@@ -63,9 +67,9 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<?php if($is_chapter || $is_intro):?>
 			<?php if(has_post_thumbnail()):?>
 				<div class="media illustration">
-					<div class="section-inner">
-						<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
-					</div>
+					
+					<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
+					
 				</div>
 			<?php endif;?>
 		<?php endif;?>

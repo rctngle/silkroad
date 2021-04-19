@@ -22,6 +22,8 @@
 		<?php get_template_part('templates/parts/cases'); ?>
 			
 	</section>
+	<section id="video"><?php get_template_part('templates/parts/video-example'); ?></section>
+
 	<section id="take-action">
 		<a name="take-action-anchor"></a>
 		<?php get_template_part('templates/parts/call-to-action'); ?>			

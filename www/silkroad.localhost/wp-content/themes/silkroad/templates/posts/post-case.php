@@ -42,51 +42,27 @@
 		<div class="case">
 		
 			<h3><?php echo silkroad_translate_field(get_field('name_ml_text')); ?></h3>
-			
-			<div>
-				<h5>Profession</h5>
-				<?php echo silkroad_translate_field(get_field('profession_ml_text')); ?>
-			</div>
-
-			<div>
-				<h5>Date of Birth</h5>
-				<?php the_field('date_of_birth'); ?>
-			</div>
-
-			<div>
-				<h5>Hometown</h5>
-				<?php echo silkroad_translate_field(get_field('hometown_ml_text')); ?>
-			</div>
-			
-			<div>
-				<h5>Last Seen</h5>
-				<?php the_field('last_seen_date') ?>
-			</div>
 			<div>
 				<h5>Assumed Location</h5>
 				<?php echo silkroad_translate_field(get_field('where_held_ml_text')); ?>
 			</div>
-			<div class="ethnicity">
-				<h5>Ethnicity</h5>
-				<?php echo silkroad_translate_field(get_field('ethnicity_ml_text')); ?>
-			</div>
-			
-			<div class="full">
-				<h5>Real Reason for Arrest or Detention</h5>
+			<div class="">
+				<h5>Suspected Reasons for Arrest or Detention</h5>
 				<p><?php echo silkroad_translate_field(get_field('reason_for_arrest_or_detention_suspected_ml_text')); ?></p>
 			</div>
-			
-			<div class="full">
+			<div class="">
 				<h5>Official Reason for Arrest or Detention</h5>
 				<p><?php echo silkroad_translate_field(get_field('reason_for_arrest_or_detention_official_ml_text')); ?></p>
 			</div>
+			<div>
+				<h5>Last Contact</h5>
+				<p><?php echo silkroad_translate_field(get_field('last_seen_date_ml_text')); ?></p>
+			</div>
 			
-		
 			<?php if(get_field('quote_or_personal_detail_ml_text') && strlen(silkroad_translate_field(get_field('quote_or_personal_detail_ml_text'))) > 0):?>
+				<h5>Personal Details</h5>
 				<div class="full"><p><?php echo silkroad_translate_field(get_field('quote_or_personal_detail_ml_text')); ?></p></div>
 			<?php endif;?>
-			
-
 			<div class="full summary">
 				<?php if(get_field('summary_ml_rich_text') && strlen(silkroad_translate_field(get_field('summary_ml_rich_text'))) > 0):?>
 					<?php echo silkroad_translate_field(get_field('summary_ml_rich_text')); ?>
@@ -96,6 +72,42 @@
 				
 
 			</div>
+
+			<div>
+				<h5>Date of Birth</h5>
+				<?php the_field('date_of_birth'); ?>
+			</div>
+
+			<div class="ethnicity">
+				<h5>Ethnicity</h5>
+				<?php echo silkroad_translate_field(get_field('ethnicity_ml_text')); ?>
+			</div>
+			<div>
+				<h5>Hometown</h5>
+				<?php echo silkroad_translate_field(get_field('hometown_ml_text')); ?>
+			</div>
+			
+			<div class="profession">
+				<h5>Profession</h5>
+				<?php echo silkroad_translate_field(get_field('profession_ml_text')); ?>
+			</div>
+
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+			
+			
+
+			
 			<div class="read-more"><span>Read More</span> <i class="fas fa-caret-down"></i></div>
 		</div>
 	</div>	
