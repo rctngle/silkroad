@@ -52,3 +52,23 @@
 		// padding-top: 360px;
 	}
 }
+
+
+p.media-caption {
+	color: var(--light-grey);
+	font-style: italic;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+
+.play-icon {
+    width: 53px;
+    height: 53px;
+    background: #FFFF00;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 68px;
+    right: 68px;
+}

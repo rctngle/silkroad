@@ -70,3 +70,54 @@ section#map {
 	display: none;
 }
 
+
+section#video {
+	.video-container {
+		position: relative;
+		width: 75%;
+		transition: 200ms;
+		&:hover {
+			// width: 100%;
+			// z-index: 2;
+			// cursor: pointer;
+		}
+		div {
+			position: relative;
+		}
+		.media-caption {
+			margin: 0 auto;
+			width: 400px;
+			position: relative;
+			top: -2rem;
+		}
+		div img.video {
+			width: 100%;
+			display: block;
+
+		}
+	}
+	.text {
+		position: absolute;
+		 background: #222;
+		// color: #000;
+		left: 0;
+		width: 40%;
+		z-index: 1;
+		padding: 32px;
+		bottom: 0;
+		box-shadow: 0 0 20px rgba(0,0,0,0.6);
+		p {
+			margin-bottom: 0;
+		}
+	}
+	.columns {
+		width: 100%;
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		// > div {
+		// 	flex: 0 1 50%;
+		// }
+	}
+
+}
