@@ -10,13 +10,13 @@ $cases_query = new WP_Query([
 ?>
 <div class="content-box section-title centered">
 
-	<h1><?php echo count($cases_query->posts);?> Missing and Detained Persons</h1>		
+	<h1>Missing and Detained People</h1>		
 	<div class="cases-download-container">
 		<a target="_blank" href="#">
 			<div class="icon">
 				<img src="<?php bloginfo('template_directory');?>/assets/images/ico-download.svg">
 			</div>
-			<div class="label">Download<br/>Cases</div>
+			<div class="label">Download<br/>this data</div>
 		</a>
 	</div>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -31,8 +31,11 @@ $cases_query = new WP_Query([
 		<?php wp_reset_postdata() ?>
 	</div>
 	<div class="swiper-pagination"></div>
-	<div class="gradient">
+	<div class="gradient right">
 		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right.svg)"></div>
+	</div>
+	<div class="gradient left">
+		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left.svg)"></div>
 	</div>
 </div>
 </div>

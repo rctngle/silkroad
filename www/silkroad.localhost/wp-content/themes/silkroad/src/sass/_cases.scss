@@ -74,7 +74,7 @@ section#cases {
 		.slideshow {
 			box-sizing: border-box;
 			position: relative;
-			height: 200px;
+			height: 260px;
 			min-height: 0;
 			.slide:nth-child(1){
 				img {
@@ -129,17 +129,15 @@ section#cases {
 		white-space: nowrap;
 
 		&.scrolled {
-			~ .gradient.left {
-				display: flex;
-				justify-content: flex-start;
-				background: linear-gradient(to left, transparent, #000);
-			}
+
 		}
 	}
 	.gradient.left {
-		display: none;
+
 		left: 0;
 		right: auto;
+		background: linear-gradient(to left, transparent, #000);
+		justify-content: flex-start;
 	}
 	.gradient {
 		position: absolute;
@@ -224,30 +222,45 @@ section#cases {
 
 			}
 		}
+		.summary {
+			margin-top: 1rem;
+		}
 		.summary p {
-			overflow: hidden;
-			display: -webkit-box;
-			-webkit-line-clamp: 3;
-			-webkit-box-orient: vertical;
+
+			// overflow: hidden;
+			// display: -webkit-box;
+			// -webkit-line-clamp: 3;
+			// -webkit-box-orient: vertical;
 		}
 
 		.case div {
 			white-space: normal;
 			align-items: baseline;
-			margin-bottom: 0.5rem;
+			margin-bottom: 5px;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+			border-bottom: 1px solid #ddd;
+			padding-bottom: 5px;
+			h5 {
+				padding-right: 5px;
+			}
+			&.profession, &.summary {
+				border-bottom: none;
+			}
 		}
 		.case div.read-more {
 			display: block;
 			text-align: center;
 			color: var(--light-grey);
-			margin-top: 16px;
+			margin: 0 0 0 0;
+			padding: 32px 0 12px 0;
 			cursor: pointer;
 			position: absolute;
+			border: none;
 			left: 0;
 			right: 0;
-			bottom: 12px;
+			bottom: 0;
+			background: linear-gradient(to bottom, transparent 0%, #FFF 50%);
 			span {
 				text-decoration: underline;
 			}
@@ -276,5 +289,6 @@ section#cases {
 			background-color: #FFF;
 			padding: 16px 16px 8px 16px;
 		}
+
 	}
 }

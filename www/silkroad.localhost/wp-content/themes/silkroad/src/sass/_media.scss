@@ -30,13 +30,13 @@
 }
 
 .media.illustration {
-	margin-bottom: 36px;
+	//margin-bottom: 36px;
 	z-index: -1;
     position: relative;
-    height: 465px;
+    height: calc(70vh - 30px);
 	.image {
 		width: 100%;
-		height: 600px;
+		height: 70vh;
 		overflow: hidden;
 
 		img {
@@ -46,6 +46,7 @@
 		}
 	}
 	+ .content-box {
+
 		//position: relative;
 		// z-index: 1;
 		// padding-top: 360px;

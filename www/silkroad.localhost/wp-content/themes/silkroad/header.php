@@ -54,7 +54,6 @@ $classes[]=LANG;
 	</div>
 	<nav>
 		<?php get_template_part('templates/nav/main-nav'); ?>
-		<?php get_template_part('templates/nav/language-nav'); ?>
 	</nav>
 
 </header>

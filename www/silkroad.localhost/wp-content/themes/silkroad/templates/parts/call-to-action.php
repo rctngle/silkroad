@@ -1,12 +1,16 @@
 <div class="section-inner">
+	<div class="content-box section-title centered">
+		<h1>Take Action</h1>
+		<h1 class="sub-title">Write to the leaders of the Coalition and demand accountability</h1>	
+	</div>
 	<div class="media image">
 		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/mensell.jpg">
 		<div class="gradient"></div>
 	</div>
 
-	<div class="content-box">
-			<div class="section-title centered">
-			<h1 class="sub-title">Write to the leaders of the Coalition and demand accountability</h1>
+	<div class="content-box cta-body">
+		<div class="section-title centered">
+		
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
