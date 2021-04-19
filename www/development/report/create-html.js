@@ -49,7 +49,7 @@ for (let i in doc.querySelector('body').children) {
 	const el = doc.querySelector('body').children[i]
 
 
-	if (el.tagName == 'H1' && el.textContent != 'Contents') {
+	if (el.tagName == 'H1' && el.textContent != 'Contents' && el.textContent != 'Methodology') {
 		chapter++;
 		const title = getTitle(el.textContent);
 		
@@ -67,11 +67,11 @@ for (let i in doc.querySelector('body').children) {
 		current = structure['chapter_' + chapter]
 		section = 0;
 
-		if (title === 'Background') {
+		if (title === 'Executive Summary') {
 			rootType = 'chapter';
 		}
 
-	} else if (el.tagName == 'H2' || el.tagName == 'H3') {
+	} else if (el.tagName == 'H2' || el.tagName == 'H3' || el.textContent == 'Methodology') {
 		section++;
 		let title = getTitle(el.textContent);
 		
@@ -79,6 +79,11 @@ for (let i in doc.querySelector('body').children) {
 		if (title.toUpperCase().indexOf('LEGAL TEXT BOX') >= 0) {
 			type = 'legal-text';
 			title = title.replace(/LEGAL TEXT BOX:?/, '').trim();
+		}
+
+		if (title.toUpperCase().indexOf('TEXT BOX') >= 0) {
+			type = 'legal-text';
+			title = title.replace(/TEXT BOX:?/, '').trim();
 		}
 
 		structure['chapter_' + chapter].sections['section_' + section] = {
