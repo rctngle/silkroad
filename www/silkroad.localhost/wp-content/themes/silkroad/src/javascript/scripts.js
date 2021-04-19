@@ -91,6 +91,8 @@ function createTakeAction(){
 
 function createCaseSwiper() {
 
+	const cases = document.querySelectorAll('#cases .swiper-wrapper .swiper-slide');
+	
 	caseSwiper = new Swiper('.swiper-container', {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
@@ -102,6 +104,17 @@ function createCaseSwiper() {
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
+			renderBullet: function (index, className) {
+				const imgSrc = cases[index].querySelector('.slide img').getAttribute('src');
+				const name = cases[index].querySelector('.case h3').textContent;
+				return `
+					<span class="${className}">
+						<span style="background-image: url('${imgSrc}')"></span>
+						<span>${name}</span>
+					</span>
+				`;
+			},
+
 		}
 	});
 }
@@ -167,7 +180,7 @@ function appendMap(){
 		container: 'mapbox-map',
 		style: 'mapbox://styles/anecdote101/cklkrw25g1nz617nnucz4id6p?fresh=true',
 		center: [87.48862,41.2804],
-		zoom: [3.5675],
+		zoom: [2.8],
 		attributionControl: false,
 		zoomControl: false,
 		interactive: false

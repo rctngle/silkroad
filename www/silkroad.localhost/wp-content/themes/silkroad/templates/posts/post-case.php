@@ -15,15 +15,15 @@
 
 					<?php if ($media['type'] == 'image'): ?>
 						<div class="slide">
-							<a target="_blank" href="<?php echo $media['sizes']['large'];?>"><img src="<?php echo esc_url($media['sizes']['large']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" /></a>
+							<a target="_blank" href="<?php echo $media['sizes']['medium'];?>"><img src="<?php echo esc_url($media['sizes']['medium']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" /></a>
 							<?php if($media['caption']):?>
-								<p class="caption"><a target="_blank" href="<?php echo $media['sizes']['large'];?>"><?php echo $media['caption'];?></a></p>
+								<p class="caption"><a target="_blank" href="<?php echo $media['sizes']['medium'];?>"><?php echo $media['caption'];?></a></p>
 							<?php endif;?>
 						</div>
 
 					<?php elseif ($preview): ?>
 						<div class="slide">
-							<img src="<?php echo esc_url($preview['sizes']['large']); ?>" alt="<?php echo esc_attr($preview['alt']); ?>" />
+							<img src="<?php echo esc_url($preview['sizes']['medium']); ?>" alt="<?php echo esc_attr($preview['alt']); ?>" />
 							<?php if($media['caption']):?>
 								<p class="caption"><?php echo $caption;?></p>
 							<?php endif;?>
