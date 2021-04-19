@@ -94,7 +94,7 @@ function createCaseSwiper() {
 	const cases = document.querySelectorAll('#cases .swiper-wrapper .swiper-slide');
 	
 	caseSwiper = new Swiper('.swiper-container', {
-		slidesPerView: 4,
+		slidesPerView: 4.3,
 		spaceBetween: 20,
 		freeMode: true,
 		preventClicks: false,
@@ -109,7 +109,15 @@ function createCaseSwiper() {
 			el: '.swiper-pagination',
 			clickable: true,
 			renderBullet: function (index, className) {
-				const imgSrc = cases[index].querySelector('.slide img').getAttribute('src');
+
+				let face = cases[index].querySelector('.face-crop img');
+
+				if(face === undefined || face === null){
+					face = cases[index].querySelector('.slide img');
+				} else {
+					console.log(face);
+				}
+				const imgSrc = face.getAttribute('src');
 				const name = cases[index].querySelector('.case h3').textContent;
 				return `
 					<span class="${className}">

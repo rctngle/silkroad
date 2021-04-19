@@ -1,5 +1,9 @@
 section#cases {
+	.face-crop {
+		display: none;
+	}
 	.cases-download-container {
+
 		position: absolute;
 		right: 0;
 		&:hover {
@@ -71,8 +75,8 @@ section#cases {
 			// }
 			span {
 				display: block;
-				width: 48px;
-				height: 48px;
+				width: 56px;
+				height: 56px;
 				background-size: cover;				
 				background-position: center;
 
@@ -157,6 +161,9 @@ section#cases {
 		background: linear-gradient(to left, transparent, #000);
 		justify-content: flex-start;
 	}
+	.gradient.swiper-button-disabled {
+		display: none;
+	}
 	.gradient {
 		position: absolute;
 		right: 0;
@@ -168,6 +175,10 @@ section#cases {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
+		height: auto;
+		&::after {
+			content: '';
+		}
 		.button {
 
 			text-align: center;
@@ -260,7 +271,7 @@ section#cases {
 			border-bottom: 1px solid #ddd;
 			padding-bottom: 5px;
 			h5 {
-				padding-right: 5px;
+				padding-right: 10px;
 			}
 			&.profession, &.summary {
 				border-bottom: none;

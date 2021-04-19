@@ -61,7 +61,7 @@ body.horizontal-nav {
 	}
 
 	.report-nav-inner > ul > li {
-		width: 266px;
+		width: 278px;
 		flex-shrink: 0;
 		position: relative;
 		border-right: 1px solid #444;
@@ -116,23 +116,40 @@ body.horizontal-nav {
 //		background: red;
 		position: absolute;
 		right: 0;
-		width: 70px;
+		width: 30px;
 		top: 0;
 		bottom: 0;
 		z-index: 1;
 		background: linear-gradient(to right, transparent 0%, #222 60%);
+		background: #222;
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: flex-end;
+		border-left: 1px solid #4e4a4a;
+		&:hover {
+			background: #333;
+		}
 		.button {
-			width: 40px;
+			width: 27px;
 			height: 40px;
 			background-repeat: no-repeat;
 			background-position: center;
 			//background-color: #565656;
 			background-size: 10px;
 		}
+	}
+	.report-nav .gradient.left {
+		right: auto;
+		left: 0;
+		//background: linear-gradient(to left, transparent 0%, #222 60%);
+		border-right: 1px solid #4e4a4a;
+		border-left: none;
+		align-items: flex-start;
+
+	}
+	.report-nav .swiper-button-disabled {
+		display: none;
 	}
 }
 
@@ -177,14 +194,30 @@ body.horizontal-nav {
 			}
 		}
 	}
+	.active-marker {
+		display: inline-block;
+		background: yellow;
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		margin-right: 2px;
+		display: none;
+		position: relative;
+		top: 0px;
+
+	}
 	.report-nav-inner > ul > li.active {
 		> ul {
 			display: block;
 		}
 	}	
+	.active .active-marker {
+		display: inline-block;
+	}
 	.active > a {
 
-		background: #616161;
+
+		background: #404040;
 	}
 	ul ul li {
 		padding-left: 16px;
@@ -269,7 +302,7 @@ section#report {
 
 		}
 	}
-	sup {
+	a + sup {
 		padding: 0px 4px 0px 4px;
 		text-align: center;
 		display: inline-block;
@@ -427,9 +460,8 @@ section#report {
 	article.content-type-big-text {
 		display: none;
 	}
-	article.active {
-		background: red;
-	}
+	
+
 	article.content-type-chapter {
 		padding-top: 8px * 10;
 		margin-top: 8px * 10;
