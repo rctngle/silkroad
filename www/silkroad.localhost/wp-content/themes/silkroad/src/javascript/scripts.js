@@ -91,6 +91,8 @@ function createTakeAction(){
 
 function createCaseSwiper() {
 
+	const cases = document.querySelectorAll('#cases .swiper-wrapper .swiper-slide');
+	
 	caseSwiper = new Swiper('.swiper-container', {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
@@ -102,6 +104,17 @@ function createCaseSwiper() {
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
+			renderBullet: function (index, className) {
+				const imgSrc = cases[index].querySelector('.slide img').getAttribute('src');
+				const name = cases[index].querySelector('.case h3').textContent;
+				return `
+					<span class="${className}">
+						<span style="background-image: url('${imgSrc}')"></span>
+						<span>${name}</span>
+					</span>
+				`;
+			},
+
 		}
 	});
 }
