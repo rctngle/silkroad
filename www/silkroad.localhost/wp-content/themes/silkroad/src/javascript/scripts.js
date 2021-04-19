@@ -72,10 +72,10 @@ window.addEventListener('DOMContentLoaded', e=>{
 	createNavSwiper();
 
 
-	document.querySelector('.button').addEventListener('click', e => {
-		console.log('next');
-		caseSwiper.slideNext()
-	})
+	// document.querySelector('.button').addEventListener('click', e => {
+	// 	console.log('next');
+	// 	caseSwiper.slideNext()
+	// })
 
 });
 
@@ -94,13 +94,17 @@ function createCaseSwiper() {
 	const cases = document.querySelectorAll('#cases .swiper-wrapper .swiper-slide');
 	
 	caseSwiper = new Swiper('.swiper-container', {
-		slidesPerView: 'auto',
+		slidesPerView: 4,
 		spaceBetween: 20,
 		freeMode: true,
 		preventClicks: false,
 		slidesOffsetAfter: 40,
 		slidesOffsetBefore: 40,
 		grabCursor: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
@@ -130,6 +134,10 @@ function createNavSwiper() {
 		setWrapperSize: true,
 		centeredSlidesBounds: true,
 		preventClicksPropagation: true,
+		navigation: {
+			nextEl: '.report-swiper-button-next',
+			prevEl: '.report-swiper-button-prev',
+		},
 	});
 }
 
