@@ -134,6 +134,10 @@ function createNavSwiper() {
 		setWrapperSize: true,
 		centeredSlidesBounds: true,
 		preventClicksPropagation: true,
+		navigation: {
+			nextEl: '.report-swiper-button-next',
+			prevEl: '.report-swiper-button-prev',
+		},
 	});
 }
 
