@@ -96,7 +96,16 @@ for (let i in doc.querySelector('body').children) {
 
 	} else if (chapter > 0) {
 		if (el.tagName !== 'SECTION' && el.outerHTML) {
-			current.content += el.outerHTML
+			const content = el.outerHTML;
+
+			if (el.querySelector('strong') && el.textContent.substr(0, 1) == '“') {
+				current.content += '<blockquote>' + el.innerHTML + '</blockquote>';
+			} else {
+				current.content += el.outerHTML;
+
+			}
+
+			
 		}
 	}
 }
