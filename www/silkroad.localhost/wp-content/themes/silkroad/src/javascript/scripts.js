@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 		appendMap();	
 	}
 	createTakeAction();
-	document.querySelectorAll('.expand').forEach(continueLink=>{
+	document.querySelectorAll('.content-box h3').forEach(continueLink=>{
 		continueLink.addEventListener('click',e=>{
 			e.preventDefault();
 			e.stopPropagation();
@@ -30,11 +30,11 @@ window.addEventListener('DOMContentLoaded', e=>{
 		});
 	});
 
-	document.querySelectorAll('#report article').forEach(article=>{
-		article.addEventListener('click',e=>{
-			article.classList.add('expanded');
-		});
-	});
+	// document.querySelectorAll('#report article').forEach(article=>{
+	// 	article.addEventListener('click',e=>{
+	// 		article.classList.add('expanded');
+	// 	});
+	// });
 
 
 
