@@ -106,14 +106,17 @@ function createCaseSwiper() {
 	const cases = document.querySelectorAll('#cases .swiper-wrapper .swiper-slide');
 	
 	caseSwiper = new Swiper('.swiper-container', {
-		slidesPerView: 4.3,
+		// slidesPerView: 4.3,
+		slidesPerView: 'auto',
 		spaceBetween: 20,
 		freeMode: true,
 		preventClicks: false,
-		slidesOffsetAfter: 40,
-		slidesOffsetBefore: 40,
+		// slidesOffsetAfter: 40,
+		// slidesOffsetBefore: 40,
 		grabCursor: true,
-		navigation: {
+		// centeredSlides: true,
+		centeredSlidesBounds: true,
+   		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
@@ -150,6 +153,7 @@ function createNavSwiper() {
 		preventClicks: true,
 		grabCursor: true,
 		setWrapperSize: true,
+		// centeredSlides: true,
 		centeredSlidesBounds: true,
 		preventClicksPropagation: true,
 		navigation: {
