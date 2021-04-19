@@ -54,19 +54,37 @@ section#cases {
 	.swiper-pagination {
 		color: #FFF;
 		bottom: 0px;
+		display: flex;
+		justify-content: center;
+
 		.swiper-pagination-bullet {
-			width: 16px;
-			height: 16px;
-			background-color: #525252;
+			width: auto;
+			height: auto;
+			background-color: transparent;
 			opacity: 1;
-			&:hover {
-				background-color: var(--light-grey);
+			border-radius: 0;
+			margin: 0 4px 0 0;
+			display: block;
+
+			// &:hover {
+			// 	background-color: var(--light-grey);
+			// }
+			span {
+				display: block;
+				width: 48px;
+				height: 48px;
+				background-size: cover;				
+				background-position: center;
+
+			}
+			span.name {
+				display: none;
 			}
 		}
 		.swiper-pagination-bullet-active {
-			background-color: #FFF;
-			&:hover {
-				background-color: #FFF;
+			
+			.image {
+				border: solid 3px #ffff00;	
 			}
 		}
 	}
@@ -180,7 +198,7 @@ section#cases {
 		line-height: 1.2;
 		font-size: 14px;
 		letter-spacing: 0.01em;
-		margin-bottom: 56px;
+		margin-bottom: 76px;
 		width: 360px;
 		background-color: #FFF;
 		color: #000;

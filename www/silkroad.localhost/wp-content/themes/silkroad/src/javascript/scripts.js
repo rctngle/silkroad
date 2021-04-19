@@ -109,8 +109,8 @@ function createCaseSwiper() {
 				const name = cases[index].querySelector('.case h3').textContent;
 				return `
 					<span class="${className}">
-						<span style="background-image: url('${imgSrc}')"></span>
-						<span>${name}</span>
+						<span class="image" style="background-image: url('${imgSrc}')"></span>
+						<span class="name">${name}</span>
 					</span>
 				`;
 			},
