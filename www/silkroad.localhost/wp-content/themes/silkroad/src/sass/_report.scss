@@ -114,6 +114,16 @@
 		padding: 16px;
 	}
 	.stat {
+		.icon {
+			background-color: #FFF;
+			
+			padding: 20px 0 0 0;
+			img {
+				width: 100px;
+				height: 100px;
+
+			}
+		}
 		flex: 0 1 calc(33.3% - 20px);
 //		background: #222;
 		p {
