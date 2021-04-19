@@ -2,8 +2,8 @@
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
 			<div class="slide"><?php the_post_thumbnail();?></div>
-			<?php if(get_field('cropped_image')):?>
-				<div class="face-crop"><img src="<?php echo get_field('cropped_image')['sizes']['thumbnail'];?>"/></div>
+			<?php if(get_field('image_cropped')):?>
+				<div class="face-crop"><img src="<?php echo get_field('image_cropped')['sizes']['thumbnail'];?>"/></div>
 			<?php endif;?>
 
 			<?php
