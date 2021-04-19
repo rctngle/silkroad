@@ -1,7 +1,7 @@
 <div class="section-inner">
 	<div class="content-box section-title centered">
-		<h1>Take Action</h1>
-		<h1 class="sub-title">Write to the leaders of the Coalition and demand accountability</h1>	
+		<h1>Write to the leaders of the Coalition and demand accountability</h1>
+		<h1 class="sub-title"></h1>	
 	</div>
 	<div class="media image">
 		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/mensell.jpg">

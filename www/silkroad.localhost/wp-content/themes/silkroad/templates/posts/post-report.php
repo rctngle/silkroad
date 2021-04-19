@@ -86,7 +86,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 				<h2><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></h2>
 			<?php elseif($is_legal_text):?>
 				<div class="legal-text-title">
-					<h3><i class="fal fa-balance-scale"></i> Legal Reference</h3>
+					<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
 					<p><?php echo silkroad_translate_field(get_field('title_ml_text')); ?></p>
 					<div class="expand">
 						<i class="fas fa-caret-down"></i>
