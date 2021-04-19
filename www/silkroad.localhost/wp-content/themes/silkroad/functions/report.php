@@ -93,9 +93,9 @@ function silkroad_report_get_children($parent, $root_parent, $sub_parent, $depth
 
 			silkroad_report_get_children(get_the_ID(), $root_parent, $sub_parent, $depth+1, $chapter_num, $report_content);
 
-			if ($report_args['is_chapter']) {
-				$report_content .= silkroad_load_template_part('templates/parts/illustrations');
-			}
+			// if ($report_args['is_chapter']) {
+			// 	$report_content .= silkroad_load_template_part('templates/parts/illustrations');
+			// }
 
 			$idx++;
 		}
