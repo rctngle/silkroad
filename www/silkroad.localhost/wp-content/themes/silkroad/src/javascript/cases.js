@@ -3,10 +3,30 @@ import ScrollBooster from 'scrollbooster';
 export default function createCases() {
 	const cases = document.querySelector('#cases').querySelectorAll('article');
 
+	const checkScrollMax = (state) => {
+		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;
+		const scrollWidth = document.querySelector('#cases-scroller .scroller-outer').scrollWidth;
+		const bodyWidth = document.body.clientWidth;
+
+		if (scrollLeft <= 100) {
+			document.querySelector('#cases-scroller').classList.remove('max-right');
+			document.querySelector('#cases-scroller').classList.add('max-left');
+		} else if (scrollLeft + bodyWidth + 100 >= scrollWidth) {
+			document.querySelector('#cases-scroller').classList.remove('max-left');	
+			document.querySelector('#cases-scroller').classList.add('max-right');	
+		} else {			
+			document.querySelector('#cases-scroller').classList.remove('max-right');	
+			document.querySelector('#cases-scroller').classList.remove('max-left');	
+		}
+	};
+
 	const casesScroller = new ScrollBooster({ 
 		viewport: document.querySelector('#cases-scroller .scroller-outer'),
 		scrollMode: 'native', 
-		direction: 'horizontal' 
+		direction: 'horizontal',
+		onUpdate: state => {
+			checkScrollMax(state);
+		},
 	});
 
 	if (cases.length > 0) {
@@ -57,19 +77,24 @@ export default function createCases() {
 
 
 			const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
-			casesScroller.scrollTo({ x: x, y: 0 })
+			casesScroller.scrollTo({ x: x, y: 0 });
 		});
 	});
+
 
 	document.querySelector('#cases-scroller .scroller-prev').addEventListener('click', e => {
 		const scrollAmount = (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
 		casesScroller.scrollTo({ x: scrollLeft - scrollAmount, y: 0 });
+		checkScrollMax();
 	});
 
 	document.querySelector('#cases-scroller .scroller-next').addEventListener('click', e => {
 		const scrollAmount = (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
 		casesScroller.scrollTo({ x: scrollLeft + scrollAmount, y: 0 });
+		checkScrollMax();
 	});
+
+	checkScrollMax();
 }
