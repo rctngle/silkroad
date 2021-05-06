@@ -14,10 +14,15 @@
 }
 .scroller-inner {
 	display: flex;
+	
+}
+
+section#case .scroller-inner {
 	margin: 0 80px;
 }
 
 section#cases {
+
 	.face-crop {
 		display: none;
 	}
