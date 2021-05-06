@@ -1,4 +1,4 @@
-<article class="swiper-slide">
+<article class="swiper-slide case-<?php the_field('reference_code'); ?>">
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
 			<div class="slide"><?php the_post_thumbnail();?></div>
@@ -7,7 +7,7 @@
 			<?php endif;?> -->
 
 			<?php
-				$gallery = get_field('images_documents');
+			$gallery = get_field('images_documents');
 			?>
 
 			<?php if ($gallery && is_array($gallery) && count($gallery) > 0): ?>

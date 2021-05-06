@@ -1,6 +1,33 @@
+import ScrollBooster from 'scrollbooster';
 import inView from 'in-view-modern';
 
 export default function createReport() {
+
+
+	const reportScroller = new ScrollBooster({ 
+		viewport: document.querySelector('#report-nav-scroller .scroller-outer'),
+		scrollMode: 'native', 
+		direction: 'horizontal' 
+	});
+
+
+	document.querySelector('#report-nav-scroller .scroller-prev').addEventListener('click', e => {
+		const position = reportScroller.getState().position;
+		const scrollAmount = (document.body.clientWidth / 2);
+		console.log(position);
+		console.log('prev');
+		reportScroller.scrollTo({ x: position.x - scrollAmount, y: 0 });
+	});
+
+	document.querySelector('#report-nav-scroller .scroller-next').addEventListener('click', e => {
+		const position = reportScroller.getState().position;
+		const scrollAmount = (document.body.clientWidth / 2);
+		console.log('next');
+		console.log(position);
+		reportScroller.scrollTo({ x: position.x + scrollAmount, y: 0 });
+	});
+
+
 	document.querySelectorAll('.content-box h3').forEach(continueLink=>{
 		continueLink.addEventListener('click',e=>{
 			e.preventDefault();
