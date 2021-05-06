@@ -26,7 +26,7 @@ export default function createMap() {
 			fetch('/wp-content/themes/silkroad/data/markers.geo.json')
 				.then(response => response.json())
 				.then(data => {
-					console.log(data);
+					// console.log(data);
 					const features = [];
 					data.features.forEach(feature=>{
 						if(feature.properties.type == 'camp'){
