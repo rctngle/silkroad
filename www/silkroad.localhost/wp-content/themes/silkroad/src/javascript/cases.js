@@ -81,6 +81,12 @@ export default function createCases() {
 			const referenceCode = href.replace('#case-', '');
 			
 			const caseSlide = document.querySelector('.swiper-slide.case-'+referenceCode);
+			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+				c.classList.remove('active');
+			});
+			caseSlide.classList.add('active');
+
+
 			const elementLeft = caseSlide.offsetLeft;
 			const caseRect = caseSlide.getBoundingClientRect();
 
