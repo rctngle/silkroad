@@ -62,11 +62,10 @@
 					<h5>Last Contact</h5>
 					<p><?php echo silkroad_translate_field(get_field('last_seen_date_ml_text')); ?></p>
 				</div>
+
 				
-				<?php if(get_field('quote_or_personal_detail_ml_text') && strlen(silkroad_translate_field(get_field('quote_or_personal_detail_ml_text'))) > 0):?>
-					<h5>Personal Details</h5>
-					<div class="full"><p><?php echo silkroad_translate_field(get_field('quote_or_personal_detail_ml_text')); ?></p></div>
-				<?php endif;?>
+				
+
 				<div class="full summary">
 					<?php if(get_field('summary_ml_rich_text') && strlen(silkroad_translate_field(get_field('summary_ml_rich_text'))) > 0):?>
 						<?php echo silkroad_translate_field(get_field('summary_ml_rich_text')); ?>
@@ -76,7 +75,12 @@
 					
 
 				</div>
-
+				<?php if(get_field('quote_or_personal_detail_ml_rich_text_basic') && strlen(silkroad_translate_field(get_field('quote_or_personal_detail_ml_rich_text_basic'))) > 0):?>
+					<div class="personal-details full">
+						<h5>Personal Details</h5>
+						<p><?php echo silkroad_translate_field(get_field('quote_or_personal_detail_ml_rich_text_basic')); ?></p>
+					</div>
+				<?php endif;?>
 				<div>
 					<h5>Date of Birth</h5>
 					<?php the_field('date_of_birth'); ?>
