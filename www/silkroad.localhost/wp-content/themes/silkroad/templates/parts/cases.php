@@ -22,23 +22,27 @@ $cases_query = new WP_Query([
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
 
-<div class="section-inner-full">
-<div class="swiper-container">
-	<div class="swiper-wrapper">
-		<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
-			<?php get_template_part('templates/posts/post', get_post_type()); ?>
-		<?php endwhile; ?>
-		<?php wp_reset_postdata() ?>
+<div id="cases-scroller" class="scroller">
+	<div class="scroller-outer">
+		<div class="scroller-inner">	
+			<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
+				<?php get_template_part('templates/posts/post', get_post_type()); ?>
+			<?php endwhile; ?>
+			<?php wp_reset_postdata() ?>
+		</div>
 	</div>
-	<div class="swiper-pagination"></div>
+</div>
+
+<?php /*
+<div class="swiper-pagination"></div>
 	<div class="gradient right swiper-button-next">
 		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right.svg)"></div>
 	</div>
 	<div class="gradient left swiper-button-prev">
 		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left.svg)"></div>
 	</div>
-</div>
-</div>
+*/ ?>
+
 
 <?php /* if ($cases_query->have_posts()): ?>
 	<div class="section-inner-full">	
