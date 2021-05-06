@@ -48,18 +48,19 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<div class="scroller-outer">
 			<div class="scroller-inner">
 				<?php silkroad_report_display_nav(0, 0, 0);?>
-			</ul>
+			</div>
+		</div>
+		<div class="gradient right">
+			<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right-white.svg)"></div>
+		</div>
+		<div class="gradient left">
+			<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left-white.svg)"></div>
 		</div>
 	</div>
 
-	<?php /*
-	<div class="gradient right report-swiper-button-next">
-		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right-white.svg)"></div>
-	</div>
-	<div class="gradient left report-swiper-button-prev">
-		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left-white.svg)"></div>
-	</div>
-	*/ ?>
+
+	
+
 
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 		<div class="content-box">
