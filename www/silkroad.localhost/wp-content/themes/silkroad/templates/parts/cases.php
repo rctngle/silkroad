@@ -41,7 +41,6 @@ $cases_query = new WP_Query([
 
 <div id="cases-pager">
 	<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
-		
 		<?php get_template_part('templates/parts/case-pager'); ?>
 	<?php endwhile; ?>
 	<?php wp_reset_postdata() ?>
