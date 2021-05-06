@@ -14,11 +14,11 @@ export default function createMap() {
 		});
 
 		map.on('zoom', e=>{
-			console.log(map.getZoom());
+			// console.log(map.getZoom());
 		});
 
 		map.on('move', e=>{
-			console.log(map.getCenter());
+			// console.log(map.getCenter());
 		});
 
 		map.on('load', function () {
