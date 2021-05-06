@@ -51,12 +51,12 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 			$chapter_num = $report_args['chapter_num'];
 			
 
-			echo '<li class="reportid-' . get_the_ID() . ' swiper-slide">';
+			echo '<div class="reportid-' . get_the_ID() . ' swiper-slide">';
 				get_template_part('templates/nav/nav', get_post_type(), $report_args);
 				/* echo "<ul>";
 				silkroad_report_display_nav(get_the_ID(), $depth+1, $chapter_num);
 				echo "</ul>"; */
-			echo '</li>';
+			echo '</div>';
 			$idx++;
 		}
 		$report_query->reset_postdata();
