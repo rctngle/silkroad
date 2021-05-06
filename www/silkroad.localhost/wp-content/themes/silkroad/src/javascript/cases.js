@@ -57,8 +57,19 @@ export default function createCases() {
 
 
 			const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
-			casesScroller.scrollTo({ x: x, y: 0 });
-			
+			casesScroller.scrollTo({ x: x, y: 0 })
 		});
+	});
+
+	document.querySelector('#cases-scroller .swiper-button-prev').addEventListener('click', e => {
+		const position = casesScroller.getState().position;
+		const scrollAmount = (document.body.clientWidth / 2);
+		casesScroller.scrollTo({ x: position.x - scrollAmount, y: 0 });
+	});
+
+	document.querySelector('#cases-scroller .swiper-button-next').addEventListener('click', e => {
+		const position = casesScroller.getState().position;
+		const scrollAmount = (document.body.clientWidth / 2);
+		casesScroller.scrollTo({ x: position.x + scrollAmount, y: 0 });
 	});
 }
