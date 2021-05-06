@@ -27,6 +27,11 @@ export default function createCases() {
 		onUpdate: state => {
 			checkScrollMax(state);
 		},
+		onPointerDown: () => {
+			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+				c.classList.remove('active');
+			});			
+		}
 	});
 
 	if (cases.length > 0) {
