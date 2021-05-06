@@ -50,10 +50,10 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 				<?php silkroad_report_display_nav(0, 0, 0);?>
 			</div>
 		</div>
-		<div class="gradient right">
+		<div class="gradient right scroller-next">
 			<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right-white.svg)"></div>
 		</div>
-		<div class="gradient left">
+		<div class="gradient left scroller-prev">
 			<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left-white.svg)"></div>
 		</div>
 	</div>

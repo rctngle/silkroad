@@ -23,10 +23,10 @@ $cases_query = new WP_Query([
 </div>
 
 <div id="cases-scroller" class="scroller grabbable">
-	<div class="gradient right swiper-button-next">
+	<div class="gradient right scroller-next">
 		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right.svg)"></div>
 	</div>
-	<div class="gradient left swiper-button-prev">
+	<div class="gradient left scroller-prev">
 		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left.svg)"></div>
 	</div>
 	<div class="scroller-outer">
