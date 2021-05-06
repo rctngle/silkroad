@@ -8,9 +8,8 @@ if ($image_cropped) {
 
 ?>
 <div class="case-pagination-item">
-
 	<div class="image">
-		<a href="#case-<?php the_field('reference_code'); ?>">
+		<a class="case-pager-link" href="#case-<?php the_field('reference_code'); ?>">
 			<img src="<?php echo $thumb_url; ?>"/>
 		</a>
 	</div>

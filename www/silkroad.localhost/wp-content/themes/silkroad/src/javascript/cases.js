@@ -2,14 +2,13 @@ import ScrollBooster from 'scrollbooster';
 
 export default function createCases() {
 	const cases = document.querySelector('#cases').querySelectorAll('article');
-	document.querySelectorAll('.scroller').forEach(scroller => {
 
-		new ScrollBooster({ 
-			viewport: scroller.querySelector('.scroller-outer'),
-			scrollMode: 'native', 
-			direction: 'horizontal' 
-		});
+	const casesScroller = new ScrollBooster({ 
+		viewport: document.querySelector('#cases-scroller .scroller-outer'),
+		scrollMode: 'native', 
+		direction: 'horizontal' 
 	});
+
 	if (cases.length > 0) {
 		cases.forEach(article => {
 			article.querySelector('.read-more').addEventListener('click', e=>{
@@ -40,4 +39,26 @@ export default function createCases() {
 			}
 		});
 	}
+
+	document.querySelectorAll('.case-pager-link').forEach(pager => {
+		pager.addEventListener('click', e => {
+
+			document.querySelectorAll('.case-pager-link.active').forEach(p => {
+				p.classList.remove('active');
+			});
+
+			pager.classList.add('active');
+			const href = pager.getAttribute('href');
+			const referenceCode = href.replace('#case-', '');
+			
+			const caseSlide = document.querySelector('.swiper-slide.case-'+referenceCode);
+			const elementLeft = caseSlide.offsetLeft;
+			const caseRect = caseSlide.getBoundingClientRect();
+
+
+			const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
+			casesScroller.scrollTo({ x: x, y: 0 });
+			
+		});
+	});
 }
