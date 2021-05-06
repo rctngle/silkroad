@@ -1,5 +1,5 @@
 import mapboxgl from 'mapbox-gl';
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a2V0ZTBsNThoMiJ9.1Ce55CnAaojzkqgfX70fAw'
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW5lY2RvdGUxMDEiLCJhIjoiY2oxMGhjbmpsMDAyZzJ3a2V0ZTBsNThoMiJ9.1Ce55CnAaojzkqgfX70fAw';
 
 export default function createMap() {
 	if(document.querySelector('#mapbox-map')){
@@ -24,71 +24,71 @@ export default function createMap() {
 		map.on('load', function () {
 
 			fetch('/wp-content/themes/silkroad/data/markers.geo.json')
-			.then(response => response.json())
-			.then(data => {
-				console.log(data);
-				const features = [];
-				data.features.forEach(feature=>{
-					if(feature.properties.type == 'camp'){
-						features.push(feature);
-					}
+				.then(response => response.json())
+				.then(data => {
+					console.log(data);
+					const features = [];
+					data.features.forEach(feature=>{
+						if(feature.properties.type == 'camp'){
+							features.push(feature);
+						}
 
-				});
+					});
 
-				data.features = features;
+					data.features = features;
 
-				map.addSource('markers', {
-					type: 'geojson',
-					data: data,
-					cluster: true,
-					clusterMaxZoom: 14, // Max zoom to cluster points on
-					clusterRadius: 50
-				});
+					map.addSource('markers', {
+						type: 'geojson',
+						data: data,
+						cluster: true,
+						clusterMaxZoom: 14, // Max zoom to cluster points on
+						clusterRadius: 50
+					});
 
-				map.addLayer({
-					'id': 'population',
-					'type': 'circle',
-					'source': 'markers',
-					'filter': ['has', 'point_count'],
+					map.addLayer({
+						'id': 'population',
+						'type': 'circle',
+						'source': 'markers',
+						'filter': ['has', 'point_count'],
 
-					'paint': {
-						// make circles larger as the user zooms from z12 to z22
-						'circle-radius': [
-	       					"interpolate", ["linear"], ["get", "point_count"],
-							5,8,
-							50,20
-						],
-						'circle-color': '#000'
-					}
-				});
+						'paint': {
+							// make circles larger as the user zooms from z12 to z22
+							'circle-radius': [
+								'interpolate', ['linear'], ['get', 'point_count'],
+								5,8,
+								50,20
+							],
+							'circle-color': '#000'
+						}
+					});
 
-				map.addLayer({
-					'id': 'population-unclustered',
-					'type': 'circle',
-					'source': 'markers',
-					filter: ['!', ['has', 'point_count']],
-					'paint': {
-						// make circles larger as the user zooms from z12 to z22
-						'circle-radius': 5,
-						'circle-color': '#000'
-					}
-				});
+					map.addLayer({
+						'id': 'population-unclustered',
+						'type': 'circle',
+						'source': 'markers',
+						filter: ['!', ['has', 'point_count']],
+						'paint': {
+							// make circles larger as the user zooms from z12 to z22
+							'circle-radius': 5,
+							'circle-color': '#000'
+						}
+					});
 
-				map.addLayer({
-					id: 'cluster-count',
-					type: 'symbol',
-					source: 'markers',
-					filter: ['has', 'point_count'],
-					layout: {
-						'text-field': '{point_count_abbreviated}',
-						'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-						'text-size': 12
-					},
-					paint: {
-						'text-color': '#FFF'
-					}
-				});
-			});		
+					map.addLayer({
+						id: 'cluster-count',
+						type: 'symbol',
+						source: 'markers',
+						filter: ['has', 'point_count'],
+						layout: {
+							'text-field': '{point_count_abbreviated}',
+							'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+							'text-size': 12
+						},
+						paint: {
+							'text-color': '#FFF'
+						}
+					});
+				});		
 		});
 	}
 }
