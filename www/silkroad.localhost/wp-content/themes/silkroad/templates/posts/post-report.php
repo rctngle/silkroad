@@ -26,7 +26,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 <?php if($is_intro && $args['depth'] === 0 && $idx == 0):?>
 
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
-		<a class="anchor" name="<?php echo $slug; ?>"></a>
+		
 
 		<?php if($is_chapter || $is_intro):?>
 			<?php if(has_post_thumbnail()):?>
@@ -63,6 +63,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 
 
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
+		<a class="anchor" name="<?php echo $slug; ?>"></a>
 		<div class="content-box">
 			<?php if ($is_chapter): ?>
 				<div class="section-title">
