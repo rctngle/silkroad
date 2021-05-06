@@ -35,6 +35,7 @@ $cases_query = new WP_Query([
 				<?php get_template_part('templates/posts/post', get_post_type()); ?>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata() ?>
+			<div class="padder"></div>
 		</div>
 	</div>
 </div>

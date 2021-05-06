@@ -1,14 +1,23 @@
-<article class="swiper-slide case-<?php the_field('reference_code'); ?>">
+<?php 
+	$classes = ['swiper-slide', 'case-'.get_field('reference_code')];
+	$gallery = get_field('images_documents');
+
+	if ($gallery && is_array($gallery) && count($gallery) > 0){
+		$classes[]='has-gallery';
+	}
+?>
+<article class="<?php echo implode(' ', $classes);?>">
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
-			<div class="slide"><?php the_post_thumbnail();?></div>
-			<!-- <?php if(get_field('image_cropped')):?>
-				<div class="face-crop"><img src="<?php echo get_field('image_cropped')['sizes']['thumbnail'];?>"/></div>
-			<?php endif;?> -->
+	
 
-			<?php
-			$gallery = get_field('images_documents');
-			?>
+			<div class="slide">
+				<?php the_post_thumbnail();?>
+				<p class="caption">
+					<a target="_blank" href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large');?>"> <span>View</span></a>
+				</p>
+			</div>
+	
 
 			<?php if ($gallery && is_array($gallery) && count($gallery) > 0): ?>
 				<?php foreach($gallery as $media): ?>
@@ -19,7 +28,7 @@
 
 					<?php if ($media['type'] == 'image'): ?>
 						<div class="slide">
-							<a target="_blank" href="<?php echo $media['sizes']['medium'];?>"><img src="<?php echo esc_url($media['sizes']['medium']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" /></a>
+							<img src="<?php echo esc_url($media['sizes']['medium']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" />
 							<p class="caption">
 								<a target="_blank" href="<?php echo $media['sizes']['large'];?>">
 									<?php if($media['caption']):?>
