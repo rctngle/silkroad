@@ -37,7 +37,15 @@ export default function createReport() {
 	});
 
 	inView('article.report').on('enter', el => {
-		console.log('highlight nav');
+		const rootId = parseInt(el.dataset.rootparent);
+		const navItem = document.querySelector('#report-nav-scroller .reportid-'+rootId);
+		activateNavItem(navItem);
 	});
+}
 
+function activateNavItem(navItem) {
+	document.querySelectorAll('#report-nav-scroller .swiper-slide').forEach(item => {
+		item.classList.remove('active');
+	});
+	navItem.classList.add('active');	
 }
