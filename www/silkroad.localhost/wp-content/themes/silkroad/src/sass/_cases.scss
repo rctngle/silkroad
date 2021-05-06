@@ -290,14 +290,14 @@ section#cases {
 			// -webkit-box-orient: vertical;
 		}
 
-		.case div {
+		.case > div {
 			white-space: normal;
 			align-items: baseline;
-			margin-bottom: 5px;
+			margin-bottom: 6px;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			border-bottom: 1px solid #ddd;
-			padding-bottom: 5px;
+			padding-bottom: 6px;
 			h5 {
 				padding-right: 10px;
 			}
@@ -305,6 +305,7 @@ section#cases {
 				border-bottom: none;
 			}
 		}
+		
 		.case div.read-more {
 			display: block;
 			text-align: center;
@@ -323,15 +324,20 @@ section#cases {
 			}
 		}
 		.case .ethnicity {
-			margin-bottom: 1rem;
+			//margin-bottom: 1rem;
 		}
 		.case .full {
 			display: block;
-			// padding-top: 0.2rem;
 			margin-bottom: 1rem;
 			h5 {
 				margin-bottom: 0.3rem;
 			}
+		}
+		.case .personal-details {
+			margin-bottom: 5px;
+			padding-top: 5px;
+			margin-top: 2rem;
+			//border-top: 1px solid #ddd;
 		}
 		.image {
 			background-color: var(--light-grey);
