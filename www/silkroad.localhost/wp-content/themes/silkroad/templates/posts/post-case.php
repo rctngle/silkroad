@@ -2,9 +2,9 @@
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
 			<div class="slide"><?php the_post_thumbnail();?></div>
-			<?php if(get_field('image_cropped')):?>
+			<!-- <?php if(get_field('image_cropped')):?>
 				<div class="face-crop"><img src="<?php echo get_field('image_cropped')['sizes']['thumbnail'];?>"/></div>
-			<?php endif;?>
+			<?php endif;?> -->
 
 			<?php
 				$gallery = get_field('images_documents');
@@ -20,9 +20,15 @@
 					<?php if ($media['type'] == 'image'): ?>
 						<div class="slide">
 							<a target="_blank" href="<?php echo $media['sizes']['medium'];?>"><img src="<?php echo esc_url($media['sizes']['medium']); ?>" alt="<?php echo esc_attr($media['alt']); ?>" /></a>
-							<?php if($media['caption']):?>
-								<p class="caption"><a target="_blank" href="<?php echo $media['sizes']['medium'];?>"><?php echo $media['caption'];?></a></p>
-							<?php endif;?>
+							<p class="caption">
+								<a target="_blank" href="<?php echo $media['sizes']['large'];?>">
+									<?php if($media['caption']):?>
+										<span><?php echo $media['caption'];?></span>
+									<?php else:?>
+										<span>View</span>
+									<?php endif;?>
+								</a>
+							</p>
 						</div>
 
 					<?php elseif ($preview): ?>

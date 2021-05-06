@@ -115,17 +115,20 @@
 	}
 	.stat {
 		.icon {
-			background-color: #FFF;
-			
+			background-color: #FFF;			
 			padding: 20px 0 0 0;
+			&.people {
+				img {
+					width: 140px;
+					
+				}
+			}
 			img {
 				width: 100px;
 				height: 100px;
-
 			}
 		}
 		flex: 0 1 calc(33.3% - 20px);
-//		background: #222;
 		p {
 			margin: 16px;
 
@@ -148,15 +151,16 @@
 
 
 article.content-type-legal-text {
+	display: none;
 	margin-top: 32px;
 	.content-box > *:not(h3):not(.legal-text-title) {
 		display: none;
 	}
 
-	
+
 	.content-box {
 
-		padding-top: 28px;
+		padding-top: 20px;
 		//border: 1px solid var(--light-grey); 	
 		//padding: 24px 0 0 0;
 		//border-left: 8px solid rgba(255,255,255,0.1);
@@ -178,12 +182,17 @@ article.content-type-legal-text {
 			right: -8px;
 		}
 	}
+	.legal-text-title {
+		flex-flow: row nowrap;
+		align-items: baseline;
+	}
 	h4 {
 		text-transform: uppercase;
-		flex: 1 0 100%;
+		flex: 0 1 170px;
 	}
 	p {
 		margin-bottom: 20px;
+		flex-grow: 1;
 	}
 	i.fas {
 		font-size: 24px;
@@ -253,9 +262,7 @@ section#report {
 			//display: none;
 		}
 	}
-	.legal-text-title {
-		flex-flow: row wrap;
-	}
+	
 	h3, .legal-text-title {
 		display: flex;
 		justify-content: space-between;
@@ -284,26 +291,26 @@ section#report {
 		}
 		//border-bottom: 1px solid red;
 
-		// .continue {
-		// 	display: none;
-		// 	text-align: center;
-		// 	color: var(--light-grey);
-		// }
-		// &.concatenate {
-		// 	.content-box {
-		// 		*:not(div.continue):nth-child(n+5){
-		// 			display: none;
-		// 		}
-		// 	}
-		// 	.continue {
-		// 		display: block;
-		// 		&:nth-child(2),
-		// 		&:nth-child(3),
-		// 		&:nth-child(4){
-		// 			display: none;
-		// 		}
-		// 	}			
-		// }
+		.continue {
+			display: none;
+			text-align: center;
+			color: var(--light-grey);
+		}
+		&.concatenate {
+			.content-box {
+				*:not(div.continue):nth-child(n+5){
+					display: none;
+				}
+			}
+			.continue {
+				display: block;
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4){
+					display: none;
+				}
+			}			
+		}
 	}
 	article.report.depth-0.content-type-introduction {
 		//margin-bottom: 5rem;

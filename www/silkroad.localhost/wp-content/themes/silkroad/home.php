@@ -44,7 +44,7 @@
 					<p class="date media-caption">Conducted October 2019 &mdash; April 2021</p>
 				</div>
 				<div class="stat">
-					<div class="icon"><img src="<?php bloginfo('template_directory');?>/assets/images/Amnesty Icons-78.svg"></div>
+					<div class="icon people"><img src="<?php bloginfo('template_directory');?>/assets/images/Amnesty Icons-16.svg"></div>
 					<h2>Testimonial evidence from 70 survivors and witnesses</h2>
 				</div>
 			</div>

@@ -149,11 +149,19 @@ section#cases {
 				right: 27px;
 				height: 36px;
 				background-color: rgba(41, 41, 41, 0.6);
-				a[target="_blank"]:after {
-					content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-					margin: 1px 2px 0 5px;
-					filter: invert(1);
+				a[target="_blank"]{
+					text-decoration: none;
+					&::after {
+						content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+						margin: 1px 2px 0 5px;
+						filter: invert(1);						
+					}
+					span {
+						text-decoration: underline;
+					}
 				}
+				text-decoration: none;
+
 
 			}
 			img {
