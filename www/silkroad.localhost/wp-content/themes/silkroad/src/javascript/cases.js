@@ -1,5 +1,15 @@
+import ScrollBooster from 'scrollbooster';
+
 export default function createCases() {
 	const cases = document.querySelector('#cases').querySelectorAll('article');
+	document.querySelectorAll('.scroller').forEach(scroller => {
+
+		new ScrollBooster({ 
+			viewport: scroller.querySelector('.scroller-outer'),
+			scrollMode: 'native', 
+			direction: 'horizontal' 
+		});
+	});
 	if (cases.length > 0) {
 		cases.forEach(article => {
 			article.querySelector('.read-more').addEventListener('click', e=>{

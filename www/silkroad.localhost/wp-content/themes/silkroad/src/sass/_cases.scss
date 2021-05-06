@@ -1,3 +1,22 @@
+.grabbable {
+	cursor: grab;
+}
+
+.scroller {
+	width: 100vw;
+}
+
+.scroller-outer {
+	width: 100vw;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: hidden;
+}
+.scroller-inner {
+	display: flex;
+	margin: 0 80px;
+}
+
 section#cases {
 	.face-crop {
 		display: none;
@@ -92,11 +111,11 @@ section#cases {
 			}
 		}
 	}
-	.preview {
+
 		.slideshow {
 			box-sizing: border-box;
 			position: relative;
-			height: 240px;
+			flex: 0 0 240px;
 			min-height: 0;
 			.slide:nth-child(1){
 				img {
@@ -130,14 +149,15 @@ section#cases {
 				}
 
 			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				display: block;
+			}
 		}
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			display: block;
-		}
-	}
+		
+	
 	h5 {
 		margin-bottom: 0;
 	}
@@ -234,12 +254,14 @@ section#cases {
 			line-height: 1.3;
 			margin-bottom: 0;
 		}
-
+		.case-outer {
+			overflow: hidden;
+		}
 		&.expanded {
-			overflow: auto;
+			
 			.slideshow {
-				position: sticky;
-				top: 0;
+				// position: sticky;
+				// top: 0;
 			}
 			.summary p {
 				display: block;
@@ -247,8 +269,8 @@ section#cases {
 			.case div.read-more {
 				display: none;
 			}
-			.case {
-
+			.case-outer {
+				overflow: auto;
 			}
 		}
 		.summary {
@@ -309,9 +331,15 @@ section#cases {
 			background-color: var(--light-grey);
 			min-height: 260px;
 		}
+		.case-outer {
+			flex-grow: 1;
+		}
 		.preview {
 			height: 100%;
 			position: relative;
+			overflow: hidden;
+			display: flex;
+			flex-flow: column nowrap;
 		}
 		.case {
 			flex-shrink: 0;
