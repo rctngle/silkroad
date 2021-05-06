@@ -41,6 +41,15 @@ export default function createCases() {
 			slideshow.dataset.idx = 0;
 			slideshow.dataset.numarticles = slideshow.querySelectorAll('.slide').length;
 
+			slideshow.querySelectorAll('img').forEach(image=>{
+				image.addEventListener('click', e => {
+					let idx = parseInt(slideshow.dataset.idx) + 1;
+					if (idx > parseInt(slideshow.dataset.numarticles) - 1) {
+						idx = 0;
+					}
+					slideshow.dataset.idx = idx;
+				});
+			});
 			if(slideshow.querySelector('.controls')){
 				slideshow.querySelector('.prev').addEventListener('click', e => {
 					let idx = parseInt(slideshow.dataset.idx) - 1;
