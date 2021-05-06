@@ -10,7 +10,7 @@ export default function createMap() {
 			zoom: [4.22513],
 			attributionControl: false,
 			zoomControl: false,
-			interactive: true
+			interactive: false
 		});
 
 		map.on('zoom', e=>{

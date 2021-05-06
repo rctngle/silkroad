@@ -10,7 +10,17 @@ $horizontal-nav-height: 155px;
 	position: sticky;
 	top: var(--header-height);
 	z-index: 1;
-
+	.active-marker {
+		display: inline-block;
+		background: yellow;
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		margin-right: 2px;
+		display: none;
+		position: relative;
+		top: 0px;
+	}
 	.swiper-slide {	
 		background: #222;
 		height: $horizontal-nav-height;
@@ -24,9 +34,16 @@ $horizontal-nav-height: 155px;
 			
 			padding: 14px var(--padding) var(--padding) var(--padding);
 		}
+		&.active {
+			background: #484848;
+			.active-marker {
+				display: inline-block;
+			}
+		}
 	}
 
-	.scroller-inner {		
+	.scroller-inner {	
+		margin: 0 30px;	
 		box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	}
 
@@ -85,3 +102,4 @@ $horizontal-nav-height: 155px;
 	align-items: flex-start;
 
 }
+////////////////////////
