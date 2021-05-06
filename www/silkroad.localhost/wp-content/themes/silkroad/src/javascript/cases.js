@@ -62,14 +62,14 @@ export default function createCases() {
 	});
 
 	document.querySelector('#cases-scroller .scroller-prev').addEventListener('click', e => {
-		const position = casesScroller.getState().position;
 		const scrollAmount = (document.body.clientWidth / 2);
-		casesScroller.scrollTo({ x: position.x - scrollAmount, y: 0 });
+		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
+		casesScroller.scrollTo({ x: scrollLeft - scrollAmount, y: 0 });
 	});
 
 	document.querySelector('#cases-scroller .scroller-next').addEventListener('click', e => {
-		const position = casesScroller.getState().position;
 		const scrollAmount = (document.body.clientWidth / 2);
-		casesScroller.scrollTo({ x: position.x + scrollAmount, y: 0 });
+		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
+		casesScroller.scrollTo({ x: scrollLeft + scrollAmount, y: 0 });
 	});
 }
