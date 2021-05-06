@@ -53,9 +53,7 @@ function silkroad_report_display_nav($parent, $depth, $chapter_num) {
 
 			echo '<div class="reportid-' . get_the_ID() . ' swiper-slide">';
 				get_template_part('templates/nav/nav', get_post_type(), $report_args);
-				/* echo "<ul>";
-				silkroad_report_display_nav(get_the_ID(), $depth+1, $chapter_num);
-				echo "</ul>"; */
+			
 			echo '</div>';
 			$idx++;
 		}
