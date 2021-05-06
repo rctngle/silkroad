@@ -64,8 +64,8 @@ $classes[]=LANG;
 		<div class="gradient"></div>
 	</div>
 	<div class="hero-content">
-		<h1 class="main-title"><?php echo silkroad_translate('human-rights-exposed'); ?></h1>
-		<h1 class="sub-title"><?php echo silkroad_translate('an-investigation-into-human-rights-violations'); ?></h1>
+		<h1 class="main-title"><?php echo silkroad_translate('enemies-in-war'); ?></h1>
+		<h1 class="sub-title"><?php echo silkroad_translate('chinas-mass-internment'); ?></h1>
 	</div>
 	<?php /* <div class="scroll-down-continue" style="visibility: visible;">
 		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
