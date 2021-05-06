@@ -39,16 +39,14 @@ $cases_query = new WP_Query([
 	</div>
 </div>
 
-<?php /*
-<div class="swiper-pagination"></div>
-	<div class="gradient right swiper-button-next">
-		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right.svg)"></div>
-	</div>
-	<div class="gradient left swiper-button-prev">
-		<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left.svg)"></div>
-	</div>
-*/ ?>
+<div id="cases-pager">
+	<?php while($cases_query->have_posts()): $cases_query->the_post(); ?>
+		
+		<?php get_template_part('templates/parts/case-pager'); ?>
+	<?php endwhile; ?>
+	<?php wp_reset_postdata() ?>
 
+</div>
 
 <?php /* if ($cases_query->have_posts()): ?>
 	<div class="section-inner-full">	
