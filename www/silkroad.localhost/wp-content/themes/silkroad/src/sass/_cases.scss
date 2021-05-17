@@ -56,6 +56,8 @@ section#cases {
 	}
 }
 
+
+
 #cases-scroller {
 	overflow: hidden;
 	position: relative;
@@ -291,8 +293,10 @@ section#cases {
 		flex-shrink: 0;
 		margin: 36px 16px 36px 0;
 		height: 605px;
+		//height: 1300px;
 		h3 {
 			margin-bottom: 1rem;
+			padding: 0 16px;
 		}
 		@include body-text;
 		line-height: 1.2;
@@ -353,22 +357,19 @@ section#cases {
 		.summary {
 			margin-top: 1rem;
 		}
-		.summary p {
 
-			// overflow: hidden;
-			// display: -webkit-box;
-			// -webkit-line-clamp: 3;
-			// -webkit-box-orient: vertical;
+		.case__row, .case__row--full {
+			padding-left: 16px;
+			padding-right: 16px;
 		}
-
-		.case > div {
+		.case .case__row {
+			padding-bottom: 6px;
 			white-space: normal;
 			align-items: baseline;
 			margin-bottom: 6px;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			border-bottom: 1px solid #ddd;
-			padding-bottom: 6px;
 			h5 {
 				padding-right: 10px;
 			}
@@ -394,22 +395,19 @@ section#cases {
 				text-decoration: underline;
 			}
 		}
-		.case .ethnicity {
-			//margin-bottom: 1rem;
-		}
-		.case .full {
+		.case__personal-container {
+			padding: 16px 0;
+			background-color: #ececec;
+		}	
+
+		.case .case__row--full {
 			display: block;
 			margin-bottom: 1rem;
 			h5 {
 				margin-bottom: 0.3rem;
 			}
 		}
-		.case .personal-details {
-			margin-bottom: 5px;
-			padding-top: 5px;
-			margin-top: 2rem;
-			//border-top: 1px solid #ddd;
-		}
+
 		.image {
 			background-color: var(--light-grey);
 			min-height: 260px;
@@ -427,7 +425,7 @@ section#cases {
 		.case {
 			flex-shrink: 0;
 			background-color: #FFF;
-			padding: 16px 16px 8px 16px;
+			padding: 16px 0 0 0;
 		}
 
 	}

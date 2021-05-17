@@ -1,6 +1,12 @@
 @mixin body-text {
 	font-family: 'Roboto', sans-serif, Tahoma;
-	font-size: 18px;
+	font-size: 17px;
+	letter-spacing: 0.01em;
+	@include breakpoint(lg){
+		letter-spacing: 0;
+		font-size: 18px;	
+	}
+	
 	font-weight: normal;
 	line-height: 1.5;
 	body.chinese & {

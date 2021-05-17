@@ -60,54 +60,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="chapters">
-			<h3>Chapters of the Report</h3>
-			<p>There are 12 chapters in the report:</p>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>1</div></div>
-				<div>Provides background information on XUAR and gives an overview of the cycles of violence, discrimination, and repression that occurred in XUAR from the 1980s to 2016.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>2</div></div>
-				<div>Describes <span class="highlight">major human rights violations</span> in XUAR since 2017 that have occurred outside the camps, including the severe restrictions on freedom of religion, freedom of movement, freedom of expression and the right to privacy.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>3</div></div>
-				<div>Focuses on <span class="highlight">what happens to detainees</span> from the time they are detained until they enter an internment camp: the process of arbitrary detention, interrogation, biometric data collection, and transfer to a camp.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>4</div></div>
-				<div>Details life for detainees inside the internment camps, including the <span class="highlight">conditions in the camps</span>, the highly regimented daily routines, and the content of the “re-education” curriculum.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>5</div></div>
-				<div>Describes the widespread and <span class="highlight">systematic use of torture</span> and other forms of ill-treatment in the internment camps.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>7</div></div>
-				<div>Examines the process that determines <span class="highlight">whether detainees are released</span> from internment camps.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>8</div></div>
-				<div>describes the experiences of a few camp survivors who were transferred to from the camp to <span class="highlight">situations of forced labour</span>.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>9</div></div>
-				<div>Describes the <span class="highlight">restrictions on the rights and freedoms</span> placed on ex-internees and their families after internees are released from the camps, including the surveillance by government minders, who often live with ex-detainees; other restrictions on movement and association; continued “re-education” classes; and social ostracization. </div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>10</div></div>
-				<div>Argues that the abuses committed in XUAR since 2017 meet all the elements of the elements of at least three <span class="highlight">crimes against humanity</span> under international criminal law: persecution, imprisonment, and torture.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>11</div></div>
-				<div>Concludes argues that the <span class="highlight">international community must take action</span> to investigate the situation in XUAR, most importantly, to prevent the crimes against humanity and other human right violations from continuing.</div>
-			</div>
-			<div class="chapter">
-				<div><div class="disc"><span>Chapter</span>12</div></div>
-				<div>provides recommendations to the Government of China and UN bodies and member states.</div>
-			</div>
-		</div>
+		
 		<?php get_template_part('templates/parts/report'); ?>
 	</section>
 
