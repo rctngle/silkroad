@@ -4,7 +4,6 @@ $breakpoints: (
 	'xsm': 767px,
 	'sm': 1024px,
 	'md': 1280px,
-	'md-lg': 1360px,
 	'lg': 1850px
 ) !default;
 
@@ -21,7 +20,7 @@ html {
 	font-size: 16px;
 	--padding: 16px;
 	--dark-yellow: #ffd500;
-	--light-grey: #a1a1a1;
+	--light-grey: #868686;
 	--dark-grey: #252525;
 	--hover-dark-grey: #393939;
 	--header-height: 48px;
