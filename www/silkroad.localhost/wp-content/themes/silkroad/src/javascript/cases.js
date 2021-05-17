@@ -1,5 +1,9 @@
 import ScrollBooster from 'scrollbooster';
 
+let casesScroller;
+
+
+
 export default function createCases() {
 	const cases = document.querySelector('#cases').querySelectorAll('article');
 
@@ -20,7 +24,7 @@ export default function createCases() {
 		}
 	};
 
-	const casesScroller = new ScrollBooster({ 
+	casesScroller = new ScrollBooster({ 
 		viewport: document.querySelector('#cases-scroller .scroller-outer'),
 		scrollMode: 'native', 
 		direction: 'horizontal',
@@ -76,28 +80,9 @@ export default function createCases() {
 
 	document.querySelectorAll('.case-pager-link').forEach(pager => {
 		pager.addEventListener('click', e => {
-
-			document.querySelectorAll('.case-pager-link.active').forEach(p => {
-				p.classList.remove('active');
-			});
-
-			pager.classList.add('active');
-			const href = pager.getAttribute('href');
-			const referenceCode = href.replace('#case-', '');
-			
-			const caseSlide = document.querySelector('.swiper-slide.case-'+referenceCode);
-			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
-				c.classList.remove('active');
-			});
-			caseSlide.classList.add('active');
-
-
-			const elementLeft = caseSlide.offsetLeft;
-			const caseRect = caseSlide.getBoundingClientRect();
-
-
-			const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
-			casesScroller.scrollTo({ x: x, y: 0 });
+			// e.preventDefault();
+			const caseId = pager.getAttribute('href').replace('#', '');
+			scrollToCase(caseId);
 		});
 	});
 
@@ -117,4 +102,45 @@ export default function createCases() {
 	});
 
 	checkScrollMax();
+}
+
+export function scrollToCase(caseId) {
+
+	document.querySelectorAll('.case-pager-link.active').forEach(p => {
+		p.classList.remove('active');
+	});
+
+	const pager = document.querySelector('#cases-pager a.case-pager-link[href="#' + caseId + '"]');
+	console.log(pager);
+
+	pager.classList.add('active');
+	const href = pager.getAttribute('href');
+	const referenceCode = href.replace('#case-', '');
+	
+	const caseSlide = document.querySelector('.swiper-slide.case-'+referenceCode);
+	document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+		c.classList.remove('active');
+	});
+	caseSlide.classList.add('active');
+
+
+	const elementLeft = caseSlide.offsetLeft;
+	const caseRect = caseSlide.getBoundingClientRect();
+
+
+	const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
+	casesScroller.scrollTo({ x: x, y: 0 });
+
+}
+
+export function scrollToInitalCase() {
+
+	window.scroll(0, 0);
+	document.querySelector('#cases').scrollIntoView();
+
+
+	if (window.location.hash.length > 0) {
+		const caseId = window.location.hash.replace('#', '');
+		scrollToCase(caseId);
+	}
 }

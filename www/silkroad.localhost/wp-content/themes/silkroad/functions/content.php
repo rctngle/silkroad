@@ -29,3 +29,15 @@ function silkroad_footnotes($slug, $str) {
 	
 	return $str;
 }
+
+function silkroad_get_post_by_slug($post_type, $slug) {
+	$posts = get_posts([
+		'name' => $slug,
+		'post_type' => $post_type,
+		'posts_per_page' => 1
+	]);
+	if (count($posts) > 0) {
+		return $posts[0];
+	}
+	return false;
+}

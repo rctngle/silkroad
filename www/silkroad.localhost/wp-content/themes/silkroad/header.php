@@ -8,7 +8,7 @@ $classes[]=LANG;
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Silk Road</title>
+	<title><?php echo silkroad_translate('enemies-in-war'); ?>: <?php echo silkroad_translate('chinas-mass-internment'); ?></title>
 
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
