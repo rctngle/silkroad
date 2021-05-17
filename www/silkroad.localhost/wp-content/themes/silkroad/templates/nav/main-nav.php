@@ -19,7 +19,6 @@ $chapters_query = new WP_Query([
 <div><a href="#introduction-anchor">Introduction</a></div>
 <div><a href="#cases-anchor">Cases</a></div>
 <div><a href="#report-anchor">Report</a></div>
-<div><a href="#conclusion">Conclusions</a></div>
 <div><a href="#recommendations">Recommendations</a></div>
 <div class="take-action"><a href="#take-action-anchor">Take Action</a></div>
 <div class="shared-dropdown">

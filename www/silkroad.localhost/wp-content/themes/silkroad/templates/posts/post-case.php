@@ -61,7 +61,11 @@
 		<div class="case-outer">
 			<div class="case">
 				<h3><?php echo silkroad_translate_field(get_field('name_ml_text')); ?></h3>
+				<div class="case__row"><p><?php echo silkroad_translate_field(get_field('name_chinese_ml_text')); ?></p></div>
+				
 				<div class="case__row">
+
+
 					<h5>Assumed Location</h5>
 					<p><?php echo silkroad_translate_field(get_field('where_held_ml_text')); ?></p>
 				</div>

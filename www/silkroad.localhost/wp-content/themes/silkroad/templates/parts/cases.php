@@ -1,5 +1,7 @@
 <?php
 
+$cases_page = silkroad_get_post_by_slug('page', 'missing-and-detained-people');
+
 $cases_query = new WP_Query([
 	'post_type' => 'case',
 	'posts_per_page' => -1,
@@ -10,16 +12,18 @@ $cases_query = new WP_Query([
 ?>
 <div class="content-box section-title centered">
 
-	<h1>Missing and Detained People</h1>		
+	<h1><?php echo silkroad_translate_field(get_field('title_ml_text', $cases_page->ID)); ?></h1>		
 	<div class="cases-download-container">
 		<a target="_blank" href="#">
 			<div class="icon">
 				<img src="<?php bloginfo('template_directory');?>/assets/images/ico-download.svg">
 			</div>
-			<div class="label">Download<br/>this data</div>
+			<div class="label"><?php echo silkroad_translate('download-this-data'); ?></div>
 		</a>
 	</div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	<div>
+		<?php echo silkroad_translate_field(get_field('content_ml_rich_text', $cases_page->ID)); ?>
+	</div>
 </div>
 
 <div id="cases-scroller" class="scroller grabbable">

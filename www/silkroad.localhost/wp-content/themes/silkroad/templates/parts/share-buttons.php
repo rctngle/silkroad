@@ -1,8 +1,6 @@
 <?php
-
-$share_url ='https://www.amnesty.org';
-$share_title = 'Website title goes here';
-
+$share_url = site_url();
+$share_title = silkroad_translate('social-media-text');
 ?>
 <ul>
 	<li>
@@ -32,3 +30,4 @@ $share_title = 'Website title goes here';
 		</a>
 	</li>
 </ul>
+

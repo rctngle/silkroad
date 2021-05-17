@@ -38,8 +38,8 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 
 		<div class="content-box">
 			<div class="section-title">
-				<h1>Report</h1>
-				<h2>Xinjiang: Eventual Report Title</h2>
+				<h1><?php echo silkroad_translate('enemies-in-war'); ?></h1>
+				<h2><?php echo silkroad_translate('chinas-mass-internment'); ?></h2>
 			</div>
 		</div>	
 	</article>
@@ -49,7 +49,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			<div class="scroller-inner">
 				<?php silkroad_report_display_nav(0, 0, 0);?>
 			</div>
-		</div>
+		</div>	
 		<div class="gradient right scroller-next">
 			<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-right-white.svg)"></div>
 		</div>
