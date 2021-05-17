@@ -135,12 +135,20 @@ export function scrollToCase(caseId) {
 
 export function scrollToInitalCase() {
 
-	window.scroll(0, 0);
-	document.querySelector('#cases').scrollIntoView();
+	window.scroll(0, offset(document.querySelector('#cases')).top - 100);
+	// document.querySelector('#cases').scrollIntoView();
+
 
 
 	if (window.location.hash.length > 0) {
 		const caseId = window.location.hash.replace('#', '');
 		scrollToCase(caseId);
 	}
+}
+
+function offset(el) {
+	const rect = el.getBoundingClientRect();
+	const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
 }

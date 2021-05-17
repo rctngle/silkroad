@@ -7,9 +7,7 @@ import createPolyfills from './polyfills';
 
 createPolyfills();
 
-window.addEventListener('DOMContentLoaded', e=>{
-	window.scroll(0, 0);
-	
+window.addEventListener('DOMContentLoaded', e=>{	
 	createCases();
 	createFootnotes();
 	createMap();
