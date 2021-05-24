@@ -45,8 +45,10 @@
 }
 
 @mixin sans-ui {
-	font-family: 'Helvetica', san-serif;
-	font-weight: bold;
+	font-family: 'Helvetica', san-serif, Tahoma;
+	strong {
+		font-weight: bold;		
+	}
 }
 
 @mixin h3-title {
@@ -149,7 +151,7 @@ h1, h2 {
 	color: #000;
 	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
 	line-height: 1;
-	letter-spacing: -0.015em;
+	letter-spacing: -0.01em;
 	padding: 10px 16px 12px 16px;
 	margin-bottom: 32px;
 	display: inline-block;

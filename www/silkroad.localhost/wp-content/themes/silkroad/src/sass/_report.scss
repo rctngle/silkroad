@@ -18,6 +18,25 @@
 // 		width: 100% !important;
 // 	}
 // }
+.insert {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	top: 340px;
+	pointer-events: none;
+	z-index: -1;
+	opacity: 0.9;
+}
+
+
+article[data-rootparent="1068"]{
+	.insert {
+		top: auto;
+		bottom: 40px;
+	}
+}
 
 .call-out {
 	display: none;
@@ -250,10 +269,11 @@ section#report {
 			position: absolute;
 			right: -340px;
 			width: 260px;
-			padding-right: 20px;
+//			padding-right: 20px;
 			margin-top: -20px;
 			font-size: 14px;
-
+			padding: 10px;
+			background-color:rgba(0,0,0,0.8);
 			color: var(--light-grey);
 			word-break: break-word;
 			span {

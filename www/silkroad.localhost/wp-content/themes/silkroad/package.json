@@ -33,7 +33,8 @@
   "dependencies": {
     "in-view-modern": "^0.6.3",
     "mapbox-gl": "^2.1.1",
-    "scrollbooster": "^3.0.2"
+    "scrollbooster": "^3.0.2",
+    "typer-js": "^5.5.3"
   },
   "browserslist": [
     "> 1%",

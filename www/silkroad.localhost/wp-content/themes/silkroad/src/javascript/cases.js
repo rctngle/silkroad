@@ -106,41 +106,46 @@ export default function createCases() {
 
 export function scrollToCase(caseId) {
 
-	document.querySelectorAll('.case-pager-link.active').forEach(p => {
-		p.classList.remove('active');
-	});
+	if(caseId){
+		document.querySelectorAll('.case-pager-link.active').forEach(p => {
+			p.classList.remove('active');
+		});
 
-	const pager = document.querySelector('#cases-pager a.case-pager-link[href="#' + caseId + '"]');
-	console.log(pager);
+		const pager = document.querySelector('#cases-pager a.case-pager-link[href="#' + caseId + '"]');
+		console.log(pager);
 
-	pager.classList.add('active');
-	const href = pager.getAttribute('href');
-	const referenceCode = href.replace('#case-', '');
-	
-	const caseSlide = document.querySelector('.swiper-slide.case-'+referenceCode);
-	document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
-		c.classList.remove('active');
-	});
-	caseSlide.classList.add('active');
+		pager.classList.add('active');
+		const href = pager.getAttribute('href');
+		const referenceCode = href.replace('#case-', '');
+		
+		const caseSlide = document.querySelector('.swiper-slide.case-'+referenceCode);
 
+		document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+			c.classList.remove('active');
+		});
 
-	const elementLeft = caseSlide.offsetLeft;
-	const caseRect = caseSlide.getBoundingClientRect();
+		caseSlide.classList.add('active');
 
 
-	const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
-	casesScroller.scrollTo({ x: x, y: 0 });
+		const elementLeft = caseSlide.offsetLeft;
+		const caseRect = caseSlide.getBoundingClientRect();
+
+
+		const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
+		casesScroller.scrollTo({ x: x, y: 0 });
+	}
 
 }
 
 export function scrollToInitalCase() {
 
-	window.scroll(0, offset(document.querySelector('#cases')).top - 100);
+	
 	// document.querySelector('#cases').scrollIntoView();
 
 
 
-	if (window.location.hash.length > 0) {
+	if (window.location.hash.length > 0 && window.location.hash.indexOf('case-') > 0) {
+		window.scroll(0, offset(document.querySelector('#cases')).top - 100);
 		const caseId = window.location.hash.replace('#', '');
 		scrollToCase(caseId);
 	}

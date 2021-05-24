@@ -25,8 +25,30 @@
 		<a name="take-action-anchor"></a>
 		<?php get_template_part('templates/parts/call-to-action'); ?>			
 	</section>
+
+
+
 	<section name="report" id="report">
 		<a name="report-anchor"></a>
+
+		<div class="insert" data-root="1062">
+			<div class="left">
+				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-1.jpg">
+			</div>
+			<div class="right">
+				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-6.jpg">
+			</div>
+		</div>
+
+		<div class="insert" data-root="1068">
+			<div class="left">
+				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-3.jpg">
+			</div>
+			<div class="right">
+				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-2.jpg">
+			</div>
+		</div>
+
 		<div class="what-is-the-report">
 			<h3>What is the Report?</h3>
 			<div class="stats">

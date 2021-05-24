@@ -40,8 +40,10 @@ export default function createReport() {
 	const whatIsMarkup = document.querySelector('#report > .what-is-the-report');
 	document.querySelector('#what-is-the-report').appendChild(whatIsMarkup);
 
-	// const chapters = document.querySelector('#report > .chapters');
-	// document.querySelector('#chapters').appendChild(chapters);
+	document.querySelectorAll('#report .insert').forEach(insert=>{
+		document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);
+	});
+
 
 	const callOut = document.querySelector('#report > .call-out');
 	document.querySelector('#call-out').appendChild(callOut);

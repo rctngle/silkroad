@@ -132,10 +132,10 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 			<?php echo silkroad_translate_field(get_field('content_ml_rich_text')); ?>		
 		</div>
 
-		<?php if($post->post_name == 'background'):?>
+		<?php /* if($post->post_name == 'background'):?>
 
 			<section id="map"><?php get_template_part('templates/parts/map'); ?></section>
-		<?php endif;?>
+		<?php endif;*/?>
 
 	</article>
 
