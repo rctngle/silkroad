@@ -30,21 +30,35 @@
 }
 
 img.alignleft {
-	width: 400px;
+	width: 170px;
 	height: auto;
 	float: left;
-	margin-left: -200px;
-	margin: 16px 32px 16px -200px;
+	margin: 16px 18px 16px -40px;
+	@include breakpoint(xsm){
+		margin: 16px 32px 16px -40px;
+		width: 300px;
+	}
+	@include breakpoint(sm){
+		width: 400px;
+		margin: 16px 32px 16px -200px;
+	}
 }
 
 .media.illustration {
 	//margin-bottom: 36px;
+	--media-height: 250px;
+	@include breakpoint(xsm){
+		--media-height: 50vh;
+	}
+	@include breakpoint(sm){
+		--media-height: 70vh;
+	}
 	z-index: -1;
     position: relative;
-    height: calc(70vh - 100px);
+    height: calc(var(--media-height) - 100px);
 	.image {
 		width: 100%;
-		height: 70vh;
+		height: var(--media-height);
 		overflow: hidden;
 
 		img {

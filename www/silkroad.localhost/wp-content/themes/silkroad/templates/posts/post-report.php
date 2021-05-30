@@ -48,6 +48,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<div class="scroller-outer">
 			<div class="scroller-inner">
 				<?php silkroad_report_display_nav(0, 0, 0);?>
+				<div class="padder"></div>
 			</div>
 		</div>	
 		<div class="gradient right scroller-next">
@@ -56,6 +57,7 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 		<div class="gradient left scroller-prev">
 			<div class="button" style="background-image: url(<?php bloginfo('template_directory');?>/assets/images/ico-arrow-left-white.svg)"></div>
 		</div>
+
 	</div>
 
 

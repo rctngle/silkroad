@@ -48,14 +48,16 @@ $classes[]=LANG;
 <body dir="auto" class="<?php echo implode(' ', $classes); ?> horizontal-nav">
 <a name="introduction-anchor"></a>
 
-<header>
+<header class="">
 	<div class="logo">
 		<a href="<?php echo site_url();?>"><img src="<?php bloginfo('template_directory');?>/assets/images/logo-amnesty-yellow@3x.png"></a>
 	</div>
 	<nav>
 		<?php get_template_part('templates/nav/main-nav'); ?>
 	</nav>
-
+	<div class="mobile-nav-toggle">
+		<img src="<?php bloginfo('template_directory');?>/assets/images/hamburger.svg">
+	</div>
 </header>
 
 <section class="hero">
@@ -64,47 +66,32 @@ $classes[]=LANG;
 		<div class="gradient"></div>
 	</div>
 	<div class="hero-content">
+		<div class="main-title-mobile">
+			<h1 class="animate" data-delay="0">
+				<?php echo silkroad_translate('enemies-in-war'); ?>
+			</h1>
+			<h2 class="animate" data-delay="1000"><?php echo silkroad_translate('chinas-mass-internment'); ?></h2>
+		</div>
 		<h1 class="main-title animate" data-delay="0">
 			<?php echo silkroad_translate('enemies-in-war'); ?>
 			<span><?php echo silkroad_translate('chinas-mass-internment'); ?></span>			
 		</h1>
-<!-- 		<h1 class="sub-title"></h1> -->
+<!-- 		<div class="mobile-main-points">
+			<p data-delay="1200">Turkic Muslim people in the Xinjiang face Chinese government-directed <span>discrimination and persecution</span>.</p>
+			<p class="animate" data-delay="1600">The objectives are to <span>eradicate Islamic religious beliefs</span> and Turkic Muslim ethno-cultural practices.</p>
+			<p class="animate" data-delay="2000">More than <span>a million people</span> have been arbitrarily arrested, denied due process, and unlawfully interned.</p>
+		</div> -->
 		<div class="main-points">
 			<div class="animate" data-delay="1200">				
-				<div class="image"><img src="<?php bloginfo('template_directory');?>/assets/temporary/bus022.jpg"></div>
 				<p>Turkic Muslim people in the Xinjiang face Chinese government-directed <span>discrimination and persecution</span>.</p>
 			</div>
 			<div class="animate" data-delay="1600">				
-				<div class="image"><img src="<?php bloginfo('template_directory');?>/assets/temporary/bus022.jpg"></div>
 				<p>The objectives are to <span>eradicate Islamic religious beliefs</span> and Turkic Muslim ethno-cultural practices.</p>
 			</div>
 			<div class="animate" data-delay="2000">				
-				<div class="image"><img src="<?php bloginfo('template_directory');?>/assets/temporary/bus022.jpg"></div>
 				<p>More than <span>a million people</span> have been arbitrarily arrested, denied due process, and unlawfully interned.</p>
 			</div>
 		</div>
-		<!-- <div id="sub-title" class="sub-title">
-			<div class="row animate">
-				<div class="dark">China’s</div>	
-				<div class=""><span>Mass Internment</span></div>
-				<div></div>
-			</div>
-			<div class="row">
-				<div></div>
-				<div class="animate"><span>Torture &amp;</span></div>	
-				<div></div>
-			</div>
-			<div class="row">
-				<div></div>
-				<div class="animate"><span>Persecution</span></div>
-				<div class="dark animate">of Muslims in Xinjiang</div>
-			</div>			
-			<div class="row">	
-				<div></div>
-				
-			</div>
-			
-		</div> -->
 	</div>
 
 	<div class="scroll-down-continue animate" data-delay="2800" style="visibility: visible;">

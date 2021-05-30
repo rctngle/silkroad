@@ -19,10 +19,13 @@
 // 	}
 // }
 .insert {
+	display: none;
+	@include breakpoint(md){
+		display: flex;
+	}
 	position: absolute;
 	left: 0;
 	right: 0;
-	display: flex;
 	justify-content: space-between;
 	top: 340px;
 	pointer-events: none;
@@ -41,15 +44,32 @@ article[data-rootparent="1068"]{
 .call-out {
 	display: none;
 
-	width: 100vw;
-	left: calc(calc(calc(100vw - 698px) / 2) * -1);
+	width: 100%;
+	padding: 8px;
+	@include breakpoint(xsm){
+		padding: 16px 16px 16px 32px;
+	}
+	@include breakpoint(sm){
+		width: 100vw;
+		left: calc(calc(calc(100vw - 698px) / 2) * -1);	
+	}
 	position: relative;
 	background-color: #FFF;
 	color: #fff;
 	margin: 64px 0;
-	padding: 32px 0;
+	
+
+	h2 {
+		margin-bottom: 0;
+	}
+	@include breakpoint(sm){
+		padding: 32px 0;
+	}
 	.inner {
-		display: flex;
+		@include breakpoint(xsm){
+			display: flex;	
+		}
+		
 		max-width: 900px;
 		margin: 0 auto;
 		//align-items: center;
@@ -62,10 +82,14 @@ article[data-rootparent="1068"]{
 		}
 	}
 	.blur {
-		margin-top: 15px;
 		flex: 0 0 200px;
-		margin-right: 40px;
+		width: 200px;
+		margin: 16px auto 0 auto; 
 		position: relative;
+		@include breakpoint(xsm){
+			width: auto;
+			margin-right: 40px;	
+		}
 		img {
 			display: block;
 			width: 100%;
@@ -115,20 +139,36 @@ article[data-rootparent="1068"]{
 .section-title h2 {
 	background-color: #000;
 	color: #FFF;
-	font-size: 36px;
+	font-size: var(--h1-font-size);
 }
 
 .what-is-the-report {
 	display: none;
-	width: 1100px;	
-	left: -200px;
+	width: 90vw;
+	@include breakpoint(xsm){
+		left: calc(calc(calc(calc(90vw + 32px) - var(--content-box-width)) / 2) * -1);	
+	}
+	
+
+	@include breakpoint(md){
+		width: 1100px;	
+		left: -200px;	
+	}
+	
 	position: relative;
 	text-align: center;
 	margin: 60px 0;
 
 	.stats {
-		display: flex;
-		justify-content: space-between;
+
+		@include breakpoint(xsm){
+			grid-gap: 16px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include breakpoint(sm){
+			grid-gap: 32px;
+		}
 	}
 	h3 {
 		display: block !important;
@@ -151,7 +191,7 @@ article[data-rootparent="1068"]{
 				height: 100px;
 			}
 		}
-		flex: 0 1 calc(33.3% - 20px);
+		
 		p {
 			margin: 16px;
 
@@ -226,11 +266,22 @@ section#report {
 	
 	.wp-caption {
 
-		display: grid;
+		@include breakpoint(xsm){
+			display: grid;	
+		}
+		
 		grid-template-columns: 1fr 1fr;
-		width: 1100px !important;
+		width: 90vw !important;
+		
+		@include breakpoint(xms){
+			left: calc(calc(calc(calc(90vw + 32px) - var(--content-box-width)) / 2) * -1);	
+		}
+		@include breakpoint(md){
+			width: 1100px !important;	
+			left: -205px;
+		}
 		position: relative;
-		left: -205px;
+		
 		margin: 48px 0;
 		align-items: start;
 		img {
@@ -243,8 +294,12 @@ section#report {
 			padding: 32px;
 			margin-bottom: 0;
 			position: relative;
-			top: 80px;
-			left: -40px;
+			height: 100%;
+			@include breakpoint(sm){
+				height: auto;
+				top: 80px;
+				left: -40px;
+			}
 
 		}
 	}
@@ -262,21 +317,50 @@ section#report {
 				display: block;
 			}
 		}
-		position: static;
+		&.show-right {
+			> span {
+				right: 0;
+			}
+		}
+		position: relative;
+		@include breakpoint(sm){
+			position: static;
+		}
 		> span {
-			text-align: left;
 			display: none;
-			position: absolute;
-			right: -340px;
-			width: 260px;
-//			padding-right: 20px;
-			margin-top: -20px;
-			font-size: 14px;
-			padding: 10px;
-			background-color:rgba(0,0,0,0.8);
-			color: var(--light-grey);
+			width: 280px;		
+			background: #353535;
+			margin-left: -4px;
+			padding: 6px 10px;
+			color: #d0d0d0;
+			box-shadow: 0 0 10px rgba(0,0,0,0.7);
+			z-index: 3;
+			@include breakpoint(sm){
+				box-shadow: none;
+				color: var(--light-grey);
+				max-width: none;
+				padding: 10px;
+				margin-left: 0;
+				margin-top: -20px;
+				background-color: rgba(0,0,0,0.8);
+				right: -340px;
+				width: 260px;
+			}
+			text-align: left;			
+			position: absolute;		
+			font-size: 14px;		
 			word-break: break-word;
+			br {
+				display: none;
+				@include breakpoint(sm){
+					display: block;
+				}
+			}
 			span {
+				display: none;
+				@include breakpoint(sm){
+					display: block;
+				}
 				padding: 2px 5px;
 				background: #353535;
 				//display: inline-block;
@@ -368,7 +452,10 @@ section#report {
 			// -webkit-box-orient: vertical;
 		}
 		.content-box {
-			padding-top: 32px;
+			padding-top: 24px;
+			@include breakpoint(xsm){
+				padding-top: 32px;
+			}
 			border-bottom: 1px solid #FFF;
 		}
 	}
@@ -408,8 +495,12 @@ section#report {
 	
 
 	article.content-type-chapter {
-		padding-top: 8px * 10;
-		margin-top: 8px * 10;
+		padding-top: 8px * 4;
+		margin-top: 8px * 4;
+		@include breakpoint(sm){
+			padding-top: 8px * 10;
+			margin-top: 8px * 10;			
+		}
 	}
 
 	article.depth-3 {

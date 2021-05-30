@@ -5,6 +5,7 @@ import createTakeAction from './take-action';
 import createReport from './report';
 import createPolyfills from './polyfills';
 import createIntro from './intro';
+import createHeader from './header';
 
 createPolyfills();
 
@@ -16,6 +17,7 @@ window.addEventListener('DOMContentLoaded', e=>{
 	createReport();
 	scrollToInitalCase();
 	createIntro();
+	createHeader();
 });
 
 window.onload = function() {

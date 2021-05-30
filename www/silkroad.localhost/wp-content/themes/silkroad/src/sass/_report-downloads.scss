@@ -29,6 +29,12 @@ section#report-downloads {
 
 #report-list {
 	font-family: 'Roboto', sans-serif, Tahoma;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	@include breakpoint(xsm){
+		display: block;
+	}
 	strong {
 		font-weight: 500;
 	}
@@ -49,6 +55,7 @@ section#report-downloads {
 		}
 	}
 	div.label {
+		flex: 1 0 100%;
 		line-height: 1.4;
 		margin-bottom: 8px;
 		//color: var(--light-grey);
@@ -58,7 +65,10 @@ section#report-downloads {
 	}
 	div.language {
 		position: relative;
-		width: 160px;		
+		flex: 0 1 calc(50% - 8px);
+		@include breakpoint(xsm){
+			width: 160px;	
+		}		
 		margin-bottom: 0px;
 		//text-align: center;
 		padding: 9px 0 8px 0;

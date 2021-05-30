@@ -33,7 +33,7 @@
 
 		<div class="insert" data-root="1062">
 			<div class="left">
-				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-1.jpg">
+				<img src="<?php bloginfo('template_directory');?>/assets/temporary/barbedwire031.jpg">
 			</div>
 			<div class="right">
 				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-6.jpg">

@@ -17,13 +17,17 @@ $breakpoints: (
 
 html {
 	box-sizing: border-box;
+
 	font-size: 16px;
 	--padding: 16px;
 	--dark-yellow: #ffd500;
 	--light-grey: #868686;
 	--dark-grey: #252525;
 	--hover-dark-grey: #393939;
-	--header-height: 48px;
+	--header-height: 42px;
+	@include breakpoint(xsm){
+		--header-height: 48px;
+	}
 }
 
 *, *:before, *:after {
@@ -39,7 +43,6 @@ html {
 @import "ui";
 @import "base";
 @import "media";
-@import "hero";
 @import "sections";
 @import "report";
 @import "report-nav";
@@ -67,7 +70,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	min-width: 1230px;
+	--content-box-width: 730px;
 }
 body.uyghur {
 	direction: rtl;

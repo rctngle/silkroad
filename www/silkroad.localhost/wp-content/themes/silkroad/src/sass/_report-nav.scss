@@ -1,8 +1,12 @@
-$horizontal-nav-height: 155px;
 
 
 
 #report-nav-scroller {
+	--horizontal-nav-height: 125px;
+	@include breakpoint(xsm){
+		--horizontal-nav-height: 155px;
+	}
+	height: var(--horizontal-nav-height);
 	margin-bottom: 2rem;
 	ul {
 		list-style-type: none;
@@ -11,7 +15,8 @@ $horizontal-nav-height: 155px;
 	top: var(--header-height);
 	z-index: 1;
 	.active-marker {
-		display: inline-block;
+		
+		
 		background: yellow;
 		width: 11px;
 		height: 11px;
@@ -23,27 +28,47 @@ $horizontal-nav-height: 155px;
 	}
 	.swiper-slide {	
 		background: #222;
-		height: $horizontal-nav-height;
-		flex: 0 0 278px;	
+		height: var(--horizontal-nav-height);
+		flex: 0 0 221px;		
+		@include breakpoint(xsm){
+			flex: 0 0 278px;
+		}
+		&:nth-child(1){
+			margin-left: 24px;
+			@include breakpoint(xsm){
+				margin-left: 30px;
+			}
+		}
+		&:nth-last-child(1){
+			border: none;
+		}
 		position: relative;
 		border-right: 1px solid #444;
 		@include small-caps;
 		> a {
 			text-decoration: none;
 			display: block;
+			padding: 12px 12px 12px 12px;
+			@include breakpoint(xsm){
+				padding: 14px var(--padding) var(--padding) var(--padding);	
+			}
 			
-			padding: 14px var(--padding) var(--padding) var(--padding);
 		}
 		&.active {
 			background: #484848;
 			.active-marker {
-				display: inline-block;
+				@include breakpoint(xsm){
+					display: inline-block;	
+				}
 			}
 		}
 	}
 
 	.scroller-inner {	
-		margin: 0 30px;	
+		// margin: 0 24px;	
+		// @include breakpoint(xsm){
+		// 	margin: 0 30px;
+		// }
 		box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	}
 
@@ -51,7 +76,10 @@ $horizontal-nav-height: 155px;
 		border-radius: 5px;
 		width: 100%;
 		overflow: hidden;
-		height: 100px;
+		height: 77px;
+		@include breakpoint(xsm){
+			height: 100px;
+		}
 		display: block;
 		margin-top: 10px;
 		img {
@@ -64,14 +92,20 @@ $horizontal-nav-height: 155px;
 
 .horizontal-chapter-number {
 	color: var(--light-grey);
-	display: inline;
+	display: none;	
+	@include breakpoint(xsm){
+		display: inline;	
+	}
 }
 
 
 #report-nav-scroller .gradient {
 	position: absolute;
 	right: 0;
-	width: 30px;
+	width: 24px;
+	@include breakpoint(xsm){
+		width: 30px;
+	}
 	top: 0;
 	bottom: 0;
 	z-index: 1;
@@ -86,12 +120,20 @@ $horizontal-nav-height: 155px;
 		background: #333;
 	}
 	.button {
-		width: 27px;
+		width: 24px;
+		@include breakpoint(xsm){
+			width: 27px;
+		}
 		height: 40px;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 10px;
 	}
+}
+
+#report-nav-scroller .padder {
+	flex: 0 0 24px;
+	height: var(--horizontal-nav-height);
 }
 
 #report-nav-scroller .gradient.left {
