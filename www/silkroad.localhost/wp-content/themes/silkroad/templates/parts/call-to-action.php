@@ -24,6 +24,7 @@ $cta_page = silkroad_get_post_by_slug('page', 'call-to-action');
 				Take Action
 			</div>
 		</div>
-		<iframe src="https://join.amnesty.org/page/40993/action/1?Locale=en-US"></iframe>
+
+		<iframe src="<?php echo silkroad_translate('call-to-action-widget'); ?>"></iframe>
 	</div>
 </div>

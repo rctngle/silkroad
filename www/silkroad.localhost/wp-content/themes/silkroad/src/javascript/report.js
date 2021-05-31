@@ -64,13 +64,17 @@ export default function createReport() {
 	inView('article.report').on('enter', el => {
 		const rootId = parseInt(el.dataset.rootparent);
 		const navItem = document.querySelector('#report-nav-scroller .reportid-'+rootId);
-		activateNavItem(navItem);
-	});
-}
 
-function activateNavItem(navItem) {
-	document.querySelectorAll('#report-nav-scroller .swiper-slide').forEach(item => {
-		item.classList.remove('active');
+		document.querySelectorAll('#report-nav-scroller .swiper-slide').forEach(item => {
+			item.classList.remove('active');
+		});
+		navItem.classList.add('active');	
+
+		const elementLeft = navItem.offsetLeft;
+		const navItemRect = navItem.getBoundingClientRect();
+
+		const x = (elementLeft - (document.body.clientWidth / 2)) + (navItemRect.width / 2);
+		reportScroller.scrollTo({ x: x, y: 0 });
+
 	});
-	navItem.classList.add('active');	
 }

@@ -5,8 +5,7 @@ $cases_page = silkroad_get_post_by_slug('page', 'missing-and-detained-people');
 $cases_query = new WP_Query([
 	'post_type' => 'case',
 	'posts_per_page' => -1,
-    // 'orderby' => 'rand',
-
+    'orderby' => 'rand',
 ]);
 
 ?>

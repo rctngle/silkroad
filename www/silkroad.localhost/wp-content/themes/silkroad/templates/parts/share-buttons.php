@@ -1,6 +1,7 @@
 <?php
 $share_url = site_url();
 $share_title = silkroad_translate('social-media-text');
+$instagram_url = get_field('instagram_url', 'options');
 ?>
 <ul>
 	<li>
@@ -15,14 +16,15 @@ $share_title = silkroad_translate('social-media-text');
 			<span>Twitter</span>
 		</a>
 	</li>
-	<?php /*
-	<li>
-		<a class="share-button ico-instagram" href="https://www.instagram.com/" target="_blank">
-			<img src="<?php bloginfo('template_directory');?>/assets/images/ico-instagram-white.svg">
-			<span>Instagram</span>
-		</a>
-	</li>
-	*/ ?>
+	<?php if ($instagram_url): ?>
+		<li>
+			<a class="share-button ico-instagram" href="<?php echo $instagram_url; ?>" target="_blank">
+				<img src="<?php bloginfo('template_directory');?>/assets/images/ico-instagram-white.svg">
+				<span>Instagram</span>
+			</a>
+		</li>
+	<?php endif; ?>
+
 	<li>
 		<a class="share-button ico-telegram" href="https://t.me/share/url?url=<?php echo $share_url; ?>&text=<?php echo $share_title; ?>" target="_blank">
 			<img src="<?php bloginfo('template_directory');?>/assets/images/ico-telegram-white.svg">
