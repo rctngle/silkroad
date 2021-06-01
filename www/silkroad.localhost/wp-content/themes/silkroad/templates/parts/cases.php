@@ -8,18 +8,24 @@ $cases_query = new WP_Query([
     'orderby' => 'rand',
 ]);
 
+$download_this_data_url = get_field('download_this_data_url', 'options');
+
 ?>
 <div class="content-box section-title centered">
 
 	<h1><?php echo silkroad_translate_field(get_field('title_ml_text', $cases_page->ID)); ?></h1>		
-	<div class="cases-download-container">
-		<a target="_blank" href="#">
-			<div class="icon">
-				<img src="<?php bloginfo('template_directory');?>/assets/images/ico-download.svg">
-			</div>
-			<div class="label"><?php echo silkroad_translate('download-this-data'); ?></div>
-		</a>
-	</div>
+	
+	<?php if ($download_this_data_url): ?>
+		<div class="cases-download-container">
+			<a target="_blank" href="<?php echo $download_this_data_url; ?>">
+				<div class="icon">
+					<img src="<?php bloginfo('template_directory');?>/assets/images/ico-download.svg">
+				</div>
+				<div class="label"><?php echo silkroad_translate('download-this-data'); ?></div>
+			</a>
+		</div>
+	<?php endif; ?>
+
 	<div>
 		<?php echo silkroad_translate_field(get_field('content_ml_rich_text', $cases_page->ID)); ?>
 	</div>
