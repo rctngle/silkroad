@@ -21,19 +21,20 @@ foreach($image_files as $image_file) {
 		if (!isset($case_images[$file_code])) {
 			$case_images[$file_code] = [
 				'image' => '',
+				'crop' => '',
 				'images' => [],
 			];
 		}
 
-		if (stristr($image_file, '-')) {
+		if (stristr($image_file, '-crop')) {
+			$case_images[$file_code]['crop'] = $image_file;
+		} else if (stristr($image_file, '-')) {
 			$case_images[$file_code]['images'][] = $image_file;
 		} else {
 			$case_images[$file_code]['image'] = $image_file;
 		}
 	}
 }
-
-
 
 
 
@@ -66,9 +67,12 @@ foreach($cases as $case) {
 
 	$images = $case_images[$case->case_id];
 	$main_image = $images['image'];
+	$crop_image = $images['crop'];
+
 
 	if ($main_image) {
-	
+		
+
 		$image_path = __DIR__ . '/images/' . $main_image;
 		if (file_exists($image_path)) {
 			echo $image_path . PHP_EOL;
@@ -76,19 +80,26 @@ foreach($cases as $case) {
 		}
 		set_post_thumbnail( $case->post_id, $attach_id );
 
-
+		$crop_path = __DIR__ . '/images/' . $crop_image;
+		if (file_exists($crop_path)) {
+			echo $crop_path . PHP_EOL;
+			$crop_id = create_attachment($crop_path, false);		
+			update_field( 'image_cropped', $crop_id , $case->post_id );
+		}
+		
 		$doc_ids = [];
 		foreach($images['images'] as $doc) {
 			$doc_path = __DIR__ . '/images/' . $doc;
 			if (file_exists($doc_path)) {
 				echo $doc_path . PHP_EOL;
-				$doc_ids[] = create_attachment($image_path, false);
+				$doc_ids[] = create_attachment($doc_path, false);
 			}
 		}
 
 		if (count($doc_ids) > 0) {
 			update_field( 'images_documents', $doc_ids , $case->post_id );
 		}
+
 	}
 }	
 
