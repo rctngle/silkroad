@@ -2,6 +2,7 @@ const fs = require('fs');
 const util = require('util');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
+const striptags = require('striptags');
 
 let content = fs.readFileSync(__dirname + '/report-in.html', 'utf8').toString();
 let dom = new JSDOM(content);
@@ -16,12 +17,49 @@ doc.querySelectorAll('a.footnote-ref').forEach(a => {
 	const sup = a.querySelector('sup');
 	const num = parseInt(sup.textContent)
 	if (num > 0) {
-	 	const footnote = doc.querySelector('li#fn'+num)
+		const footnote = doc.querySelector('li#fn'+num);
+		const footnoteBack = footnote.querySelector('.footnote-back');
+		footnoteBack.parentNode.removeChild(footnoteBack)
 
-	 	a.insertAdjacentHTML('afterend', ' [[[' + footnote.textContent.replace('↩︎', '').replace(/\n/g, ' ').trim() + ']]]');
+		const footnoteLinks = footnote.querySelectorAll('a');
+
+		const numFootnoteLinks = footnoteLinks.length;
+		footnoteLinks.forEach(footnoteLink => {
+			const footnoteLinkHREF = footnoteLink.getAttribute('href');
+			const footnoteLinkA = doc.createElement('a');
+			footnoteLinkA.setAttribute('class', 'fn-ext-link');
+			footnoteLinkA.setAttribute('target', '_blank');
+			footnoteLinkA.setAttribute('href', footnoteLinkHREF);
+			footnoteLinkA.innerHTML = '&rarr;'
+
+			footnoteLink.parentNode.insertBefore(footnoteLinkA, footnoteLink);
+
+			// '<a class="fn-link" href="' + footnoteLinkHREF + '"></a>';
+			// if (numFootnoteLinks == 1) {
+			// 	footnote.appendChild(footnoteLinkA);
+			// } else {
+			// }
+		})
+
+		footnoteLinks.forEach(footnoteLink => {
+			footnoteLink.parentNode.removeChild(footnoteLink);
+		});
+
+
+		const footnoteP = footnote.querySelector('p');
+		if (!footnoteP) {
+		}
+
+		console.log(footnote.outerHTML);
+
+		let footenoteContent = footnote.innerHTML.replace(/\s\s+/g, ' ').replace(/, <a/g, ' <a').trim();
+		footenoteContent = striptags(footenoteContent, ['a', 'sup', 'em']);
+
+		a.insertAdjacentHTML('afterend', ' [[[' + footenoteContent + ']]]');
 		a.parentNode.removeChild(a)
 	}
 })
+
 
 const html = doc.documentElement.outerHTML;
 fs.writeFileSync('report-out.html', html);
@@ -76,12 +114,16 @@ for (let i in doc.querySelector('body').children) {
 		let title = getTitle(el.textContent);
 		
 		let type = 'section';
-		if (title.toUpperCase().indexOf('LEGAL TEXT BOX') >= 0) {
+		if (title.toUpperCase().indexOf('NON-LEGAL TEXT BOX:') >= 0) {
+			type = 'text-box';
+			title = title.replace(/NON-LEGAL TEXT BOX:?/, '').trim();
+		} else if (title.toUpperCase().indexOf('NON-LEGAL TEXT BOX') >= 0) {
+			type = 'text-box';
+			title = title.replace(/NON-LEGAL TEXT BOX:?/, '').trim();
+		} else if (title.toUpperCase().indexOf('LEGAL TEXT BOX') >= 0) {
 			type = 'legal-text';
 			title = title.replace(/LEGAL TEXT BOX:?/, '').trim();
-		}
-
-		if (title.toUpperCase().indexOf('TEXT BOX') >= 0) {
+		} else if (title.toUpperCase().indexOf('TEXT BOX') >= 0) {
 			type = 'legal-text';
 			title = title.replace(/TEXT BOX:?/, '').trim();
 		}
@@ -102,10 +144,7 @@ for (let i in doc.querySelector('body').children) {
 				current.content += '<blockquote>' + el.innerHTML + '</blockquote>';
 			} else {
 				current.content += el.outerHTML;
-
 			}
-
-			
 		}
 	}
 }
