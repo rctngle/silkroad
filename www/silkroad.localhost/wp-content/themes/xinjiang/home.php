@@ -34,16 +34,14 @@
 
 		<div class="insert" data-root="1062">
 			<div class="left">
-				<img src="<?php bloginfo('template_directory');?>/assets/temporary/barbedwire031.jpg">
+				<img src="<?php bloginfo('template_directory');?>/assets/sidebar/barbed-wire.jpg">
 			</div>
-			<div class="right">
-				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-6.jpg">
-			</div>
+
 		</div>
 
 		<div class="insert" data-root="1068">
 			<div class="left">
-				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-3.jpg">
+				<img src="<?php bloginfo('template_directory');?>/assets/sidebar/cctv.jpg">
 			</div>
 			<div class="right">
 				<img src="<?php bloginfo('template_directory');?>/assets/temporary/insert-2.jpg">
