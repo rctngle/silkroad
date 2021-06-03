@@ -38,7 +38,7 @@ foreach($csv as $row_num => $row) {
 }
 
 foreach($data as $idx => $entry) {
-	$title = $entry['case_id'] . ': ' . $entry['name'];
+	$title = $entry['case_id'] . ': ' . $entry['name_uyghur'];
 
 	$chapter_args = [
 		'post_type' => 'case',
