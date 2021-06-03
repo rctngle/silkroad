@@ -4,8 +4,8 @@ require_once(dirname(dirname(__DIR__)) . '/silkroad.localhost/wp-load.php');
 require_once(dirname(dirname(__DIR__)) . '/silkroad.localhost/wp-admin/includes/post.php');
 
 // $post_types = ['report', 'case'];
-$post_types = ['report'];
-// $post_types = ['case'];
+// $post_types = ['report'];
+$post_types = ['case'];
 
 $post_ids = [];
 foreach($post_types as $post_type) {

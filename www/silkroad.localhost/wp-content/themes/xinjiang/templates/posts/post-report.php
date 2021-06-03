@@ -19,6 +19,12 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	}
 
 }
+$header_image_size = get_field('header_image_size');
+$header_image_classes = ['media', 'illustration'];
+$header_image_classes[]=$header_image_size;
+if($header_image_size == 'cover'){
+	$header_image_classes[]=get_field('header_image_placement');	
+}
 
 ?>
 
@@ -28,9 +34,9 @@ if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 		
 
-		<?php if($is_chapter || $is_intro):?>
+		<?php if($is_chapter || $is_intro):?>			
 			<?php if(has_post_thumbnail()):?>
-				<div class="media illustration">					
+				<div class="<?php echo implode(' ', $header_image_classes);?>">					
 					<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
 				</div>
 			<?php endif;?>

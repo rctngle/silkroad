@@ -38,15 +38,19 @@ export default function createReport() {
 	});
 
 	const whatIsMarkup = document.querySelector('#report > .what-is-the-report');
-	document.querySelector('#what-is-the-report').appendChild(whatIsMarkup);
+	if(document.querySelector('#what-is-the-report')){
+		document.querySelector('#what-is-the-report').appendChild(whatIsMarkup);	
+	}
+	
 
-	document.querySelectorAll('#report .insert').forEach(insert=>{
-		document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);
-	});
+	// document.querySelectorAll('#report .insert').forEach(insert=>{
+		
+	// 	document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);
+	// });
 
 
-	const callOut = document.querySelector('#report > .call-out');
-	document.querySelector('#call-out').appendChild(callOut);
+	// const callOut = document.querySelector('#report > .call-out');
+	// document.querySelector('#call-out').appendChild(callOut);
 
 	document.querySelectorAll('.content-type-legal-text .legal-text-title').forEach(legalText=>{
 		legalText.addEventListener('click',e=>{
