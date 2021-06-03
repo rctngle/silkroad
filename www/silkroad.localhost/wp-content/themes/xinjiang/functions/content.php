@@ -17,12 +17,23 @@ function xinjiang_footnotes($str) {
 		$num_name = 'num-' . $count;
 		$fn_name = 'fn-' . $count;
 
+		$contents = explode(';', $matches[1]);
+		$entries = [];
+
+		foreach($contents as $entry) {
+			$entry = trim($entry);
+			if ($entry) {
+				$entries[] = $entry;
+			}
+		}
+		$content = implode('<br /><br />', $entries);
+
 		return '
 			<a name="' . $num_name . '"></a>
 			<sup>
 
 				<a href="#' . $fn_name. '">' . $count . '</a>
-				<span><span>' . $count . '</span><br/>' . $matches[1] . '</span>
+				<span><span>' . $count . '</span><br/>' . $content . '</span>
 			</sup>
 		';
 	}, $str);

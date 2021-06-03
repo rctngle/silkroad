@@ -50,10 +50,14 @@ doc.querySelectorAll('a.footnote-ref').forEach(a => {
 		if (!footnoteP) {
 		}
 
-		console.log(footnote.outerHTML);
 
-		let footenoteContent = footnote.innerHTML.replace(/\s\s+/g, ' ').replace(/, <a/g, ' <a').trim();
-		footenoteContent = striptags(footenoteContent, ['a', 'sup', 'em']);
+		let footenoteContent = footnote.innerHTML.replace(/\s\s+/g, ' ')
+			.replace(/, <a/g, ' <a')
+			.replace(/ ;/g, ';')
+			.trim();
+		footenoteContent = striptags(footenoteContent, ['a', 'sup', 'em', 'br']);
+
+		console.log(footenoteContent); 
 
 		a.insertAdjacentHTML('afterend', ' [[[' + footenoteContent + ']]]');
 		a.parentNode.removeChild(a)
