@@ -6,7 +6,7 @@
 		$classes[]='has-gallery';
 	}
 ?>
-<article class="<?php echo implode(' ', $classes);?>">
+<article class="<?php echo implode(' ', $classes);?>" data-ref="<?php echo get_field('reference_code'); ?>">
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
 	
@@ -23,7 +23,7 @@
 				<?php foreach($gallery as $media): ?>
 
 					<?php 
-						$preview = get_field('preview', $media['ID']);
+					$preview = get_field('preview', $media['ID']);
 					?>
 
 					<?php if ($media['type'] == 'image'): ?>
@@ -63,6 +63,10 @@
 				<h3><?php echo xinjiang_translate_field(get_field('name_ml_text')); ?></h3>
 				<div class="case__row"><p><?php echo xinjiang_translate_field(get_field('name_chinese_ml_text')); ?></p></div>
 				
+				<div class="case__row">
+					<a href="<?php echo site_url(); ?>#case-<?php echo get_field('reference_code'); ?>" target="_blank">[permalink]</a>
+				</div>				
+
 				<div class="case__row">
 
 

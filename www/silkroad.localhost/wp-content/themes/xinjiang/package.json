@@ -31,6 +31,7 @@
     "webpack-livereload-plugin": "^2.3.0"
   },
   "dependencies": {
+    "animated-scroll-to": "^2.2.0",
     "in-view-modern": "^0.6.3",
     "mapbox-gl": "^2.1.1",
     "scrollbooster": "^3.0.2",

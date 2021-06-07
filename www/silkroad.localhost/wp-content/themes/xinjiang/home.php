@@ -82,6 +82,10 @@
 		<?php get_template_part('templates/parts/report'); ?>
 	</section>
 
+	<section id="take-action-bottom">
+		<?php get_template_part('templates/parts/call-to-action'); ?>			
+	</section>
+
 </main>
 
 <?php get_footer(); ?>

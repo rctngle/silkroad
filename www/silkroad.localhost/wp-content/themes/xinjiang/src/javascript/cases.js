@@ -1,8 +1,7 @@
 import ScrollBooster from 'scrollbooster';
+import animateScrollTo from 'animated-scroll-to';
 
 let casesScroller;
-
-
 
 export default function createCases() {
 	const cases = document.querySelector('#cases').querySelectorAll('article');
@@ -24,16 +23,33 @@ export default function createCases() {
 		}
 	};
 
+	const casesScrollerEl = document.querySelector('#cases-scroller .scroller-outer');
+
+	let dragStart;
+	let dragCase;
+
 	casesScroller = new ScrollBooster({ 
-		viewport: document.querySelector('#cases-scroller .scroller-outer'),
+		viewport: casesScrollerEl,
 		scrollMode: 'native', 
 		direction: 'horizontal',
 		onUpdate: state => {
 			checkScrollMax(state);
 		},
-		onPointerDown: () => {
+		onPointerDown: state => {
+			dragStart = state.position.x;
 			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
-				c.classList.remove('active');
+				// c.classList.remove('active');
+			});			
+		},
+		onPointerUp: state => {
+			const dragDist = Math.abs(dragStart - state.position.x);
+			if (dragCase && dragDist < 5) {
+				const caseId = 'case-' + dragCase.dataset.ref;
+				scrollToCase(caseId);
+			}
+
+			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+				// c.classList.remove('active');
 			});			
 		}
 	});
@@ -90,15 +106,31 @@ export default function createCases() {
 	document.querySelector('#cases-scroller .scroller-prev').addEventListener('click', e => {
 		const scrollAmount = (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
-		casesScroller.scrollTo({ x: scrollLeft - scrollAmount, y: 0 });
+		
+		animateScrollTo([scrollLeft - scrollAmount, null], {
+			cancelOnUserAction: true,
+			elementToScroll: casesScrollerEl,
+		});
+
 		checkScrollMax();
 	});
 
 	document.querySelector('#cases-scroller .scroller-next').addEventListener('click', e => {
 		const scrollAmount = (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
-		casesScroller.scrollTo({ x: scrollLeft + scrollAmount, y: 0 });
+
+		animateScrollTo([scrollLeft + scrollAmount, null], {
+			cancelOnUserAction: true,
+			elementToScroll: casesScrollerEl,
+		});
+
 		checkScrollMax();
+	});
+
+	document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+		c.addEventListener('mousedown', e => {
+			dragCase = c;
+		});
 	});
 
 	checkScrollMax();
@@ -115,6 +147,7 @@ export function scrollToCase(caseId) {
 		console.log(pager);
 
 		pager.classList.add('active');
+
 		const href = pager.getAttribute('href');
 		const referenceCode = href.replace('#case-', '');
 		
@@ -132,7 +165,15 @@ export function scrollToCase(caseId) {
 
 
 		const x = (elementLeft - (document.body.clientWidth / 2)) + (caseRect.width / 2);
-		casesScroller.scrollTo({ x: x, y: 0 });
+		
+		const casesScrollerEl = document.querySelector('#cases-scroller .scroller-outer');
+
+		animateScrollTo([x, null], {
+			cancelOnUserAction: true,
+			elementToScroll: casesScrollerEl,
+		});
+
+
 	}
 
 }
