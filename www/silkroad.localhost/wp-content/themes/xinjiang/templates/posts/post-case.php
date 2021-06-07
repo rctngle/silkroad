@@ -9,7 +9,6 @@
 <article class="<?php echo implode(' ', $classes);?>" data-ref="<?php echo get_field('reference_code'); ?>">
 	<div class="preview">
 		<div class="slideshow" data-idx="0">
-	
 
 			<div class="slide">
 				<?php the_post_thumbnail();?>
@@ -60,13 +59,12 @@
 		</div>
 		<div class="case-outer">
 			<div class="case">
+				<div class="case__permalink"><a href="<?php echo site_url(); ?>#case-<?php echo get_field('reference_code'); ?>" target="_blank"><i class="fal fa-link"></i></a></div>
+
 				<h3><?php echo xinjiang_translate_field(get_field('name_ml_text')); ?></h3>
 				<div class="case__row"><p><?php echo xinjiang_translate_field(get_field('name_chinese_ml_text')); ?></p></div>
 				
-				<div class="case__row">
-					<a href="<?php echo site_url(); ?>#case-<?php echo get_field('reference_code'); ?>" target="_blank">[permalink]</a>
-				</div>				
-
+			
 				<div class="case__row">
 
 

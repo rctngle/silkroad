@@ -3,16 +3,18 @@
 $cta_page = xinjiang_get_post_by_slug('page', 'call-to-action');
 
 ?>
+<div class="media image">
+	<div class="take-action__quote"><h2>“[Chinese authorities] are looking for any excuse to sentence you”</h2></div>
+	<?php echo wp_get_attachment_image(1900, '2048x2048', false, ['alt' => ''] ); ?></div>
+	<div class="gradient"></div>
+</div>
 <div class="section-inner">
+
+
 	<div class="content-box section-title centered">
 		<h1><?php echo xinjiang_translate_field(get_field('title_ml_text', $cta_page->ID)); ?></h1>
-		<h1 class="sub-title"></h1>	
 	</div>
-	<div class="media image">
-		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/mensell.jpg">
-		<div class="gradient"></div>
-	</div>
-
+	
 	<div class="content-box cta-body">
 		<div class="section-title centered">
 			

@@ -293,7 +293,7 @@ section#report {
 			width: 100%;
 			height: auto;
 		}
-		p {
+		img.image-quote + p {
 			background: #FFF;
 			@include quote;
 			padding: 32px;
@@ -305,7 +305,6 @@ section#report {
 				top: 80px;
 				left: -40px;
 			}
-
 		}
 	}
 	a + sup {
@@ -324,7 +323,10 @@ section#report {
 		}
 		&.show-right {
 			> span {
-				right: 0;
+				@media (max-width: map-get($breakpoints, 'xsm')){
+					right: 0;	
+				}
+				
 			}
 		}
 		position: relative;
@@ -364,7 +366,7 @@ section#report {
 			span {
 				display: none;
 				@include breakpoint(sm){
-					display: block;
+					display: inline-block;
 				}
 				padding: 2px 5px;
 				background: #353535;
@@ -440,7 +442,9 @@ section#report {
 
 	}
 
+	article.report.depth-0.content-type-chapter {
 
+	}
 	article.content-type-section,
 	article.content-type-introduction.depth-1,
 	article.content-type-introduction.depth-2 {

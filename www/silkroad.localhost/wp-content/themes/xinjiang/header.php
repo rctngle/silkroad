@@ -76,13 +76,7 @@ $classes[]=LANG;
 			<?php echo xinjiang_translate('enemies-in-war'); ?>
 			<span><?php echo xinjiang_translate('chinas-mass-internment'); ?></span>			
 		</h1>
-		<!-- 		
-		<div class="mobile-main-points">
-			<p data-delay="1200">Turkic Muslim people in the Xinjiang face Chinese government-directed <span>discrimination and persecution</span>.</p>
-			<p class="animate" data-delay="1600">The objectives are to <span>eradicate Islamic religious beliefs</span> and Turkic Muslim ethno-cultural practices.</p>
-			<p class="animate" data-delay="2000">More than <span>a million people</span> have been arbitrarily arrested, denied due process, and unlawfully interned.</p>
-		</div> 
-		-->
+		<?php /* 
 		<div class="main-points">
 			<div class="animate" data-delay="1200">				
 				<p>Turkic Muslim people in the Xinjiang face Chinese government-directed <span>discrimination and persecution</span>.</p>
@@ -93,10 +87,10 @@ $classes[]=LANG;
 			<div class="animate" data-delay="2000">				
 				<p>More than <span>a million people</span> have been arbitrarily arrested, denied due process, and unlawfully interned.</p>
 			</div>
-		</div>
+		</div> */?>
 	</div>
 
-	<div class="scroll-down-continue animate" data-delay="2800" style="visibility: visible;">
+	<div class="scroll-down-continue animate" data-delay="1200" style="visibility: visible;">
 		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
 		<div class="meaning">
 			<a id="report-list-link" href="#report-list-anchor">

@@ -16,7 +16,7 @@ $video_page = xinjiang_get_post_by_slug('page', 'video');
 				</div>
 			</div>
 			<div class="video-container">
-				<div>
+				<div class="embed">
 					<?php echo xinjiang_translate_field(get_field('video_ml_oembed', $video_page->ID)); ?>
 				</div>
 				

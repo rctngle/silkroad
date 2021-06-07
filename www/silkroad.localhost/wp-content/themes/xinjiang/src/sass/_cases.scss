@@ -140,10 +140,13 @@ section#cases {
 
 
 section#cases {
-
+	.section-title {
+		position: static;
+	}
 	.face-crop {
 		display: none;
 	}
+
 	.cases-download-container {
 		width: auto;		
 		@include breakpoint(sm){
@@ -384,11 +387,12 @@ section#cases {
 		height: var(--case-height);
 		//height: 1300px;
 		h3 {
-			margin-bottom: 0;
+			margin-bottom: 2px;
 			padding: 0 10px;
 			@include breakpoint(xsm){
 				padding: 0 16px;
 			}
+
 		}
 		@include body-text;
 		line-height: 1.2;
@@ -403,19 +407,17 @@ section#cases {
 		overflow: hidden;
 		transition: transform 150ms;
 		&:hover {
-			//transform: scale(1.03);
 			.controls {
 				> div {
 					background-color: #000;	
 
-				}
-				
+				}				
 			}
 			.case .read-more {
 				color: #000;
-				//animation: pulse-arrow 1s linear infinite;
 			}
 		}
+		
 		p {
 			font-size: 13px;
 			@include breakpoint(xsm){
@@ -426,6 +428,7 @@ section#cases {
 		}
 		.case-outer {
 			overflow: hidden;
+			position: relative;
 		}
 		&.expanded {
 			
@@ -528,6 +531,15 @@ section#cases {
 		.case-outer {
 			flex-grow: 1;
 		}
+
+		.case__permalink {
+			position: absolute;
+			top: 22px;
+			color: #999;
+			right: 16px;
+			z-index: 1;
+		}
+
 		.preview {
 			height: 100%;
 			position: relative;

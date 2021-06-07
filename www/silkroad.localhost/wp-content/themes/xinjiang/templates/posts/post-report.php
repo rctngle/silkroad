@@ -105,9 +105,11 @@ if($header_image_size == 'cover'){
 		<?php if($is_chapter || $is_intro):?>
 			<?php if(has_post_thumbnail()):?>
 				<div class="<?php echo implode(' ', $header_image_classes);?>">
-					
-					<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
-					
+					<?php
+						$post_thumbnail_id = get_post_thumbnail_id();
+						$post_thumbnail_alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
+					?>			
+					<div class="image"><?php echo wp_get_attachment_image( $post_thumbnail_id, '2048x2048', false, ['alt' => $post_thumbnail_alt] ); ?></div>
 				</div>
 			<?php endif;?>
 		<?php endif;?>
