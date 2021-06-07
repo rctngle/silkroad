@@ -1,11 +1,12 @@
 import ScrollBooster from 'scrollbooster';
 import inView from 'in-view-modern';
+import animateScrollTo from 'animated-scroll-to';
 
 export default function createReport() {
 
-
+	const reportScrollerEl = document.querySelector('#report-nav-scroller .scroller-outer');
 	const reportScroller = new ScrollBooster({ 
-		viewport: document.querySelector('#report-nav-scroller .scroller-outer'),
+		viewport: reportScrollerEl,
 		scrollMode: 'native', 
 		direction: 'horizontal' 
 	});
@@ -14,13 +15,19 @@ export default function createReport() {
 	document.querySelector('#report-nav-scroller .scroller-prev').addEventListener('click', e => {
 		const scrollAmount = (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#report-nav-scroller .scroller-outer').scrollLeft;
-		reportScroller.scrollTo({ x: scrollLeft - scrollAmount, y: 0 });
+		animateScrollTo([scrollLeft - scrollAmount, null], {
+			cancelOnUserAction: true,
+			elementToScroll: reportScrollerEl,
+		});
 	});
 
 	document.querySelector('#report-nav-scroller .scroller-next').addEventListener('click', e => {
 		const scrollAmount = (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#report-nav-scroller .scroller-outer').scrollLeft;
-		reportScroller.scrollTo({ x: scrollLeft + scrollAmount, y: 0 });
+		animateScrollTo([scrollLeft + scrollAmount, null], {
+			cancelOnUserAction: true,
+			elementToScroll: reportScrollerEl,
+		});
 	});
 
 

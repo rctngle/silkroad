@@ -4,7 +4,6 @@ $report_downloads_page = get_page_by_path('report-downloads');
 
 
 <div id="report-list" class="report-dropdowns">
-	<a name="report-list-anchor"></a>
 	<div class="label">Download the report</div>
 	<?php if(have_rows('report_downloads', $report_downloads_page->ID)): ?>
 		<?php while( have_rows('report_downloads', $report_downloads_page->ID) ) : the_row(); ?>
