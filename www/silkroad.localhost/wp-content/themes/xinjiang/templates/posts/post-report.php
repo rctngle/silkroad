@@ -165,22 +165,16 @@ if($header_image_size == 'cover'){
 						?>
 
 						<div class="<?php echo implode(' ', $box_classes); ?>">
-							<h1><?php echo $args['post_id']; ?> - <?php echo count($boxes_query->posts); ?></h1>
 
-							<?php if($is_legal_text):?>
-								<div class="legal-text-title">
+							<div class="title">
+								<?php if($is_legal_text):?>
 									<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
-									<p><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></p>
-								</div>
-							<?php endif; ?>
+								<?php endif; ?>
 
-							<?php if($is_text_box):?>
-								<div class="legal-text-title">
-									<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
-									<p><?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?></p>
-								</div>
-							<?php endif; ?>
-				
+								<p><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></p>
+							</div>
+							
+							<p><?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?></p>
 						</div>
 					<?php endwhile; ?>
 
