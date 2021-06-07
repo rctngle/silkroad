@@ -7,7 +7,7 @@ $chapter_num = $args['chapter_num'];
 $is_intro = $args['is_intro'];
 $idx = $args['idx'];
 
-$is_legal_text = false;
+
 $classes = ['report', 'depth-' . $args['depth']];
 
 if ($args['report_content_type_terms'] && $args['report_content_type_terms']) {
@@ -30,7 +30,6 @@ if($header_image_size == 'cover'){
 
 <?php if($is_intro && $args['depth'] === 0 && $idx == 0):?>
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
-		
 
 		<?php if($is_chapter || $is_intro):?>			
 			<?php if(has_post_thumbnail()):?>
@@ -98,7 +97,6 @@ if($header_image_size == 'cover'){
 
 <?php else: ?>
 
-
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 		<a class="anchor" name="<?php echo $slug; ?>"></a>
 
@@ -123,27 +121,79 @@ if($header_image_size == 'cover'){
 				</div>
 			<?php elseif($args['depth'] == 0):?>
 				<h2><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></h2>
-			<?php elseif($is_legal_text):?>
-				<div class="legal-text-title">
-					<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
-					<p><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></p>
-					<div class="expand">
-						<i class="fas fa-caret-down"></i>
-						<i class="fas fa-caret-up"></i>
-					</div>
-				</div>
 			<?php else:?>
-
 				<h3><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?> <div class="expand"><i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></div></h3>
 			<?php endif; ?>
 
 			<?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?>		
+
+			<?php if ($args['depth'] == 1): ?>
+				<?php
+
+				$boxes_query = new WP_Query([
+					'post_type' => 'report',
+					'posts_per_page' => 10,
+					'orderby' => 'menu_order',
+					'order' => 'ASC',
+					'post_parent' => $args['post_id'],
+				]);
+
+				// echo "<pre>";
+				// print_r($boxes_query->posts);
+				// echo "</pre>";
+
+				?>
+				<?php if ($boxes_query->have_posts()): ?>
+					<?php while($boxes_query->have_posts()): $boxes_query->the_post(); ?>
+
+						<?php
+						$terms = get_the_terms($post_id, 'report_content_types');
+						
+						$is_legal_text = false;
+						$is_text_box = false;
+
+						$box_classes = [];
+						if ($terms && is_array($terms) && count($terms) > 0) {
+							foreach($terms as $term) {
+								$box_classes[] = $term->slug;
+								if ($term->slug == 'legal-text'){
+									$is_legal_text = true;
+								} else if ($term->slug == 'text-box') {
+									$is_text_box = true;
+								}
+
+							}
+						}	
+						?>
+
+						<div class="<?php echo implode(' ', $box_classes); ?>">
+							<h1><?php echo $args['post_id']; ?> - <?php echo count($boxes_query->posts); ?></h1>
+
+							<?php if($is_legal_text):?>
+								<div class="legal-text-title">
+									<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
+									<p><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></p>
+								</div>
+							<?php endif; ?>
+
+							<?php if($is_text_box):?>
+								<div class="legal-text-title">
+									<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
+									<p><?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?></p>
+								</div>
+							<?php endif; ?>
+				
+						</div>
+					<?php endwhile; ?>
+
+					<?php
+					$boxes_query->reset_postdata();
+					wp_reset_postdata();
+					?>
+				<?php endif; ?>
+
+			<?php endif; ?>
 		</div>
-
-		<?php /* if($post->post_name == 'background'):?>
-
-			<section id="map"><?php get_template_part('templates/parts/map'); ?></section>
-		<?php endif;*/?>
 
 	</article>
 
