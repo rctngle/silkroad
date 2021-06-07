@@ -26,6 +26,7 @@ function xinjiang_get_report_args($post_id, $depth, $chapter_num, $idx) {
 		'chapter_num' => $chapter_num, 
 		'is_intro' => $is_intro,
 		'idx' => $idx,
+		'post_id' => $post_id,
 		'is_conclusion' => $is_conclusion,
 		'report_content_type_terms' => $terms,
 	];
@@ -89,7 +90,10 @@ function xinjiang_report_get_children($parent, $root_parent, $sub_parent, $depth
 
 			$report_content .= xinjiang_load_template_part('templates/posts/post', get_post_type(), $report_args);
 
-			xinjiang_report_get_children(get_the_ID(), $root_parent, $sub_parent, $depth+1, $chapter_num, $report_content);
+			$next_depth = $depth + 1;
+			if ($next_depth < 2) {
+				xinjiang_report_get_children(get_the_ID(), $root_parent, $sub_parent, $next_depth, $chapter_num, $report_content);
+			}
 
 			// if ($report_args['is_chapter']) {
 			// 	$report_content .= xinjiang_load_template_part('templates/parts/illustrations');
