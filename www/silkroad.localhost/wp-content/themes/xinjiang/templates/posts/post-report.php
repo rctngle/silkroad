@@ -28,9 +28,7 @@ if($header_image_size == 'cover'){
 
 ?>
 
-
 <?php if($is_intro && $args['depth'] === 0 && $idx == 0):?>
-
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
 		
 
@@ -106,7 +104,7 @@ if($header_image_size == 'cover'){
 
 		<?php if($is_chapter || $is_intro):?>
 			<?php if(has_post_thumbnail()):?>
-				<div class="media illustration">
+				<div class="<?php echo implode(' ', $header_image_classes);?>">
 					
 					<div class="image"><?php the_post_thumbnail('2048x2048');?></div>
 					
