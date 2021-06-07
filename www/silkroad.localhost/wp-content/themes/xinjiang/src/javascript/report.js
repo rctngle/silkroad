@@ -85,7 +85,13 @@ export default function createReport() {
 		const navItemRect = navItem.getBoundingClientRect();
 
 		const x = (elementLeft - (document.body.clientWidth / 2)) + (navItemRect.width / 2);
-		reportScroller.scrollTo({ x: x, y: 0 });
+		// reportScroller.scrollTo({ x: x, y: 0 });
+		animateScrollTo([x, null], {
+			cancelOnUserAction: true,
+			elementToScroll: reportScrollerEl,
+		});
+
+
 
 	});
 }
