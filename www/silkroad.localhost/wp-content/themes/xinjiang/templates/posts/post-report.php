@@ -97,7 +97,7 @@ if($header_image_size == 'cover'){
 
 <?php else: ?>
 
-	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
+	<article class="<?php echo implode(' ', $classes); ?> <?php if ($args['idx'] == 0): ?>expanded<?php endif; ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>" data-idx="<?php echo $args['idx']; ?>">
 		<a class="anchor" name="<?php echo $slug; ?>"></a>
 
 		<?php if($is_chapter || $is_intro):?>
