@@ -1,5 +1,9 @@
 .take-action__quote {
 	position: absolute;
+	left: 200px;
+	top: 100px;
+	width: 280px;
+	box-shadow: 0 0 10px rgb(0 0 0 / 30%);
 }
 section#take-action {
 	iframe {
@@ -10,11 +14,9 @@ section#take-action {
 	}
 	.section-inner {
 		position: relative;
-		top: -100px;
-		width: 280px;
-		left: 200px;
-		top: 100px;
-		box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+		top: -70px;
+		
+	
 
 	}
 	.media.image {

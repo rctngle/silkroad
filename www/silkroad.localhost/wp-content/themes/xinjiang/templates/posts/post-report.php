@@ -173,7 +173,7 @@ if($header_image_size == 'cover'){
 									<h4><i class="fal fa-balance-scale"></i> Legal Reference</h4>
 								<?php endif; ?>
 
-								<p><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></p>
+								<h3><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></h3>
 							</div>
 							
 							<p><?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?></p>
