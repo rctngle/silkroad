@@ -68,6 +68,7 @@ if($header_image_size == 'cover'){
 
 
 	<article class="<?php echo implode(' ', $classes); ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>">
+
 		<a class="anchor" name="<?php echo $slug; ?>"></a>
 		<div class="content-box">
 			<?php if ($is_chapter): ?>
@@ -97,7 +98,7 @@ if($header_image_size == 'cover'){
 
 <?php else: ?>
 
-	<article class="<?php echo implode(' ', $classes); ?> <?php if ($args['idx'] == 0): ?>expanded<?php endif; ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>" data-idx="<?php echo $args['idx']; ?>">
+	<article class="<?php echo implode(' ', $classes); ?> <?php if ($args['idx'] == 0 && $args['root_parent_slug'] !== 'recommendations'): ?>expanded<?php endif; ?>" data-rootparent="<?php echo $args['root_parent']; ?>" data-subparent="<?php echo $args['sub_parent']; ?>" data-idx="<?php echo $args['idx']; ?>">
 		<a class="anchor" name="<?php echo $slug; ?>"></a>
 
 		<?php if($is_chapter || $is_intro):?>

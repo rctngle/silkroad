@@ -77,7 +77,13 @@
 				</div>
 				<div class="case__row">
 					<h5>Official Reason for Arrest or Detention</h5>
-					<p><?php echo xinjiang_translate_field(get_field('reason_for_arrest_or_detention_official_ml_text')); ?></p>
+					<?php
+					$official_reason = trim(xinjiang_translate_field(get_field('reason_for_arrest_or_detention_official_ml_text')));
+					if (strtolower($official_reason) != 'unknown') {
+						$official_reason = '“' . $official_reason . '”';
+					}
+					?>
+					<p><?php echo $official_reason; ?></p>
 				</div>
 				<div class="case__row">
 					<h5>Last Contact</h5>

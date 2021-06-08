@@ -1,7 +1,5 @@
-import ScrollBooster from 'scrollbooster';
+import ScrollBooster from './scroll-booster';
 import animateScrollTo from 'animated-scroll-to';
-
-let casesScroller;
 
 export default function createCases() {
 	const cases = document.querySelector('#cases').querySelectorAll('article');
@@ -28,7 +26,7 @@ export default function createCases() {
 	let dragStart;
 	let dragCase;
 
-	casesScroller = new ScrollBooster({ 
+	new ScrollBooster({ 
 		viewport: casesScrollerEl,
 		scrollMode: 'native', 
 		direction: 'horizontal',

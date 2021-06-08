@@ -1,11 +1,11 @@
-import ScrollBooster from 'scrollbooster';
+import ScrollBooster from './scroll-booster';
 import inView from 'in-view-modern';
 import animateScrollTo from 'animated-scroll-to';
 
 export default function createReport() {
 
 	const reportScrollerEl = document.querySelector('#report-nav-scroller .scroller-outer');
-	const reportScroller = new ScrollBooster({ 
+	new ScrollBooster({ 
 		viewport: reportScrollerEl,
 		scrollMode: 'native', 
 		direction: 'horizontal' 
@@ -49,6 +49,7 @@ export default function createReport() {
 		document.querySelector('#what-is-the-report').appendChild(whatIsMarkup);	
 	}
 	
+
 
 	document.querySelectorAll('#report .insert').forEach(insert=>{
 		if(document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor')){

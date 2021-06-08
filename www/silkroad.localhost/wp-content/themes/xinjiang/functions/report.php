@@ -85,6 +85,7 @@ function xinjiang_report_get_children($parent, $root_parent, $sub_parent, $depth
 
 			$report_args = xinjiang_get_report_args(get_the_ID(), $depth, $chapter_num, $idx);
 			$report_args['root_parent'] = $root_parent;
+			$report_args['root_parent_slug'] = get_post_field( 'post_name', $root_parent );
 			$report_args['sub_parent'] = $sub_parent;
 			$chapter_num = $report_args['chapter_num'];
 
