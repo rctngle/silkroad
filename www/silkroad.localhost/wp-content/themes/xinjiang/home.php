@@ -22,7 +22,7 @@
 	
 	<?php get_template_part('templates/parts/video'); ?>
 
-	<section id="take-action">
+	<section id="take-action" class="take-action-container">
 		<a name="take-action-anchor"></a>
 		<?php get_template_part('templates/parts/call-to-action'); ?>			
 	</section>
@@ -82,7 +82,7 @@
 		<?php get_template_part('templates/parts/report'); ?>
 	</section>
 
-	<section id="take-action-bottom">
+	<section id="take-action-bottom" class="take-action-container">
 		<?php get_template_part('templates/parts/call-to-action'); ?>			
 	</section>
 
