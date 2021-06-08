@@ -65,9 +65,12 @@ section > a[name]{
     top: -70px;
     visibility: hidden;
 }
+
 section > a[name="report-anchor"]{
+	position: relative;
 	top: -40px;
 }
+
 body {
 	color: #fff;
 	background-color: #000;
