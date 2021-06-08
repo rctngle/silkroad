@@ -20,7 +20,9 @@
 			
 	</section>
 	
+	<?php /*
 	<?php get_template_part('templates/parts/video'); ?>
+	*/ ?>
 
 	<section id="take-action" class="take-action-container">
 		<a name="take-action-anchor"></a>
@@ -44,27 +46,6 @@
 				<img src="<?php bloginfo('template_directory');?>/assets/sidebar/cctv.jpg">
 			</div>
 		</div>
-
-		<div class="what-is-the-report">
-			<h3>What is the Report?</h3>
-			<div class="stats">
-				<div class="stat">
-					<div class="icon"><img src="<?php bloginfo('template_directory');?>/assets/images/Amnesty Icons-09.svg"></div>
-					<h2>Details of Human rights violations committed by China</h2>
-					<p class="date media-caption">Between 2017 &mdash; 2021</p>
-				</div>
-				<div class="stat">
-					<div class="icon"><img src="<?php bloginfo('template_directory');?>/assets/images/Amnesty Icons-53.svg"></div>
-					<h2>A product of field and remote research</h2>
-					<p class="date media-caption">Conducted October 2019 &mdash; April 2021</p>
-				</div>
-				<div class="stat">
-					<div class="icon people"><img src="<?php bloginfo('template_directory');?>/assets/images/Amnesty Icons-16.svg"></div>
-					<h2>Testimonial evidence from 70 survivors and witnesses</h2>
-				</div>
-			</div>
-		</div>
-
 		
 		<div class="call-out center">
 			<div class="inner">

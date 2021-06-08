@@ -97,7 +97,18 @@ $classes[]=LANG;
 		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
 		<div class="meaning">
 			<a id="report-list-link" href="#report-list-anchor">
-				Report summary available in <strong><span>English</span>, <span>中文</span>, <span>हिन्दी</span>, <span>Español</span>, <span>Français</span>, <span>বাংলা</span>,<br/><span>Pусский</span>, <span>Português</span>, <span>Indonesian</span>, <span>日本語</span>, <span>عربي</span>, <span>الأويغور</span></strong> 
+				<?php
+				$report_downloads_page = get_page_by_path('report-downloads');
+				$report_downloads = get_field('report_downloads', $report_downloads_page->ID);
+				$summary_languages = [];
+				if ($report_downloads && is_array($report_downloads)) {
+					foreach($report_downloads as $report_download) {
+						$summary_languages[] = '<span>' . $report_download['language'] . '</span>';
+					}
+				}
+
+				?>
+				Report summary available in <strong><?php echo implode(', ', $summary_languages); ?></strong> 
 			</a>
 		</div>
 	</div>

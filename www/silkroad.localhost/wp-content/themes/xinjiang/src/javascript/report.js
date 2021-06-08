@@ -44,18 +44,14 @@ export default function createReport() {
 		});
 	});
 
-	const whatIsMarkup = document.querySelector('#report > .what-is-the-report');
-	console.log(whatIsMarkup);
-	if(document.querySelector('#what-is-the-report')){
-		document.querySelector('#what-is-the-report').appendChild(whatIsMarkup);	
-	}
+
 	
 
-	document.querySelectorAll('#report .insert').forEach(insert=>{
-		if(document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor')){
-			document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);	
-		}
-	});
+	// document.querySelectorAll('#report .insert').forEach(insert=>{
+	// 	if(document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor')){
+	// 		document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);	
+	// 	}
+	// });
 
 	const callOut = document.querySelector('#report > .call-out');
 	document.querySelector('#call-out').appendChild(callOut);
