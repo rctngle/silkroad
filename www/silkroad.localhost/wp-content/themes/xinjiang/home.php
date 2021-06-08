@@ -20,7 +20,9 @@
 			
 	</section>
 	
+	<?php /*
 	<?php get_template_part('templates/parts/video'); ?>
+	*/ ?>
 
 	<section id="take-action" class="take-action-container">
 		<a name="take-action-anchor"></a>
