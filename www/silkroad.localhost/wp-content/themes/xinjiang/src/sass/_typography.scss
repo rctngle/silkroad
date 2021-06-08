@@ -108,6 +108,10 @@ ul p + p {
 	margin-top: 16px;
 }
 
+.disabled {
+	opacity: 0;
+}
+
 p {
 	@include body-text;
 	margin-bottom: 24px;

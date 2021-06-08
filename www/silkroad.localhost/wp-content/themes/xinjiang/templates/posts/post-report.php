@@ -121,7 +121,11 @@ if($header_image_size == 'cover'){
 					<h2><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></h2>
 				</div>
 			<?php elseif($args['depth'] == 0):?>
-				<h2><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></h2>
+				<div class="section-title">
+					<h1 class="disabled">&nbsp;</h1>
+					<h2><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></h2>
+				</div>
+				
 			<?php else:?>
 				<h3><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?> <div class="expand"><i class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></div></h3>
 			<?php endif; ?>
