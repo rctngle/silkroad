@@ -56,6 +56,10 @@ section#map {
 	}
 }
 
+#credit {
+	text-align: center;
+	margin-bottom: 1rem;
+}
 
 
 
@@ -122,6 +126,12 @@ section#video {
 		p {
 			margin-bottom: 0;
 		}
+	}
+
+	.embed__outline {
+		position: absolute;
+		transform: scale(1.06, 1.1);
+
 	}
 	.columns {
 		width: 100%;

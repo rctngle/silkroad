@@ -50,14 +50,16 @@ export default function createReport() {
 	}
 	
 
-	// document.querySelectorAll('#report .insert').forEach(insert=>{
+	document.querySelectorAll('#report .insert').forEach(insert=>{
+		if(document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor')){
+			document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);	
+		}
 		
-	// 	document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);
-	// });
+	});
 
 
-	// const callOut = document.querySelector('#report > .call-out');
-	// document.querySelector('#call-out').appendChild(callOut);
+	const callOut = document.querySelector('#report > .call-out');
+	document.querySelector('#call-out').appendChild(callOut);
 
 	document.querySelectorAll('.content-type-legal-text .legal-text-title').forEach(legalText=>{
 		legalText.addEventListener('click',e=>{

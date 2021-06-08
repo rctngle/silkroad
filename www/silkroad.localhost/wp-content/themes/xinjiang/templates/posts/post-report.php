@@ -176,7 +176,7 @@ if($header_image_size == 'cover'){
 								<h3><?php echo xinjiang_translate_field(get_field('title_ml_text')); ?></h3>
 							</div>
 							
-							<p><?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?></p>
+							<?php echo xinjiang_translate_field(get_field('content_ml_rich_text')); ?>
 						</div>
 					<?php endwhile; ?>
 

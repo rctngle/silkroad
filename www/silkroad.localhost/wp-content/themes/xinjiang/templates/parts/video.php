@@ -12,11 +12,15 @@ $video_page = xinjiang_get_post_by_slug('page', 'video');
 				<h3><?php echo xinjiang_translate_field(get_field('title_ml_text', $video_page->ID)); ?></h3>
 
 				<div>
+
 					<?php echo xinjiang_translate_field(get_field('content_ml_rich_text', $video_page->ID)); ?>
 				</div>
 			</div>
 			<div class="video-container">
 				<div class="embed">
+					<div class="embed__outline">
+						<img alt="" src="<?php bloginfo('template_directory');?>/assets/images/video-outline.svg">
+					</div>
 					<?php echo xinjiang_translate_field(get_field('video_ml_oembed', $video_page->ID)); ?>
 				</div>
 				

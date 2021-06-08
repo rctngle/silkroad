@@ -62,7 +62,9 @@ $classes[]=LANG;
 
 <section class="hero">
 	<div class="media full image">
-		<img role="presentation" alt="" src="<?php bloginfo('template_directory');?>/assets/images/yard2.jpg">
+		<?php echo wp_get_attachment_image(1892, '2048x2048', false, ['alt' => ''] ); ?></div>
+
+		
 		<div class="gradient"></div>
 	</div>
 	<div class="hero-content">
@@ -76,6 +78,7 @@ $classes[]=LANG;
 			<?php echo xinjiang_translate('enemies-in-war'); ?>
 			<span><?php echo xinjiang_translate('chinas-mass-internment'); ?></span>			
 		</h1>
+		<div class="introduction__credit animate" data-delay="1200">Illustrations by <a target="_blank" href="https://mollycrabapple.com">Molly Crabapple</a></div>
 		<?php /* 
 		<div class="main-points">
 			<div class="animate" data-delay="1200">				

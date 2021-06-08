@@ -53,7 +53,7 @@ html {
 
 @mixin quote {
 	font-family: AmnestyTradeGothicW01BdCnNo20, BTitrBd, Helvetica, Arial, san-serif;
-	font-size: var(--h1-font-size);
+	font-size: 30px;
 	color: #000;
 	letter-spacing: -0.01em;
 	line-height: 1.1;
@@ -78,24 +78,36 @@ html {
 
 }
 
-
+ul ul {
+	margin-top: 16px;
+}
 main ul {
 	list-style: disc;
 	padding-left: 20px;
+}
+
+main ol {
+	list-style: decimal;
+	padding-left: 20px;	
 }
 
 main ul li {
 	margin-bottom: 16px;
 }
 
-main ul {
+main ul, main ol {
 	@include body-text;
 	margin-bottom: 32px;
 }
 
-ul li p {
+ul li p, ol li p {
 	margin-bottom: 0;
 }
+
+ul p + p {
+	margin-top: 16px;
+}
+
 p {
 	@include body-text;
 	margin-bottom: 24px;
@@ -104,7 +116,9 @@ p {
 	}
 }
 
-
+a.fn-ext-link {
+	text-decoration: none;
+}
 
 h3 {
 	@include h3-title;
