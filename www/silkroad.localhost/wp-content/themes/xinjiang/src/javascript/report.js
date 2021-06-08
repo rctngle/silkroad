@@ -45,8 +45,9 @@ export default function createReport() {
 	});
 
 	const whatIsMarkup = document.querySelector('#report > .what-is-the-report');
-	if(document.querySelector('#what-is-the-report')){
-		document.querySelector('#what-is-the-report').appendChild(whatIsMarkup);	
+	const whatIsTheReport = document.querySelector('#what-is-the-report');
+	if(whatIsTheReport && whatIsMarkup){
+		whatIsTheReport.appendChild(whatIsMarkup);	
 	}
 	
 
