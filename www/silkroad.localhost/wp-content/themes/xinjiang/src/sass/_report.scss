@@ -503,7 +503,7 @@ section#report {
 		}
 
 	}
-
+  
 	article.report.depth-0.content-type-chapter {
 
 	}
@@ -511,7 +511,7 @@ section#report {
 	article.content-type-introduction.depth-1,
 	article.content-type-introduction.depth-2 {
 		.content-box > *:not(h3){
-			//display: none;
+			display: none;
 		}
 
 		.content-box p:nth-of-type(1) {

@@ -34,18 +34,6 @@
 	<section name="report" id="report">
 		<a name="report-anchor"></a>
 
-		<div class="insert" data-root="1458">
-			<div class="left">
-				<img src="<?php bloginfo('template_directory');?>/assets/sidebar/barbed-wire.jpg">
-			</div>
-
-		</div>
-
-		<div class="insert" data-root="1509">
-			<div class="left">
-				<img src="<?php bloginfo('template_directory');?>/assets/sidebar/cctv.jpg">
-			</div>
-		</div>
 		
 		<div class="call-out center">
 			<div class="inner">
