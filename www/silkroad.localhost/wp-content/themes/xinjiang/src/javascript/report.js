@@ -50,14 +50,11 @@ export default function createReport() {
 	}
 	
 
-
 	document.querySelectorAll('#report .insert').forEach(insert=>{
 		if(document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor')){
 			document.querySelector('article[data-rootparent="'+insert.dataset.root+'"] .anchor').after(insert);	
 		}
-		
 	});
-
 
 	const callOut = document.querySelector('#report > .call-out');
 	document.querySelector('#call-out').appendChild(callOut);

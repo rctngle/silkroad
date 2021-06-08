@@ -39,16 +39,28 @@ export default function createCases() {
 				// c.classList.remove('active');
 			});			
 		},
-		onPointerUp: state => {
-			const dragDist = Math.abs(dragStart - state.position.x);
-			if (dragCase && dragDist < 5) {
-				const caseId = 'case-' + dragCase.dataset.ref;
-				scrollToCase(caseId);
+		onPointerUp: (state, e) => {
+
+			if (e.target.tagName === 'A') {
+
+				const caseId = e.target.getAttribute('href').replace('#', '');
+				if (caseId.indexOf('case-') >= 0) {
+					scrollToCase(caseId);
+				}
+
+			} else {
+
+				const dragDist = Math.abs(dragStart - state.position.x);
+				if (dragCase && dragDist < 5) {
+					const caseId = 'case-' + dragCase.dataset.ref;
+					scrollToCase(caseId);
+				}
+
+				document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+					// c.classList.remove('active');
+				});			
 			}
 
-			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
-				// c.classList.remove('active');
-			});			
 		}
 	});
 
@@ -141,8 +153,8 @@ export function scrollToCase(caseId) {
 			p.classList.remove('active');
 		});
 
+
 		const pager = document.querySelector('#cases-pager a.case-pager-link[href="#' + caseId + '"]');
-		console.log(pager);
 
 		pager.classList.add('active');
 
@@ -156,6 +168,7 @@ export function scrollToCase(caseId) {
 		});
 
 		caseSlide.classList.add('active');
+		caseSlide.classList.add('expanded');
 
 
 		const elementLeft = caseSlide.offsetLeft;
