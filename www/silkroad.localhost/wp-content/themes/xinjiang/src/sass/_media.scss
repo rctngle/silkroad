@@ -107,8 +107,8 @@ div.wp-caption.larger {
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: -100px;
-		height: 100px;
+		bottom: -165px;
+		height: 165px;
 		background: #FFF;
 		right: 0;
 		left: 0;
@@ -143,11 +143,12 @@ div.wp-caption.larger {
 		--media-height: 50vh;
 	}
 	@include breakpoint(sm){
-		--media-height: 70vh;
+		--media-height: calc(100vh - calc(var(--header-height) + var(--horizontal-nav-height)));
 	}
 	z-index: -1;
     position: relative;
-    height: calc(var(--media-height) - 100px);
+
+    height: calc(var(--media-height) - 165px);
 	.image {
 		width: 100%;
 		height: var(--media-height);

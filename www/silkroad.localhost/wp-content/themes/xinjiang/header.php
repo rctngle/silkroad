@@ -97,7 +97,7 @@ $classes[]=LANG;
 		<img class="arrow-down-icon" src="<?php bloginfo('template_directory');?>/assets/images/ico-scroll.svg">
 		<div class="meaning">
 			<a id="report-list-link" href="#report-list-anchor">
-				Report available in <strong><span>English</span>, <span>中文</span>, <span>हिन्दी</span>, <span>Español</span>, <span>Français</span>, <span>বাংলা</span>,<br/><span>Pусский</span>, <span>Português</span>, <span>Indonesian</span>, <span>日本語</span>, <span>عربي</span>, <span>الأويغور</span></strong> 
+				Report summary available in <strong><span>English</span>, <span>中文</span>, <span>हिन्दी</span>, <span>Español</span>, <span>Français</span>, <span>বাংলা</span>,<br/><span>Pусский</span>, <span>Português</span>, <span>Indonesian</span>, <span>日本語</span>, <span>عربي</span>, <span>الأويغور</span></strong> 
 			</a>
 		</div>
 	</div>

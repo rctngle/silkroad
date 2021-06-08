@@ -66,14 +66,11 @@
 		</div>
 
 		
-		<div class="call-out">
+		<div class="call-out center">
 			<div class="inner">
-				<div class="blur">
-					<img src="<?php bloginfo('template_directory');?>/assets/images/blurred-face.png">
-					<p class="media-caption">[Interviewee X7]</p>
-				</div>
+				
 				<div class="statement">
-					<h2>As a result, nearly all interviews with former camp detainees and other witnesses were conducted on the condition that Amnesty International refrain from publishing the interviewee’s name and/or any information that could be used to identify the interviewee, the interviewee’s family or anyone else who might be at risk if they were to be identified. Pseudonyms are used in all cases.</h2>
+					<h2>All interviews with former camp detainees and other witnesses were conducted on the condition that Amnesty International refrain from publishing the interviewee’s name and/or any information that could be used to identify the interviewee, the interviewee’s family or anyone else who might be at risk if they were to be identified. Pseudonyms are used in all cases.</h2>
 				</div>
 			</div>
 		</div>
