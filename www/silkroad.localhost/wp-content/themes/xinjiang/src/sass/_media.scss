@@ -61,8 +61,8 @@ img.alignright, .wp-caption.alignright {
 	margin: 0;
 	@include breakpoint(xsm){
 		float: right;
-		margin: 8px -40px 16px 18px;
-		width: 300px !important;
+		margin: 8px -35px 16px 18px;
+		width: 340px !important;
 	}
 	@include breakpoint(sm){
 		width: 420px !important;
@@ -121,7 +121,7 @@ img.alignleft, .wp-caption.alignleft {
 	@include breakpoint(xsm){
 		float: left;
 		margin: 8px 32px 16px -35px;
-		width: 300px !important;
+		width: 340px !important;
 	}
 	@include breakpoint(sm){
 		margin: 8px 32px 16px -145px;
@@ -150,9 +150,10 @@ img.alignleft, .wp-caption.alignleft {
 		padding-left: var(--padding);
 		@include breakpoint(sm){
 			padding-left: 0;
-		}
-		
+		}		
 	}
+
+
 }
 
 div.wp-caption.larger {
@@ -161,15 +162,42 @@ div.wp-caption.larger {
 
 .media.illustration .caption {
 	@include image-caption;
-	padding: 7px var(--padding);
+	
 	max-width: 200px;
+	
+	position: absolute;
+    top: 15px;
+    right: 15px;
+
+    p {
+    	display: none;
+    	@include breakpoint(md){
+    		display: block;
+    	}
+    }
+
 	@include breakpoint(md){
+		top: auto;
+		right: auto;
+		padding: 7px var(--padding);
 		max-width: 300px;
 	}
 	@include breakpoint(lg){
 		max-width: 360px;	
 	}
-	
+	.caption__mobile-trigger div {
+		width: 26px;
+		height: 26px;
+		border: 2px solid #d4d4d4;
+		border-radius: 50%;
+		text-align: center;
+		font-weight: bold;
+		display: flex;
+		color: #d4d4d4;
+		flex-flow: column nowrap;
+		justify-content: center;
+		background-color: rgba(0,0,0,0.4);
+	}
 }
 
 .media.illustration.contain {
@@ -186,8 +214,12 @@ div.wp-caption.larger {
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: -165px;
-		height: 165px;
+		bottom: -150px;
+		height: 150px;
+		@include breakpoint(sm){
+			bottom: -165px;
+			height: 165px;			
+		}
 		background: #FFF;
 		right: 0;
 		left: 0;
@@ -220,15 +252,17 @@ div.wp-caption.larger {
 	//margin-bottom: 36px;
 	--media-height: 250px;
 	@include breakpoint(xsm){
-		--media-height: 50vh;
+		--media-height: 40vh;
 	}
+    height: calc(var(--media-height) - 150px);
 	@include breakpoint(sm){
+	    height: calc(var(--media-height) - 165px);
 		--media-height: calc(100vh - calc(var(--header-height) + var(--horizontal-nav-height)));
 	}
 	z-index: -1;
     position: relative;
 
-    height: calc(var(--media-height) - 165px);
+
 	.image {
 		width: 100%;
 		height: var(--media-height);

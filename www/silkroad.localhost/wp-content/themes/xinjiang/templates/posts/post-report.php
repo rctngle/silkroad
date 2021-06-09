@@ -111,6 +111,7 @@ if($header_image_size == 'cover'){
 					<div class="image"><?php echo wp_get_attachment_image( $post_thumbnail_id, '2048x2048', false, ['alt' => $post_thumbnail_alt] ); ?></div>
 					<?php if(get_the_post_thumbnail_caption()):?>
 						<div class="caption">
+							<span class="caption__mobile-trigger"><div>i</div></span>
 							<p><?php the_post_thumbnail_caption();?></p>
 						</div>
 					<?php endif;?>
