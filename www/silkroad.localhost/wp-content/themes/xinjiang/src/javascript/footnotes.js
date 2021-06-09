@@ -3,6 +3,7 @@ export default function createFootnotes(){
 		sup.addEventListener('click', e => {
 			if (e.target.tagName !== 'A') {
 				e.preventDefault();
+			} else {
 				if(sup.classList.contains('show')){
 					sup.classList.remove('show');
 				} else {
