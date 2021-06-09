@@ -62,10 +62,11 @@ article[data-rootparent="1068"]{
 	left: calc(var(--padding) * -1);
 	margin: 32px 0;
 	@include breakpoint(xsm){
-		margin: 64px 0;
+		
 		padding: 16px 16px 16px 32px;
 	}
 	@include breakpoint(sm){
+		margin: 64px 0;
 		width: 100vw;
 		left: calc(calc(calc(100vw - 698px) / 2) * -1);	
 	}

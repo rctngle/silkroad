@@ -60,7 +60,6 @@ img.alignright, .wp-caption.alignright {
 	height: auto;
 	margin: 0;
 	@include breakpoint(xsm){
-		width: 170px !important;	
 		float: right;
 		margin: 8px -40px 16px 18px;
 		width: 300px !important;
@@ -88,6 +87,14 @@ img.alignright, .wp-caption.alignright {
 		width: 100%;
 		height: auto;
 	}
+	p {
+		margin-bottom: 0;
+		padding-right: var(--padding);
+		@include breakpoint(sm){
+			padding-right: 0;
+		}
+		
+	}
 }
 
 
@@ -113,8 +120,7 @@ img.alignleft, .wp-caption.alignleft {
 	margin: 0;
 	@include breakpoint(xsm){
 		float: left;
-		width: 170px !important;
-		margin: 8px 32px 16px -40px;
+		margin: 8px 32px 16px -35px;
 		width: 300px !important;
 	}
 	@include breakpoint(sm){
@@ -138,6 +144,14 @@ img.alignleft, .wp-caption.alignleft {
 	img {
 		width: 100%;
 		height: auto;
+	}
+	p {
+		margin-bottom: 0;
+		padding-left: var(--padding);
+		@include breakpoint(sm){
+			padding-left: 0;
+		}
+		
 	}
 }
 
