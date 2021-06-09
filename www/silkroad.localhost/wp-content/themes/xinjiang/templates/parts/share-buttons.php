@@ -25,11 +25,6 @@ $instagram_url = get_field('instagram_url', 'options');
 		</li>
 	<?php endif; ?>
 
-	<li>
-		<a class="share-button ico-telegram" href="https://t.me/share/url?url=<?php echo $share_url; ?>&text=<?php echo $share_title; ?>" target="_blank">
-			<img src="<?php bloginfo('template_directory');?>/assets/images/ico-telegram-white.svg">
-			<span>Telegram</span>
-		</a>
-	</li>
+	
 </ul>
 

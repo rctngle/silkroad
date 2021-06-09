@@ -28,7 +28,7 @@ html {
 	@include breakpoint(xsm){
 		--header-height: 48px;
 	}
-	--horizontal-nav-height: 125px;
+	--horizontal-nav-height: 122px;
 	@include breakpoint(xsm){
 		--horizontal-nav-height: 155px;
 	}

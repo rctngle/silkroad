@@ -74,9 +74,13 @@ section.hero {
 	top: 0;
 	display: block;
 	@include breakpoint(sm){
+
 		display: none;
 	}
 	padding: 10px 20px 0 0;
+	@include breakpoint(xsm){
+		padding: 12px 20px 0 0;
+	}
 	img {
 		width: 22px;
 		height: 22px;
@@ -104,7 +108,7 @@ nav {
 	a, span {
 		display: block;
 		height: 100%;
-		padding: 14px 24px 13px 24px;
+		padding: 14px 24px 13px 16px;
 		@include breakpoint(xsm){
 			padding: 16px 24px 15px 24px;
 		}

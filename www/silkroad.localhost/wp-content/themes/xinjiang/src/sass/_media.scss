@@ -59,6 +59,11 @@ img.alignright, .wp-caption.alignright {
 	width: 100% !important;
 	height: auto;
 	margin: 0;
+
+	@media (max-width: map-get($breakpoints, 'xsm')){
+		margin-bottom: 1rem;
+	}
+
 	@include breakpoint(xsm){
 		float: right;
 		margin: 8px -35px 16px 18px;
@@ -78,6 +83,10 @@ img.alignright, .wp-caption.alignright {
 		margin: 8px -320px 16px 32px;
 	}
 	&.black-white {
+		@media (max-width: map-get($breakpoints, 'xsm')){
+			width: 50% !important;
+			float: right;
+		}
 		@include breakpoint(lg){
 			width: 380px !important;
 			margin: 8px -200px 16px 32px;
@@ -89,7 +98,10 @@ img.alignright, .wp-caption.alignright {
 	}
 	p {
 		margin-bottom: 0;
-		padding-right: var(--padding);
+		
+		@include breakpoint(xsm){
+			padding-right: var(--padding);	
+		}
 		@include breakpoint(sm){
 			padding-right: 0;
 		}
@@ -110,7 +122,9 @@ article[data-rootparent="1464"][data-idx="3"]{
 	}
 }
 
-
+.wp-caption {
+	
+}
 
 
 img.alignleft, .wp-caption.alignleft {
@@ -145,9 +159,15 @@ img.alignleft, .wp-caption.alignleft {
 		width: 100%;
 		height: auto;
 	}
+	@media (max-width: map-get($breakpoints, 'xsm')){
+		margin-bottom: 2rem;
+	}
+
 	p {
 		margin-bottom: 0;
-		padding-left: var(--padding);
+		@include breakpoint(xsm){
+			padding-left: var(--padding);	
+		}		
 		@include breakpoint(sm){
 			padding-left: 0;
 		}		
@@ -166,16 +186,13 @@ div.wp-caption.larger {
 	max-width: 200px;
 	
 	position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0;
+    right: 0;
+    z-index: 2;
 
-    p {
-    	display: none;
-    	@include breakpoint(md){
-    		display: block;
-    	}
-    }
-
+    padding: 8px 10px;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
 	@include breakpoint(md){
 		top: auto;
 		right: auto;
@@ -185,18 +202,48 @@ div.wp-caption.larger {
 	@include breakpoint(lg){
 		max-width: 360px;	
 	}
+    p {
+    	display: none;
+    	margin: 0;
+
+    	@media (max-width: map-get($breakpoints, 'md')){
+			font-size: 13px;
+			line-height: 1.35;
+			color: #bdbdbd;			
+		}
+    	@include breakpoint(md){
+    		display: block;
+    	}
+    }
+	&.show-caption {
+		p {
+			display: block;
+		}
+		.caption__mobile-trigger div {
+			display: none;
+		}
+	}
+	.caption__mobile-trigger {
+		display: block;
+		@include breakpoint(md){
+			display: none;
+		}
+	}
 	.caption__mobile-trigger div {
-		width: 26px;
-		height: 26px;
-		border: 2px solid #d4d4d4;
+		
+		width: 22px;
+		height: 22px;
+		border: 2px solid #fff;
 		border-radius: 50%;
 		text-align: center;
 		font-weight: bold;
 		display: flex;
-		color: #d4d4d4;
+		color: #fff;
+		font-family: 'Roboto', sans-serif;
 		flex-flow: column nowrap;
 		justify-content: center;
-		background-color: rgba(0,0,0,0.4);
+		font-size: 14px;
+		///background-color: rgba(0,0,0,0.4);
 	}
 }
 
@@ -214,8 +261,13 @@ div.wp-caption.larger {
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: -150px;
-		height: 150px;
+		bottom: -25px;
+		height: 25px;
+		@include breakpoint(xsm){
+			bottom: -150px;
+			height: 150px;	
+		}
+		
 		@include breakpoint(sm){
 			bottom: -165px;
 			height: 165px;			
@@ -251,15 +303,18 @@ div.wp-caption.larger {
 .media.illustration {
 	//margin-bottom: 36px;
 	--media-height: 250px;
+
+	height: calc(var(--media-height) - 25px);
 	@include breakpoint(xsm){
+		height: calc(var(--media-height) - 150px);
 		--media-height: 40vh;
 	}
-    height: calc(var(--media-height) - 150px);
+    
 	@include breakpoint(sm){
 	    height: calc(var(--media-height) - 165px);
 		--media-height: calc(100vh - calc(var(--header-height) + var(--horizontal-nav-height)));
 	}
-	z-index: -1;
+	z-index: 0;
     position: relative;
 
 

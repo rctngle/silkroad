@@ -43,6 +43,15 @@ export default function createReport() {
 			}			
 		});
 	});
+	document.querySelectorAll('.caption').forEach(caption=>{
+
+		caption.addEventListener('click', e=>{
+			
+			caption.classList.toggle('show-caption');
+		});
+	});
+
+	
 
 
 	

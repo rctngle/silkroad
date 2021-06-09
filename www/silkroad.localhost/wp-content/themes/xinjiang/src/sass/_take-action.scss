@@ -9,6 +9,10 @@
 	span {
 		font-style: italic;
 		@include body-text;
+		display: block;
+		@include breakpoint(xsm){
+			display: inline;
+		}
 	}
 	h2 {
 		//text-align: center;

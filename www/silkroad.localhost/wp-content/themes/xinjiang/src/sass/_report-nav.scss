@@ -2,10 +2,7 @@
 
 
 #report-nav-scroller {
-	--horizontal-nav-height: 125px;
-	@include breakpoint(xsm){
-		--horizontal-nav-height: 155px;
-	}
+	
 	height: var(--horizontal-nav-height);
 	margin-bottom: 2rem;
 	ul {
@@ -34,7 +31,7 @@
 			flex: 0 0 278px;
 		}
 		&:nth-child(1){
-			margin-left: 24px;
+			margin-left: 17px;
 			@include breakpoint(xsm){
 				margin-left: 30px;
 			}
@@ -48,7 +45,7 @@
 		> a {
 			text-decoration: none;
 			display: block;
-			padding: 12px 12px 12px 12px;
+			padding: 10px 12px 12px 12px;
 			@include breakpoint(xsm){
 				padding: 14px var(--padding) var(--padding) var(--padding);	
 			}
@@ -77,11 +74,13 @@
 		width: 100%;
 		overflow: hidden;
 		height: 77px;
+		margin-top: 9px;
 		@include breakpoint(xsm){
 			height: 100px;
+			margin-top: 10px;
 		}
 		display: block;
-		margin-top: 10px;
+
 		img {
 			width: 100%;
 			height: 100%;
@@ -102,7 +101,7 @@
 #report-nav-scroller .gradient {
 	position: absolute;
 	right: 0;
-	width: 24px;
+	width: 17px;
 	@include breakpoint(xsm){
 		width: 30px;
 	}
@@ -120,19 +119,26 @@
 		background: #333;
 	}
 	.button {
-		width: 24px;
+		background-size: 8px;
+
+		width: 17px;
 		@include breakpoint(xsm){
+			background-size: 10px;
 			width: 27px;
 		}
 		height: 40px;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: 10px;
+		
 	}
 }
 
 #report-nav-scroller .padder {
-	flex: 0 0 24px;
+	flex: 0 0 16px;
+	@include breakpoint(xsm){
+		flex: 0 0 24px;
+	}
+
 	height: var(--horizontal-nav-height);
 }
 
