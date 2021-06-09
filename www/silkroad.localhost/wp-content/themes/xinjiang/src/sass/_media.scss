@@ -30,18 +30,22 @@
 }
 
 .wp-caption {
-	p {
-		color: #999;
-		font-size: 15px;
-		margin-top: 6px;
-	}
+	@include image-caption;
 }
 
 div.wp-caption.aligncenter {
 	width: 100% !important;
+	position: relative;
+	@include breakpoint(md){
+		width: 120% !important;
+		left: -10%;
+	}
 	img {
 		width: 100%;
 		height: auto;
+	}
+	p {
+		text-align: center;
 	}
 }
 
@@ -51,17 +55,34 @@ image.aligncenter {
 }
 
 img.alignright, .wp-caption.alignright {
-	width: 170px !important;
+	
+	width: 100% !important;
 	height: auto;
-	float: right;
-	margin: 8px -40px 16px 18px;
+	margin: 0;
 	@include breakpoint(xsm){
-		margin: 8px -40px 16px 32px;
+		width: 170px !important;	
+		float: right;
+		margin: 8px -40px 16px 18px;
 		width: 300px !important;
 	}
 	@include breakpoint(sm){
+		width: 420px !important;
+		margin: 8px -145px 16px 32px;
+	}
+	@include breakpoint(md){
 		width: 400px !important;
 		margin: 8px -200px 16px 32px;
+	}
+
+	@include breakpoint(lg){
+		width: 540px !important;
+		margin: 8px -320px 16px 32px;
+	}
+	&.black-white {
+		@include breakpoint(lg){
+			width: 380px !important;
+			margin: 8px -200px 16px 32px;
+		}
 	}
 	img {
 		width: 100%;
@@ -70,18 +91,49 @@ img.alignright, .wp-caption.alignright {
 }
 
 
+
+article[data-rootparent="1477"][data-idx="4"]{
+	.media.illustration .image img {
+	    object-position: center 84%;
+	}
+}
+article[data-rootparent="1464"][data-idx="3"]{
+	.media.illustration .image img {
+		object-position: bottom;
+	}
+}
+
+
+
+
 img.alignleft, .wp-caption.alignleft {
-	width: 170px !important;
+	
+	width: 100% !important;
 	height: auto;
-	float: left;
-	margin: 8px 18px 16px -40px;
+	margin: 0;
 	@include breakpoint(xsm){
+		float: left;
+		width: 170px !important;
 		margin: 8px 32px 16px -40px;
 		width: 300px !important;
 	}
 	@include breakpoint(sm){
+		margin: 8px 32px 16px -145px;
+		width: 420px !important;
+	}
+	@include breakpoint(md){
 		width: 400px !important;
 		margin: 8px 32px 16px -200px;
+	}
+	@include breakpoint(lg){
+		width: 540px !important;
+		margin: 8px 32px 16px -320px;
+	}
+	&.black-white {
+		@include breakpoint(lg){
+			width: 400px !important;
+			margin: 8px 32px 16px -200px;
+		}
 	}
 	img {
 		width: 100%;
@@ -91,6 +143,19 @@ img.alignleft, .wp-caption.alignleft {
 
 div.wp-caption.larger {
 
+}
+
+.media.illustration .caption {
+	@include image-caption;
+	padding: 7px var(--padding);
+	max-width: 200px;
+	@include breakpoint(md){
+		max-width: 300px;
+	}
+	@include breakpoint(lg){
+		max-width: 360px;	
+	}
+	
 }
 
 .media.illustration.contain {
@@ -121,6 +186,7 @@ div.wp-caption.larger {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+
 	}
 }
 
@@ -153,10 +219,6 @@ div.wp-caption.larger {
 		width: 100%;
 		height: var(--media-height);
 		overflow: hidden;
-
-		img {
-			
-		}
 	}
 	+ .content-box {
 

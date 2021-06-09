@@ -57,9 +57,12 @@ article[data-rootparent="1068"]{
 .call-out {
 	
 
-	width: 100%;
+	width: calc(100% + calc(var(--padding) * 2));
 	padding: 8px;
+	left: calc(var(--padding) * -1);
+	margin: 32px 0;
 	@include breakpoint(xsm){
+		margin: 64px 0;
 		padding: 16px 16px 16px 32px;
 	}
 	@include breakpoint(sm){
@@ -69,7 +72,7 @@ article[data-rootparent="1068"]{
 	position: relative;
 	background-color: #FFF;
 	color: #fff;
-	margin: 64px 0;
+	
 	
 
 	h2 {
@@ -329,27 +332,35 @@ section#report {
 		
 		
 		grid-template-columns: 1fr 1fr;
-		width: 90vw !important;
 		
-		@include breakpoint(xms){
+		width: 100% !important;
+		@include breakpoint(sm){
+			width: 90vw !important;
 			left: calc(calc(calc(calc(90vw + 32px) - var(--content-box-width)) / 2) * -1);	
 		}
-		@include breakpoint(md){
-			width: 1100px !important;	
-			left: -205px;
-		}
+		
 		position: relative;
 	}
 	
 	.wp-caption.larger {
 		text-align: center;
+		@include breakpoint(md){
+			width: 120% !important;	
+			left: -10%;
+		}
 	}	
 
 	.wp-caption.image-quote {
-		margin: 48px 0 56px 0;
+		margin: 48px 0 0 0;
 		align-items: start;
-		@include breakpoint(xsm){
+		@include breakpoint(sm){
+			margin: 48px 0 56px 0;
 			display: grid;	
+		}
+
+		@include breakpoint(md){
+			width: 170% !important;	
+			left: -35%;
 		}
 		img {
 			width: 100%;
@@ -358,11 +369,22 @@ section#report {
 		img + p {
 			background: #FFF;
 			@include quote;
-			padding: 32px;
+			
 			margin-bottom: 0;
 			position: relative;
 			height: 100%;
+
+			width: 90%;
+			top: -60px;
+			left: 5%;
+			padding: 16px;
+			@include breakpoint(xsm){
+				width: 80%;
+				left: 10%;
+				padding: 32px;
+			}
 			@include breakpoint(sm){
+				width: 100%;
 				height: auto;
 				top: 30px;
 				left: -40px;

@@ -153,7 +153,11 @@ h1.sub-title {
 	justify-content: center;
 	padding: 16px;
 	bottom: 10px;
-	max-width: 680px;
+	max-width: 460px;
+	@include breakpoint(md){
+		max-width: 680px;
+	}
+
 
 	@include breakpoint(xsm){
 		margin: 0 auto;
