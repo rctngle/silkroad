@@ -43,6 +43,7 @@ article[data-rootparent="1068"]{
 		top: auto;
 		bottom: 40px;
 	}
+
 }
 .call-out.center {
 	text-align: center;
@@ -333,7 +334,7 @@ article[data-rootparent="1068"]{
 // 	}
 	
 // }
-section#report {
+section#report-section {
 	
 
 	.wp-caption.image-quote,
@@ -518,7 +519,7 @@ section#report {
 		a.anchor {
 			display: block;
 			position: relative;
-			top: -195px;
+			top: -202px;
 			visibility: hidden;			
 		}
 
@@ -548,21 +549,24 @@ section#report {
 			}			
 		}
 	}
-	article.report.depth-0.content-type-introduction {
-		//margin-bottom: 5rem;
+	article.report.depth-0.content-type-introduction[data-rootparent="1457"] {
+		
+		.section-title {
+			position: relative;
+			top: -16px;
+			@include breakpoint(xsm){
+				top: -32px;	
+			}
+			
+			h2 {
+				margin-bottom: 0;
+			}
+		}
 	}
 	article.report.depth-0.content-type-conclusion {
 		margin-top: 8 * 8px;
 	}
-	article.content-type-introduction.depth-0 {
-		// margin-bottom: 4rem;
-	 //    overflow: hidden;
-		.content-box {
-			//padding-top: 440px;
-		}
-
-	}
-  
+	
 	article.report.depth-0.content-type-chapter {
 
 	}

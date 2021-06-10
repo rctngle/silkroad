@@ -38,8 +38,8 @@ $classes[]=LANG;
 
 	<meta property="og:title" content="“Like we were enemies in a war”" />
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:description" content="China’s Mass Internment, Torture and Persecution of Muslims in Xinjiang">
-	<meta property="og:description" content="China’s Mass Internment, Torture and Persecution of Muslims in Xinjiang">
+	<meta name="twitter:description" content="China: Draconian repression of Muslims in Xinjiang amounts to crimes against humanity">
+	<meta property="og:description" content="China: Draconian repression of Muslims in Xinjiang amounts to crimes against humanity">
 	<meta name="twitter:title" content="“Like we were enemies in a war”">	
 	<meta name="twitter:image" content="<?php bloginfo('template_directory');?>/card.jpg" />
 	<meta property="og:image" content="<?php bloginfo('template_directory');?>/card.jpg" />

@@ -269,8 +269,8 @@ div.wp-caption.larger {
 		}
 		
 		@include breakpoint(sm){
-			bottom: -165px;
-			height: 165px;			
+			bottom: -168px;
+			height: 168px;			
 		}
 		background: #FFF;
 		right: 0;
@@ -311,7 +311,7 @@ div.wp-caption.larger {
 	}
     
 	@include breakpoint(sm){
-	    height: calc(var(--media-height) - 165px);
+	    height: calc(var(--media-height) - 168px);
 		--media-height: calc(100vh - calc(var(--header-height) + var(--horizontal-nav-height)));
 	}
 	z-index: 0;

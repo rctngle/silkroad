@@ -31,7 +31,7 @@
 			flex: 0 0 278px;
 		}
 		&:nth-child(1){
-			margin-left: 17px;
+			margin-left: 0;
 			@include breakpoint(xsm){
 				margin-left: 30px;
 			}
@@ -102,7 +102,9 @@
 	position: absolute;
 	right: 0;
 	width: 17px;
+	display: none;
 	@include breakpoint(xsm){
+		display: flex;
 		width: 30px;
 	}
 	top: 0;
@@ -110,7 +112,7 @@
 	z-index: 1;
 	background: linear-gradient(to right, transparent 0%, #222 60%);
 	background: #222;
-	display: flex;
+	
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: flex-end;
@@ -121,7 +123,6 @@
 	.button {
 		background-size: 8px;
 
-		width: 17px;
 		@include breakpoint(xsm){
 			background-size: 10px;
 			width: 27px;
@@ -134,8 +135,9 @@
 }
 
 #report-nav-scroller .padder {
-	flex: 0 0 16px;
+	display: none;
 	@include breakpoint(xsm){
+		display: block;
 		flex: 0 0 24px;
 	}
 
