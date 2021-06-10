@@ -17,7 +17,7 @@ $cta_page = xinjiang_get_post_by_slug('page', 'call-to-action');
 	
 	<div class="cta-body content-box">
 		<div class="take-action__quote">
-			<h2>“[Chinese authorities] are looking for any excuse to sentence you” <span>&mdash; a detainees’ relative</span></h2>
+			<h2>“[Chinese authorities] are looking for any excuse to sentence you” <span>&mdash; a detainee’s relative</span></h2>
 		</div>
 		<div class="cta-text">
 			
