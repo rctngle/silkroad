@@ -196,7 +196,7 @@ div.wp-caption.larger {
 	@include breakpoint(md){
 		top: auto;
 		right: auto;
-		padding: 7px var(--padding);
+		padding: 10px var(--padding);
 		max-width: 300px;
 	}
 	@include breakpoint(lg){
