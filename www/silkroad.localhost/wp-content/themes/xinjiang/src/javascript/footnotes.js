@@ -3,7 +3,7 @@ export default function createFootnotes(){
 		sup.addEventListener('click', e => {
 			if (e.target.tagName !== 'A') {
 				e.preventDefault();
-			} else {
+			} else if (!e.target.classList.contains('fn-ext-link')) {
 				if(sup.classList.contains('show')){
 					sup.classList.remove('show');
 				} else {
@@ -12,7 +12,6 @@ export default function createFootnotes(){
 					});
 					sup.classList.add('show');	
 					const bbox = sup.getBoundingClientRect();
-					console.log(bbox.x, document.body.clientWidth);
 					if(bbox.x > document.body.clientWidth * 0.6){
 						sup.classList.add('show-right');
 					}
