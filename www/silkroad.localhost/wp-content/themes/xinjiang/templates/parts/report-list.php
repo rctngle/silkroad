@@ -35,8 +35,12 @@ $report_downloads_page = get_page_by_path('report-downloads');
 						<?php endif; ?>
 					</div>
 
-				<?php elseif($download_summary):?>
+				<?php elseif($download_summary && $summary_document):?>
 					<a href="<?php echo $summary_document['url']; ?>" target="_blank" dir="auto" class="title">
+						<i class="fad fa-file-alt"></i> <strong><?php the_sub_field('language'); ?></strong>
+					</a>
+				<?php elseif($download_full_report && $report_document):?>
+					<a href="<?php echo $report_document['url']; ?>" target="_blank" dir="auto" class="title">
 						<i class="fad fa-file-alt"></i> <strong><?php the_sub_field('language'); ?></strong>
 					</a>
 
