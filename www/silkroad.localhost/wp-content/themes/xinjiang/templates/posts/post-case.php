@@ -108,7 +108,8 @@
 					<?php endif;?>
 					<div class="case__row">
 						<h5>Date of Birth</h5>
-						<p><?php the_field('date_of_birth'); ?></p>
+							
+						<p><?php echo xinjiang_translate_field(get_field('date_of_birth_ml_text')); ?></p>
 					</div>
 
 					<div class="ethnicity case__row">
