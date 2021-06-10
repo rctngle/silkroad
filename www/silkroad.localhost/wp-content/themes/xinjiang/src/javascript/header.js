@@ -11,9 +11,9 @@ export default function createHeader() {
 			document.querySelector('header').classList.remove('open');
 		});
 	});
-	document.querySelector('#report-list-link').addEventListener('click', e => {
+	document.querySelector('.scroll-down-continue').addEventListener('click', e => {
 		e.preventDefault();
-		animateScrollTo(document.querySelector('#introduction'), {
+		animateScrollTo(document.querySelector('#report-list'), {
 			verticalOffset: -200,
 		});
 	});
