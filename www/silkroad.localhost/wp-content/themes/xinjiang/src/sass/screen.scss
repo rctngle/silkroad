@@ -66,9 +66,15 @@ section > a[name]{
     visibility: hidden;
 }
 
-section > a[name="report-anchor"]{
+
+section > a[name="report"]{
 	position: relative;
 	top: -40px;
+}
+
+section > a[name="introduction"]{
+	position: relative;
+	top: -100px;
 }
 
 body {

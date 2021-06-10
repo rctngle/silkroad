@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 <main>
-	<section id="introduction">
+
+	<section id="introduction-section">
+		<a name="introduction"></a>
 		<div class="section-inner">
 			<article>
 				<div class="content-box columns">
