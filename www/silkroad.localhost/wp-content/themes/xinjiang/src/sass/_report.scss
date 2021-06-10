@@ -407,6 +407,8 @@ section#report {
 		display: inline-block;
 		background: #353535;
 		color: #d0d0d0;
+		
+
 		> a {
 			text-decoration: none;
 		}
@@ -417,7 +419,7 @@ section#report {
 		}
 		&.show-right {
 			> span {
-				@media (max-width: map-get($breakpoints, 'xsm')){
+				@media (max-width: map-get($breakpoints, 'sm')){
 					right: 0;	
 				}
 				
@@ -429,27 +431,48 @@ section#report {
 		}
 		> span {
 			display: none;
-			width: 280px;		
+				
 			background: #353535;
 			margin-left: -4px;
 			padding: 6px 10px;
 			color: #d0d0d0;
 			box-shadow: 0 0 10px rgba(0,0,0,0.7);
 			z-index: 3;
+			font-size: 12px;
+			width: 200px;
+			@include breakpoint(xsm){
+				width: 220px;
+
+			}
 			@include breakpoint(sm){
+				padding: 5px 10px 5px 0;
 				box-shadow: none;
 				color: var(--light-grey);
 				max-width: none;
-				padding: 10px;
+				
 				margin-left: 0;
 				margin-top: -20px;
 				background-color: rgba(0,0,0,0.8);
+				.text-box & {
+					right: -16vw;
+				}
+				right: -16vw;
+   				width: 15vw;
+   						
+			}
+			@include breakpoint(md){
+				font-size: 14px;
+				right: -250px;
+			    width: 240px;
+			    padding: 10px;
+			}
+			@include breakpoint(lg){
 				right: -340px;
 				width: 260px;
 			}
 			text-align: left;			
 			position: absolute;		
-			font-size: 14px;		
+					
 			word-break: break-word;
 			br {
 				display: none;

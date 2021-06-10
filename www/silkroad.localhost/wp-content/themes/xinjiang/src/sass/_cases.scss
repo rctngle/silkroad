@@ -237,6 +237,9 @@ section#cases {
 			position: relative;
 			flex: 0 0 170px;
 			@include breakpoint(xsm){
+				flex: 0 0 210px;
+			}
+			@include breakpoint(md){
 				flex: 0 0 240px;
 			}
 			min-height: 0;

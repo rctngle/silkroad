@@ -34,13 +34,15 @@ $classes[]=LANG;
 
 	<?php wp_head(); ?>
 
-	<meta property="og:title" content="" />
+	
+
+	<meta property="og:title" content="“Like we were enemies in a war”" />
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:description" content="">
-	<meta property="og:description" content="">
-	<meta name="twitter:title" content="">	
-	<meta name="twitter:image" content="" />
-	<meta property="og:image" content="" />
+	<meta name="twitter:description" content="China’s Mass Internment, Torture and Persecution of Muslims in Xinjiang">
+	<meta property="og:description" content="China’s Mass Internment, Torture and Persecution of Muslims in Xinjiang">
+	<meta name="twitter:title" content="“Like we were enemies in a war”">	
+	<meta name="twitter:image" content="<?php bloginfo('template_directory');?>/card.jpg" />
+	<meta property="og:image" content="<?php bloginfo('template_directory');?>/card.jpg" />
 	<script src="https://kit.fontawesome.com/09200ef171.js" crossorigin="anonymous"></script>
 
 </head>

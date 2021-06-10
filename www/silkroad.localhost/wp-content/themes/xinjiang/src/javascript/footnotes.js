@@ -12,7 +12,8 @@ export default function createFootnotes(){
 					});
 					sup.classList.add('show');	
 					const bbox = sup.getBoundingClientRect();
-					if(bbox.x > window.innerWidth * 0.6){
+					console.log(bbox.x, document.body.clientWidth);
+					if(bbox.x > document.body.clientWidth * 0.6){
 						sup.classList.add('show-right');
 					}
 				}
