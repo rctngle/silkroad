@@ -41,8 +41,8 @@ $classes[]=LANG;
 	<meta name="twitter:description" content="China: Draconian repression of Muslims in Xinjiang amounts to crimes against humanity">
 	<meta property="og:description" content="China: Draconian repression of Muslims in Xinjiang amounts to crimes against humanity">
 	<meta name="twitter:title" content="“Like we were enemies in a war”">	
-	<meta name="twitter:image" content="<?php bloginfo('template_directory');?>/card.jpg" />
-	<meta property="og:image" content="<?php bloginfo('template_directory');?>/card.jpg" />
+	<meta name="twitter:image" content="<?php echo site_url();?>/<?php bloginfo('template_directory');?>/card.jpg" />
+	<meta property="og:image" content="<?php echo site_url();?>/<?php bloginfo('template_directory');?>/card.jpg" />
 	<script src="https://kit.fontawesome.com/09200ef171.js" crossorigin="anonymous"></script>
 
 </head>
