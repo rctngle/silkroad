@@ -62,10 +62,7 @@ export default function createReport() {
 	// 	}
 	// });
 
-	const callOut = document.querySelector('#report > .call-out');
-	if (document.querySelector('#call-out')) {
-		document.querySelector('#call-out').appendChild(callOut);
-	}
+	
 
 	document.querySelectorAll('.content-type-legal-text .legal-text-title').forEach(legalText=>{
 		legalText.addEventListener('click',e=>{

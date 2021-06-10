@@ -24,9 +24,11 @@
 }
 
 
-section#take-action, section#take-action-bottom {
+section#take-action-section, section#take-action-bottom {
 
-
+	@media (max-width: map-get($breakpoints, 'xsm')){
+		margin-bottom: 0;
+	}
 
 	iframe {
 		width: 100%;

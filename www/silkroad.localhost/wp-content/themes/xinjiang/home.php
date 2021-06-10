@@ -14,8 +14,8 @@
 	<?php /* <section id="report-dropdowns"><?php get_template_part('templates/parts/report-dropdowns'); ?></section> */?>
 	<?php /* <section id="map"><?php get_template_part('templates/parts/map'); ?></section> */?>
 	
-	<section id="cases">
-		<a name="cases-anchor"></a>
+	<section id="cases-section">
+		<a name="cases"></a>
 		<?php get_template_part('templates/parts/cases'); ?>
 			
 	</section>
@@ -24,18 +24,18 @@
 	<?php get_template_part('templates/parts/video'); ?>
 	*/ ?>
 
-	<section id="take-action" class="take-action-container">
-		<a name="take-action-anchor"></a>
+	<section id="take-action-section" class="take-action-container">
+		<a name="take-action"></a>
 		<?php get_template_part('templates/parts/call-to-action'); ?>			
 	</section>
 
 
 
-	<section name="report" id="report">
-		<a name="report-anchor"></a>
+	<section name="report-section" id="report-section">
+		<a name="report"></a>
 
 		
-		<div class="call-out center">
+		<!-- <div class="call-out center">
 			<div class="inner">
 				
 				<div class="statement">
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-		
+		 -->
 		<?php get_template_part('templates/parts/report'); ?>
 	</section>
 

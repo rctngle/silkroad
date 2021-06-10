@@ -2,7 +2,7 @@ import ScrollBooster from './scroll-booster';
 import animateScrollTo from 'animated-scroll-to';
 
 export default function createCases() {
-	const cases = document.querySelector('#cases').querySelectorAll('article');
+	const cases = document.querySelector('#cases-section').querySelectorAll('article');
 
 	const checkScrollMax = (state) => {
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;
@@ -71,7 +71,7 @@ export default function createCases() {
 			});
 		});
 
-		document.querySelector('#cases').querySelectorAll('.slideshow').forEach(slideshow => {
+		document.querySelector('#cases-section').querySelectorAll('.slideshow').forEach(slideshow => {
 
 			slideshow.dataset.idx = 0;
 			slideshow.dataset.numarticles = slideshow.querySelectorAll('.slide').length;
@@ -197,7 +197,7 @@ export function scrollToInitalCase() {
 
 
 	if (window.location.hash.length > 0 && window.location.hash.indexOf('case-') > 0) {
-		window.scroll(0, offset(document.querySelector('#cases')).top - 100);
+		window.scroll(0, offset(document.querySelector('#cases-section')).top - 100);
 		const caseId = window.location.hash.replace('#', '');
 		scrollToCase(caseId);
 	}
