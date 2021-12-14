@@ -1,5 +1,6 @@
 import ScrollBooster from './scroll-booster';
 import animateScrollTo from 'animated-scroll-to';
+import hasTouch from 'has-touch';
 
 export default function createCases() {
 	const cases = document.querySelector('#cases-section').querySelectorAll('article');
@@ -30,35 +31,40 @@ export default function createCases() {
 		viewport: casesScrollerEl,
 		scrollMode: 'native', 
 		direction: 'horizontal',
+		lockScrollOnDragDirection: 'horizontal',
 		onUpdate: state => {
 			checkScrollMax(state);
 		},
 		onPointerDown: state => {
-			dragStart = state.position.x;
-			document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
-				// c.classList.remove('active');
-			});			
-		},
-		onPointerUp: (state, e) => {
-
-			if (e.target.tagName === 'A') {
-
-				const caseId = e.target.getAttribute('href').replace('#', '');
-				if (caseId.indexOf('case-') >= 0) {
-					scrollToCase(caseId);
-				}
-
-			} else {
-
-				const dragDist = Math.abs(dragStart - state.position.x);
-				if (dragCase && dragDist < 5) {
-					const caseId = 'case-' + dragCase.dataset.ref;
-					scrollToCase(caseId);
-				}
-
+			if (!hasTouch) {
+				dragStart = state.position.x;
 				document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
 					// c.classList.remove('active');
 				});			
+			}
+		},
+		onPointerUp: (state, e) => {
+
+			if (!hasTouch) {
+				if (e.target.tagName === 'A') {
+
+					const caseId = e.target.getAttribute('href').replace('#', '');
+					if (caseId.indexOf('case-') >= 0) {
+						scrollToCase(caseId);
+					}
+
+				} else {
+
+					const dragDist = Math.abs(dragStart - state.position.x);
+					if (dragCase && dragDist < 5) {
+						const caseId = 'case-' + dragCase.dataset.ref;
+						scrollToCase(caseId);
+					}
+
+					document.querySelectorAll('#cases-scroller .swiper-slide').forEach(c => {
+						// c.classList.remove('active');
+					});			
+				}
 			}
 
 		}
@@ -114,7 +120,7 @@ export default function createCases() {
 
 
 	document.querySelector('#cases-scroller .scroller-prev').addEventListener('click', e => {
-		const scrollAmount = (document.body.clientWidth / 2);
+		const scrollAmount = (hasTouch) ? (document.querySelector('.swiper-slide .preview').getBoundingClientRect().width + 16) : (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
 		
 		animateScrollTo([scrollLeft - scrollAmount, null], {
@@ -126,7 +132,7 @@ export default function createCases() {
 	});
 
 	document.querySelector('#cases-scroller .scroller-next').addEventListener('click', e => {
-		const scrollAmount = (document.body.clientWidth / 2);
+		const scrollAmount = (hasTouch) ? (document.querySelector('.swiper-slide .preview').getBoundingClientRect().width + 16) : (document.body.clientWidth / 2);
 		const scrollLeft = document.querySelector('#cases-scroller .scroller-outer').scrollLeft;		
 
 		animateScrollTo([scrollLeft + scrollAmount, null], {

@@ -1,21 +1,29 @@
 //import typer from 'typer-js';
 
-export default function createIntro(){
+export default function createIntro(){	
+	tryCreateIntro();
+}
 
-	// const element = document.querySelector('h1.main-title .upper');
-	// element.innerText = '';
-	// typer(element, 60).line('“Like we were enemies in a war”');
-	setTimeout(e=>{
-		document.querySelectorAll('.animate').forEach((el, i)=>{
-			setTimeout(e=>{
-				el.classList.add('on');
-			}, el.dataset.delay);
-		});		
+function tryCreateIntro() {
+	
+	if (document.querySelector('.hero img')) {
 
-	},0);
+		setTimeout(e=>{
+			document.querySelectorAll('.animate').forEach((el, i)=>{
+				setTimeout(e=>{
+					el.classList.add('on');
+				}, el.dataset.delay);
+			});		
 
-	setTimeout(e=>{
-		document.querySelector('.hero img').classList.add('grow');
-	}, 500);
+		},0);
+
+		setTimeout(e=>{
+			document.querySelector('.hero img').classList.add('grow');
+		}, 400);
+	} else {
+		setTimeout(() => {
+			tryCreateIntro();			
+		}, 100);
+	}
 
 }
