@@ -1,6 +1,7 @@
 <?php
 
 $cta_page = xinjiang_get_post_by_slug('page', 'call-to-action');
+$share_title = xinjiang_translate('social-media-text');
 
 ?>
 <div class="media image">
@@ -21,12 +22,11 @@ $cta_page = xinjiang_get_post_by_slug('page', 'call-to-action');
 		</div>
 		<div class="cta-text">
 			
-			
-			<?php echo xinjiang_translate_field(get_field('content_ml_rich_text', $cta_page->ID)); ?>
-			
+			<?php echo xinjiang_translate_field(get_field('content_ml_rich_text', $cta_page->ID)); ?>			
 		</div>
 
-		<div class="take-action-button">Take Action</div>
+		<a href="http://www.twitter.com/intent/tweet?text=<?php echo urlencode($share_title); ?>" target="_blank" class="take-action-button">Take Action</a>
+
 		<iframe src="<?php echo xinjiang_translate('call-to-action-widget'); ?>"></iframe>
 	</div>
 </div>
