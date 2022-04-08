@@ -214,11 +214,15 @@ a[name='report-list-anchor'] {
 }
 
 .animate {
-	opacity: 0;
-	transition: opacity 500ms ease-in-out;
-	&.on {
-		opacity: 1;
-	}
+	opacity: 1;
+	// transition: opacity 500ms ease-in-out;
+	// &.on {
+	// 	opacity: 1;
+	// }
+}
+
+.touch .animate {
+	opacity: 1;
 }
 
 .main-points {
