@@ -24,6 +24,17 @@
 }
 
 section#cases-section {
+
+	.update {
+		background: #FFF;
+		padding: 10px 16px;
+		margin-top: 1rem;
+		p {
+			color: #222;
+			font-size: 15px;
+			font-weight: 500;	
+		}
+	}
 	--gradient-width: 40px;
 	@include breakpoint(xsm){
 		--gradient-width: 200px;
