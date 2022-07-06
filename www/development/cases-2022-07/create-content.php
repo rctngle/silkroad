@@ -37,7 +37,6 @@ foreach($image_files as $image_file) {
 }
 
 
-
 foreach($cases as $case) {
 
 	$case->case_id = strtoupper($case->case_id);
