@@ -59,7 +59,7 @@ doc.querySelectorAll('a.footnote-ref').forEach(a => {
 
 		console.log(footenoteContent); 
 
-		a.insertAdjacentHTML('afterend', ' [[[' + footenoteContent + ']]]');
+		a.insertAdjacentHTML('afterend', ' [fn]' + footenoteContent + '[/fn]');
 		a.parentNode.removeChild(a)
 	}
 })

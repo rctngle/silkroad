@@ -17,7 +17,7 @@ $report_downloads_page = get_page_by_path('report-downloads');
 			?>
 
 			<div class="language <?php echo $language_slug; ?>">
-				<?php if(false && $summary_document && $report_document):?>
+				<?php if($summary_document && $report_document):?>
 					<div dir="auto" class="title">
 						<i class="fad fa-file-alt"></i> <span><?php the_sub_field('language'); ?></span> <i class="fal fa-chevron-down"></i>
 					</div>
