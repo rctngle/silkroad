@@ -1,5 +1,14 @@
 <?php
 
+function wp_rocket_add_purge_posts_to_author() {
+	// gets the author role object
+	$role = get_role('editor');
+ 
+	// add a new capability
+	$role->add_cap('rocket_purge_cache', true);
+}
+add_action('init', 'wp_rocket_add_purge_posts_to_author', 12);
+
 function xinjiang_admin_style() {
 	wp_enqueue_style( 'admin-style', get_template_directory_uri() . '/build/styles/adminstyles.css?t=' . time());
 }
